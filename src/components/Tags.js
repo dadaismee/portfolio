@@ -41,14 +41,22 @@ const Wrapper = styled.div`
   display: inline-flex;
   align-items: center;
   gap: 20px;
+  margin-bottom: 20px;
 `;
 
 const Tag = styled(menuAndTags)`
-  ${({ active }) =>
-    active
-      ? 'padding: 10px 20px; border: solid 1px'
-      : 'padding: 10px 0px; border: none; color: var(--color-disabled)'}
-  border-radius: 5px;
+  background-color: transparent;
+  color: var(--color-disabled);
   transition: var(--transition);
   cursor: pointer;
+  border: none;
+  transition: var(--transition);
+  ${({ active }) =>
+    active
+      ? 'padding: 10px 20px; border: solid 1px; border-radius: 5px; color: var(--color-text);'
+      : 'padding: 10px 0px; border: none'}
+
+  &:hover {
+    color: var(--color-text);
+  }
 `;

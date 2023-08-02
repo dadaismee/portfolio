@@ -6,7 +6,7 @@ const index = () => {
     <Layout>
       <Hero />
       <Work />
-      {/* <About /> */}
+      <About />
       {/* <Contact /> */}
       {/* <Footer /> */}
     </Layout>
