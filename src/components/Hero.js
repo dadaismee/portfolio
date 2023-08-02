@@ -26,10 +26,12 @@ const Title = styled(h1)``;
 const GridWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  row-gap: 20px;
+  /* row-gap: 20px; */
 `;
 
 const Subtitle = styled(h2)`
-  grid-column: 5 / 7;
+  grid-column: 5 / 8;
   margin: 0px;
+  padding-left: 20px;
+  text-align: left;
 `;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Hero, Work } from '../components/index';
+import { Layout, Hero, Work, About } from '../components/index';
 
 const index = () => {
   return (
