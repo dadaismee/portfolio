@@ -16,3 +16,19 @@ export const h2 = styled.h1`
   font-weight: 700;
   line-height: 100%; /* 48px */
 `;
+
+export const sectionTitle = styled.h3`
+  color: var(--text);
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%; /* 32px */
+`;
+
+export const menuAndTags = styled.button`
+  color: var(--text);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%; /* 20px */
+`;
