@@ -19,8 +19,8 @@ export default Card;
 
 const Wrapper = styled.div`
   display: grid;
-  grid-column: ${({ grid }) => grid};
-  /* width: 384px; */
+  /* grid-column: auto / span 2; */
+  width: calc(1 / 7);
   padding: 20px;
   margin: 0px;
 

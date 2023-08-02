@@ -16,9 +16,10 @@ const Work = () => {
 export default Work;
 
 const Wrapper = styled.div`
-  margin: 0 60px;
+  margin: 0px;
 `;
 
 const SectionTitle = styled(sectionTitle)`
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
+  margin: 0 60px 40px;
 `;

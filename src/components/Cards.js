@@ -4,9 +4,6 @@ import { Card } from '../components/index';
 
 const Cards = () => {
   const cards = cardData.map((card, index) => {
-    const gridColumn = `${2 * index + 1} / ${2 * index + 3}`;
-    console.log(gridColumn);
-
     return (
       <Card
         key={index}
@@ -14,7 +11,6 @@ const Cards = () => {
         title={card.title}
         description={card.description}
         tags={card.tags}
-        grid={gridColumn}
       />
     );
   });
@@ -29,10 +25,9 @@ export default Cards;
 const Wrapper = styled.div`
   display: grid;
   grid-template-columns: var(--grid-columns);
-  grid-auto-columns: minmax(0, 1fr);
   gap: 20px;
-  padding-top: 10px;
-  overflow-y: hidden;
+  overflow-x: auto;
+  padding: 10px 0 20px 60px;
 
   &::-webkit-scrollbar {
     display: none;
@@ -49,6 +44,16 @@ const cardData = [
   },
   {
     image: 'images/poster.png',
+    title: 'Undulation',
+    description: 'A landing page for a Hungarian ambient music label.',
+    tags: ['Branding', 'UX/UI'],
+  },
+  {
+    title: 'Undulation',
+    description: 'A landing page for a Hungarian ambient music label.',
+    tags: ['Branding', 'UX/UI'],
+  },
+  {
     title: 'Undulation',
     description: 'A landing page for a Hungarian ambient music label.',
     tags: ['Branding', 'UX/UI'],

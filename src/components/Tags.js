@@ -41,6 +41,7 @@ const Wrapper = styled.div`
   display: inline-flex;
   align-items: center;
   gap: 20px;
+  margin: 0 60px;
 `;
 
 const Tag = styled(menuAndTags)`
