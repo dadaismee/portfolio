@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
+
+:root {
+  /* Colors */
+  --color-main: #e9e9dc;
+  --color-accent: #d3b64e;
+  --color-button-hover: #3a6c90;
+  --color-disabled: #bfbfbf;
+  --color-text: #211414;
+}
+
+body {
+  font-family: 'Space Grotesk';
+  background-color: var(--color-main);
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--color-text);
+}
+
+li {
+  list-style-type: none;
+}
