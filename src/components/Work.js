@@ -1,11 +1,24 @@
 import React from 'react';
 import { styled } from 'styled-components';
+import { motion } from 'framer-motion';
 import { sectionTitle } from '../styles/TextStyles';
 import { Tags, Cards } from '../components/index';
 
 const Work = () => {
   return (
-    <Wrapper>
+    <Wrapper
+      initial={{
+        opacity: 0,
+      }}
+      whileInView={{
+        opacity: 1,
+      }}
+      transition={{
+        duration: 1,
+        delay: 0.5,
+      }}
+      viewport={{ once: true }}
+    >
       <SectionTitle>Work</SectionTitle>
       <Tags />
       <Cards />
@@ -15,7 +28,7 @@ const Work = () => {
 
 export default Work;
 
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
   margin: 0px;
 `;
 

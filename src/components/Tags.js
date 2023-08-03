@@ -47,6 +47,7 @@ const Tag = styled(menuAndTags)`
   background-color: transparent;
   color: var(--color-disabled);
   transition: var(--transition);
+  box-sizing: border-box;
   cursor: pointer;
   border: none;
   ${({ active }) =>

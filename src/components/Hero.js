@@ -6,10 +6,61 @@ const Hero = () => {
   return (
     <Wrapper>
       {/* <Canvas /> */}
-      <Title>Valerii Shevchenko</Title>
+      <Title
+        initial={{
+          opacity: 0,
+          y: 10,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          transition: {
+            ease: [0.165, 0.84, 0.44, 1],
+            duration: 1,
+            delay: 0.25,
+          },
+        }}
+        viewport={{ once: true }}
+      >
+        Valerii Shevchenko
+      </Title>
       <GridWrapper>
-        <Subtitle>deisng generalist</Subtitle>
-        <Subtitle>creative coder</Subtitle>
+        <Subtitle
+          initial={{
+            opacity: 0,
+            y: 10,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              ease: [0.165, 0.84, 0.44, 1],
+              duration: 1,
+              delay: 0.5,
+            },
+          }}
+          viewport={{ once: true }}
+        >
+          design generalist
+        </Subtitle>
+        <Subtitle
+          initial={{
+            opacity: 0,
+            y: 10,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              ease: [0.165, 0.84, 0.44, 1],
+              duration: 1,
+              delay: 0.5,
+            },
+          }}
+          viewport={{ once: true }}
+        >
+          creative coder
+        </Subtitle>
       </GridWrapper>
     </Wrapper>
   );

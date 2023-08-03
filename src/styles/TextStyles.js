@@ -1,6 +1,7 @@
 import { styled } from 'styled-components';
+import { motion } from 'framer-motion';
 
-export const h1 = styled.h1`
+export const h1 = styled(motion.h1)`
   color: var(--color-text);
   font-size: 72px;
   font-style: normal;
@@ -8,7 +9,7 @@ export const h1 = styled.h1`
   line-height: 100%; /* 72px */
 `;
 
-export const h2 = styled.h1`
+export const h2 = styled(motion.h2)`
   color: var(--color-text);
   font-size: 48px;
   font-style: normal;
@@ -38,6 +39,9 @@ export const menuAndTags = styled.button`
   font-style: normal;
   font-weight: 700;
   line-height: 100%; /* 20px */
+  border: none;
+  background-color: transparent;
+  text-align: left;
 `;
 
 export const paragraph = styled.p`

@@ -7,6 +7,7 @@ const Cards = () => {
     return (
       <Card
         key={index}
+        index={index}
         image={card.image}
         title={card.title}
         description={card.description}
@@ -14,8 +15,6 @@ const Cards = () => {
       />
     );
   });
-
-  // console.log(cards);
 
   return <Wrapper>{cards}</Wrapper>;
 };

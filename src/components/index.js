@@ -6,4 +6,5 @@ export { default as Tags } from './Tags';
 export { default as Cards } from './Cards';
 export { default as Card } from './Card';
 export { default as About } from './About';
+export { default as Skill } from './Skill';
 export { default as Contact } from './Contact';

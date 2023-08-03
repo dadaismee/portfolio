@@ -1,11 +1,28 @@
 import React from 'react';
 import { styled } from 'styled-components';
+import { motion } from 'framer-motion';
 import { cardTags, logoAndCardTitles, paragraph } from '../styles/TextStyles';
 
-const Card = ({ image, title, description, tags, grid }) => {
+const Card = ({ image, title, description, tags, index }) => {
   const cardTags = tags.map((tag, index) => <Tag key={index}>{tag}</Tag>);
   return (
-    <Wrapper grid={grid}>
+    <Wrapper
+      initial={{
+        opacity: 0,
+        y: 20,
+      }}
+      transition={{
+        ease: [0.165, 0.84, 0.44, 1],
+        duration: 2,
+        delay: 0.5 + index * 0.15,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      viewport={{ once: true }}
+      transformTemplate={({ y }) => `translateY(-${y}px)`}
+    >
       <Image src={image} />
       <Title>{title}</Title>
       <Description>{description}</Description>
@@ -17,11 +34,11 @@ const Card = ({ image, title, description, tags, grid }) => {
 
 export default Card;
 
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
   display: grid;
   box-sizing: border-box;
-  width: 25.19vw; //362.8px
-  max-width: 362.8px;
+  width: var(--card-width);
+  /* max-width: var(--card-max-width); */
   padding: 20px;
   margin: 0px;
 
@@ -37,8 +54,7 @@ const Wrapper = styled.div`
 `;
 
 const Image = styled.img`
-  /* height: 215px; */
-  /* align-self: stretch; */
+  max-height: 215px;
   border-radius: 15px;
   border: 1px solid var(--color-text);
 `;

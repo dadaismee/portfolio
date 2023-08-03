@@ -33,7 +33,7 @@ export default Header;
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 60px 60px 40px 60px;
+  margin: 0px 60px 40px 60px;
 `;
 
 const Logo = styled.div`

@@ -1,8 +1,13 @@
 import React from 'react';
 import { styled } from 'styled-components';
 import { paragraph, sectionTitle } from '../styles/TextStyles';
+import { Skill } from '../components/index';
 
 const About = () => {
+  const skillsMap = skills.map((skill, index) => (
+    <Skill key={index} title={skill.title} level={skill.level} />
+  ));
+
   return (
     <Wrapper>
       <AboutBlock>
@@ -18,10 +23,10 @@ const About = () => {
           placerat.
         </Text>
       </AboutBlock>
-      <Skills>
+      <SkillsBlock>
         <Title>Skills</Title>
-        {/* <SkillsImage /> */}
-      </Skills>
+        <Skills>{skillsMap}</Skills>
+      </SkillsBlock>
     </Wrapper>
   );
 };
@@ -39,6 +44,45 @@ const AboutBlock = styled.div`
 `;
 const Title = styled(sectionTitle)``;
 const Text = styled(paragraph)``;
-const Skills = styled.div`
+
+const SkillsBlock = styled.div`
   grid-column: 5 / 7;
+  padding-left: 20px;
 `;
+
+const Skills = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+
+const skills = [
+  {
+    title: 'LX design / Production',
+    level: 90,
+  },
+  {
+    title: 'Product Management',
+    level: 75,
+  },
+  {
+    title: 'UX/UI Design',
+    level: 70,
+  },
+  {
+    title: 'Brand Design',
+    level: 65,
+  },
+  {
+    title: 'Web Development',
+    level: 60,
+  },
+  {
+    title: 'Creative Coding',
+    level: 55,
+  },
+  {
+    title: '3D (Blender)',
+    level: 55,
+  },
+];
