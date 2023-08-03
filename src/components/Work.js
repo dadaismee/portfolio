@@ -7,6 +7,7 @@ import { Tags, Cards } from '../components/index';
 const Work = () => {
   return (
     <Wrapper
+      id='work'
       initial={{
         opacity: 0,
       }}

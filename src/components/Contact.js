@@ -1,6 +1,7 @@
 import React from 'react';
 import { styled } from 'styled-components';
 import { menuAndTags, sectionTitle } from '../styles/TextStyles';
+import telegram from '../images/telegram.svg';
 
 const Contact = () => {
   return (
@@ -13,7 +14,11 @@ const Contact = () => {
         </EmailForm>
         <Telegram>
           <TelegramTitle>Write in Telegram</TelegramTitle>
-          <Button />
+          <a href='https://t.me/emsiadad' target='_blank'>
+            <Button>
+              <img src={telegram} />
+            </Button>
+          </a>
         </Telegram>
       </ContentWrapper>
     </Wrapper>
@@ -59,5 +64,20 @@ const Button = styled.button`
   height: 341px;
   width: var(--card-width);
   padding: 0 20px;
-  background: url('/src/images/telegram.svg') cover no-repeat;
+  transition: var(--transition);
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--main-shadow);
+    background-color: var(--color-button-hover);
+    cursor: pointer;
+  }
+
+  img {
+    transition: var(--transition);
+  }
+
+  &:hover img {
+    transform: scale(1.5);
+  }
 `;

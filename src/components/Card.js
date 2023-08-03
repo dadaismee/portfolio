@@ -8,31 +8,33 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 const Card = ({ image, title, description, tags, index, to }) => {
   const cardTags = tags.map((tag, index) => <Tag key={index}>{tag}</Tag>);
   return (
-    <Wrapper
-      initial={{
-        opacity: 0,
-        y: 20,
-      }}
-      transition={{
-        ease: [0.165, 0.84, 0.44, 1],
-        duration: 2,
-        delay: 0.5 + index * 0.15,
-      }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-      }}
-      viewport={{ once: true }}
-      transformTemplate={({ y }) => `translateY(-${y}px)`}
-    >
-      <Image image={image} alt={title} />
-      <Title>{title}</Title>
-      <Description>{description}</Description>
-      <TagsWrapper>{cardTags}</TagsWrapper>
-      <Link to={to}>
-        <Button>Explore</Button>
-      </Link>
-    </Wrapper>
+    <Link to={to}>
+      <Wrapper
+        initial={{
+          opacity: 0,
+          y: 20,
+        }}
+        transition={{
+          ease: [0.165, 0.84, 0.44, 1],
+          duration: 2,
+          delay: 0.5 + index * 0.15,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+        }}
+        viewport={{ once: true }}
+        transformTemplate={({ y }) => `translateY(-${y}px)`}
+      >
+        <Image image={image} alt={title} />
+        <Title>{title}</Title>
+        <Description>{description}</Description>
+        <TagsWrapper>{cardTags}</TagsWrapper>
+        <Link to={to}>
+          <Button>Explore</Button>
+        </Link>
+      </Wrapper>
+    </Link>
   );
 };
 
