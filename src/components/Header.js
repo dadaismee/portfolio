@@ -1,11 +1,23 @@
 import React from 'react';
 import { styled } from 'styled-components';
+import { motion } from 'framer-motion';
 import { Link } from 'gatsby';
-import { h1 } from '../styles/TextStyles';
 
 const Header = () => {
   return (
-    <Wrapper>
+    <Wrapper
+      initial={{
+        opacity: 0,
+        y: 20,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      transition={{
+        duration: 0.25,
+      }}
+    >
       <Link to='/'>
         <Logo>
           <p>V--S</p>
@@ -30,7 +42,7 @@ const Header = () => {
 
 export default Header;
 
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
   display: flex;
   justify-content: space-between;
   margin: 0px 60px 40px 60px;

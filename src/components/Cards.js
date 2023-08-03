@@ -1,17 +1,46 @@
 import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
 import { styled } from 'styled-components';
 import { Card } from '../components/index';
 
 const Cards = () => {
-  const cards = cardData.map((card, index) => {
+  const query = useStaticQuery(
+    graphql`
+      query {
+        allMarkdownRemark {
+          nodes {
+            id
+            frontmatter {
+              description
+              tags
+              url
+              title
+              image {
+                childImageSharp {
+                  gatsbyImageData(placeholder: DOMINANT_COLOR)
+                }
+              }
+            }
+          }
+        }
+      }
+    `
+  );
+
+  const { nodes } = query.allMarkdownRemark;
+  const cards = nodes.map((card, index) => {
+    const { title, tags, description, url, image } = card.frontmatter;
+    const img = getImage(image);
     return (
       <Card
         key={index}
         index={index}
-        image={card.image}
-        title={card.title}
-        description={card.description}
-        tags={card.tags}
+        to={`/${url}`}
+        image={img}
+        title={title}
+        description={description}
+        tags={tags}
       />
     );
   });
@@ -32,44 +61,3 @@ const Wrapper = styled.div`
     display: none;
   }
 `;
-
-const cardData = [
-  {
-    image: '/src/static/poster.png',
-    title: 'Konspekt',
-    description:
-      'A website for my startup for streamlined academic writing tools.',
-    tags: ['Branding', 'UX/UI', 'WebDev'],
-  },
-  {
-    image: 'images/poster.png',
-    title: 'Undulation',
-    description: 'A landing page for a Hungarian ambient music label.',
-    tags: ['Branding', 'UX/UI'],
-  },
-  {
-    title: 'Undulation',
-    description: 'A landing page for a Hungarian ambient music label.',
-    tags: ['Branding', 'UX/UI'],
-  },
-  {
-    title: 'Undulation',
-    description: 'A landing page for a Hungarian ambient music label.',
-    tags: ['Branding', 'UX/UI'],
-  },
-  {
-    title: 'Undulation',
-    description: 'A landing page for a Hungarian ambient music label.',
-    tags: ['Branding', 'UX/UI'],
-  },
-  {
-    title: 'Undulation',
-    description: 'A landing page for a Hungarian ambient music label.',
-    tags: ['Branding', 'UX/UI'],
-  },
-  {
-    title: 'Undulation',
-    description: 'A landing page for a Hungarian ambient music label.',
-    tags: ['Branding', 'UX/UI'],
-  },
-];

@@ -1,9 +1,11 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 import { cardTags, logoAndCardTitles, paragraph } from '../styles/TextStyles';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
-const Card = ({ image, title, description, tags, index }) => {
+const Card = ({ image, title, description, tags, index, to }) => {
   const cardTags = tags.map((tag, index) => <Tag key={index}>{tag}</Tag>);
   return (
     <Wrapper
@@ -23,11 +25,13 @@ const Card = ({ image, title, description, tags, index }) => {
       viewport={{ once: true }}
       transformTemplate={({ y }) => `translateY(-${y}px)`}
     >
-      <Image src={image} />
+      <Image image={image} alt={title} />
       <Title>{title}</Title>
       <Description>{description}</Description>
       <TagsWrapper>{cardTags}</TagsWrapper>
-      <Button>Explore</Button>
+      <Link to={to}>
+        <Button>Explore</Button>
+      </Link>
     </Wrapper>
   );
 };
@@ -53,7 +57,7 @@ const Wrapper = styled(motion.div)`
   }
 `;
 
-const Image = styled.img`
+const Image = styled(GatsbyImage)`
   max-height: 215px;
   border-radius: 15px;
   border: 1px solid var(--color-text);
@@ -78,6 +82,7 @@ const Tag = styled(cardTags)`
 const Button = styled.button`
   display: flex;
   height: 48px;
+  width: 100%;
   justify-content: center;
   align-items: center;
   gap: 10px;

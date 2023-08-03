@@ -1,5 +1,12 @@
 import React from 'react';
-import { Layout, Hero, Work, About, Contact } from '../components/index';
+import {
+  Layout,
+  Hero,
+  Work,
+  About,
+  Contact,
+  Footer,
+} from '../components/index';
 
 const index = () => {
   return (
@@ -8,11 +15,11 @@ const index = () => {
       <Work />
       <About />
       <Contact />
-      {/* <Footer /> */}
+      <Footer />
     </Layout>
   );
 };
 
 export default index;
 
-export const Head = () => <title>Home Page</title>;
+export const Head = () => <title>V--S | Designer and creative coder</title>;
