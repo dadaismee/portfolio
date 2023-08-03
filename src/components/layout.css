@@ -13,12 +13,16 @@
   --transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
   --main-shadow: 20px 20px 20px 0px rgba(0, 0, 0, 0.25);
   --grid-columns: repeat(7, 1fr);
+  --card-width: 25.19vw;
+  --card-max-width: 362.8px;
 }
 
+html,
 body {
   margin: 0;
   font-family: 'Space Grotesk';
   background-color: var(--color-main);
+  box-sizing: border-box;
 }
 
 a {

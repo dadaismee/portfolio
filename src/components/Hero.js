@@ -25,8 +25,7 @@ const Title = styled(h1)``;
 
 const GridWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  /* row-gap: 20px; */
+  grid-template-columns: var(--grid-columns);
 `;
 
 const Subtitle = styled(h2)`

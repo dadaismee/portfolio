@@ -19,8 +19,9 @@ export default Card;
 
 const Wrapper = styled.div`
   display: grid;
-  /* grid-column: auto / span 2; */
-  width: calc(1 / 7);
+  box-sizing: border-box;
+  width: 25.19vw; //362.8px
+  max-width: 362.8px;
   padding: 20px;
   margin: 0px;
 

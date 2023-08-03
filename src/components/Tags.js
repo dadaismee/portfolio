@@ -20,7 +20,6 @@ const Tags = () => {
           {tag.title}
         </Tag>
       ))}
-      ;
     </Wrapper>
   );
 };
@@ -50,7 +49,6 @@ const Tag = styled(menuAndTags)`
   transition: var(--transition);
   cursor: pointer;
   border: none;
-  transition: var(--transition);
   ${({ active }) =>
     active
       ? 'padding: 10px 20px; border: solid 1px; border-radius: 5px; color: var(--color-text);'

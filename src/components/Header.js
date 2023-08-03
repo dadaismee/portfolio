@@ -47,6 +47,11 @@ const Logo = styled.div`
     font-style: normal;
     font-weight: 700;
     line-height: 100%; /* 24px */
+    transition: var(--transition);
+
+    &:hover {
+      transform: translateY(-5px);
+    }
   }
 `;
 
@@ -57,11 +62,15 @@ const Navbar = styled.nav`
 
     li {
       color: #211414;
-      font-family: Space Grotesk;
       font-size: 20px;
       font-style: normal;
       font-weight: 700;
       line-height: 100%; /* 20px */
+      transition: var(--transition);
+
+      &:hover {
+        transform: translateY(-5px);
+      }
     }
   }
 `;
