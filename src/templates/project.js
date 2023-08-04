@@ -88,10 +88,12 @@ const project = ({ data }) => {
           <SectionTitle>Process</SectionTitle>
           <Process>{processBlock}</Process>
         </TextSection>
-        <TextSection>
-          <SectionTitle>Results</SectionTitle>
-          <Text>{results}</Text>
-        </TextSection>
+        {Boolean(results) && (
+          <TextSection>
+            <SectionTitle>Results</SectionTitle>
+            <Text>{results}</Text>
+          </TextSection>
+        )}
       </Wrapper>
     </Layout>
   );
