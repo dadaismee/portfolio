@@ -4,10 +4,11 @@ import { styled } from 'styled-components';
 import { h2, paragraph, sectionTitle } from '../styles/TextStyles';
 import { Layout } from '../components';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import Arrow from '../images/icons/Arrow.svg';
 
 const project = ({ data }) => {
   // Data from a prject JSON
-  const { links, tools, task, whyExists, metaphor } =
+  const { links, tools, task, whyExists, metaphor, process, results } =
     data.projectsJson.projectData;
   const { title, url, image, description, tags } =
     data.projectsJson.frontmatter;
@@ -21,15 +22,24 @@ const project = ({ data }) => {
   const toolsBlock = tools.map((tool, index) => {
     const img = getImage(tool.icon);
     return (
-      <div style={{ display: 'flex', gap: '10px' }}>
+      <div key={index} style={{ display: 'flex', gap: '10px' }}>
         <Icon image={img} />
-        <Text key={index}>{tool.title}</Text>
+        <Text>{tool.title}</Text>
       </div>
     );
   });
-  // const processBlock = process.map((step, index) => (
-
-  // ))
+  const processBlock = process.map((step, index) => {
+    const img = getImage(step.image);
+    return (
+      <ProcessStep
+        key={index}
+        title={step.title}
+        image={img}
+        caption={step.caption}
+        isDone={step.isDone}
+      />
+    );
+  });
 
   // Rendered component
   return (
@@ -60,29 +70,53 @@ const project = ({ data }) => {
               <Text>{task}</Text>
             </TextSection>
           </GridContainer>
-          <CoverImage image={img} alt={title} />
+          <Image image={img} alt={title} />
         </FrontmatterWrapper>
         <GridContainer>
           <TextSection column='1 / 3'>
             <SectionTitle>Why it exists</SectionTitle>
             <Text>{whyExists}</Text>
           </TextSection>
-          <TextSection column='5 / 7'>
-            <SectionTitle>Metaphor</SectionTitle>
-            <Text>{metaphor}</Text>
-          </TextSection>
+          {Boolean(metaphor) && (
+            <TextSection column='5 / 7'>
+              <SectionTitle>Metaphor</SectionTitle>
+              <Text>{metaphor}</Text>
+            </TextSection>
+          )}
         </GridContainer>
-        {/* <TextSection>
+        <TextSection>
           <SectionTitle>Process</SectionTitle>
-          {processBlock}
-        </TextSection> */}
-        {/* <div dangerouslySetInnerHTML={{ __html: html }} /> */}
+          <Process>{processBlock}</Process>
+        </TextSection>
+        <TextSection>
+          <SectionTitle>Results</SectionTitle>
+          <Text>{results}</Text>
+        </TextSection>
       </Wrapper>
     </Layout>
   );
 };
 
 export default project;
+
+const ProcessStep = ({ title, image, caption, isDone }) => (
+  <ProcessStepWrapper isDone={isDone}>
+    <ProcessStepTitle>{title}</ProcessStepTitle>
+    {/* <img src={Arrow} /> */}
+    <div
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        backgroundColor: image.backgroundColor,
+        height: '100%',
+        borderRadius: 'var(--border-radius-ext)',
+      }}
+    >
+      <Image image={image} style={{ maxWidth: 'var(--card-width)' }} />
+    </div>
+    {Boolean(caption) && <ProcessStepCaption>{caption}</ProcessStepCaption>}
+  </ProcessStepWrapper>
+);
 
 const Wrapper = styled.div`
   margin: 0 60px;
@@ -131,14 +165,44 @@ const Icon = styled(GatsbyImage)`
   max-height: 25px;
 `;
 
-const Motivation = styled.div`
-  grid-column: 1 / 3;
+const Process = styled.div`
+  display: flex;
+  gap: 20px;
 `;
+
+const ProcessStepWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  opacity: ${({ isDone }) => (isDone ? '1' : '0.5')};
+`;
+
+const ProcessStepTitle = styled(sectionTitle)`
+  padding: 20px 0;
+  width: 100%;
+  border: solid 1px var(--color-text);
+  border-radius: var(--border-radius-ext);
+  font-size: 16px;
+  text-align: center;
+  text-transform: uppercase;
+`;
+
+const ProcessStepCaption = styled(paragraph)`
+  font-style: normal;
+  font-weight: 700;
+  line-height: 125%; /* 25px */
+  padding: 0px 10px;
+  width: 100%;
+`;
+
 const SectionTitle = styled(sectionTitle)``;
 const Text = styled(paragraph)``;
-const CoverImage = styled(GatsbyImage)`
+
+const Image = styled(GatsbyImage)`
   border-radius: var(--border-radius-ext);
-  height: 100%;
+  height: max-content;
 `;
 
 export const query = graphql`
@@ -156,9 +220,6 @@ export const query = graphql`
         }
       }
       projectData {
-        metaphor
-        task
-        whyExists
         links {
           github
           prod
@@ -171,6 +232,20 @@ export const query = graphql`
             }
           }
         }
+        task
+        metaphor
+        whyExists
+        process {
+          title
+          image {
+            childImageSharp {
+              gatsbyImageData(placeholder: DOMINANT_COLOR)
+            }
+          }
+          caption
+          isDone
+        }
+        results
       }
     }
   }

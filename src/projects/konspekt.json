@@ -2,9 +2,9 @@
   "frontmatter": {
     "title": "Konspekt",
     "description": "branding and website for my streamlined academic writing tools startup",
-    "image": "../images/projects/konspekt/konspekt.png",
+    "image": "../images/projects/konspekt/main.png",
     "tags": ["Branding", "UX/UI", "WebDev"],
-    "url": "konspekt"
+    "url": "  konspekt"
   },
   "projectData": {
     "links": {
@@ -32,34 +32,38 @@
     "task": "Develop a brand and make a website for it.",
     "whyExists": "While working on my PhD dissertation, I found that my overeall workflow with reading, processing information and writing was energy-inefficient. So, I researched workflows, adopted one over time and wondered whether I can help solve this problem for other academics and writers",
     "metaphor": "Marker pen highlights as a symbol of the most important ideas, which are stacked upon each other to show the emergence of larger ideas and entities like papers.",
-    "process": {
-      "steps": [
-        {
-          "title": "G-forms survey",
-          "image":"../images/konspekt.png"
-        },
-        {
-          "title": "UX interviews",
-          "image":"../images/konspekt.png"
-        },
-        {
-          "title": "Identity design",
-          "image":"../images/konspekt.png"
-        },
-        {
-          "title": "Wireframes",
-          "image":"../images/konspekt.png"
-        },
-        {
-          "title": "UI design",
-          "image":"../images/konspekt.png"
-        },
-        {
-          "title": "Development",
-          "image":"../images/konspekt.png"
-        }
-      ]
-    },
+    "process": [
+      {
+        "title": "G-forms survey",
+        "image":"../images/projects/konspekt/process-step-1.png",
+        "isDone": true
+      },
+      {
+        "title": "UX interviews",
+        "image":"../images/projects/konspekt/process-step-2.png",
+        "isDone": true
+      },
+      {
+        "title": "Identity design",
+        "image":"../images/projects/konspekt/process-step-3.png",
+        "isDone": true
+      },
+      {
+        "title": "Wireframes",
+        "image":"../images/projects/konspekt/process-step-4.png",
+        "isDone": true
+      },
+      {
+        "title": "UI design",
+        "image":"../images/projects/konspekt/process-step-5.png",
+        "isDone": true
+      },
+      {
+        "title": "Development",
+        "image":"../images/projects/konspekt/process-step-6.png",
+        "isDone": true
+      }
+    ],
     "results": "Planning to launch the course. Not so much results yet."
-  }
-}
+    }
+  } 

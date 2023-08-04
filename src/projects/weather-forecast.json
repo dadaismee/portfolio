@@ -1,0 +1,49 @@
+{
+  "frontmatter": {
+    "title": "Weather forecast with Python in 1 hour",
+    "description": "free online programming course",
+    "image": "../images/projects/weather-forecast/main.png",
+    "tags": ["LX/PM"],
+    "url": "weather-forecast"
+  },
+  "projectData": {
+    "links": {
+      "prod": ["https://practicum.yandex.ru/content/prognoz-pogody-na-python/"]
+    },
+    "tools": [
+      {
+        "icon": "../images/icons/pm-muscles.png", 
+        "title": "PM muscles"
+      }
+    ],
+    "task": "To develop an MVP of a new format of an educationl product for the top of the funnel to raise conversion rate into paid products.",
+    "whyExists": "While working on my PhD dissertation, I found that my overeall workflow with reading, processing information and writing was energy-inefficient. So, I researched workflows, adopted one over time and wondered whether I can help solve this problem for other academics and writers",
+    "process": [
+      {
+        "title": "User survey",
+        "image":"../images/projects/weather-forecast/process-step-1.png",
+        "isDone": true,
+        "caption": "To know what project ideas are most interesting for potential students"
+      },
+      {
+        "title": "Instructional design",
+        "image":"../images/projects/weather-forecast/process-step-2.png",
+        "isDone": true,
+        "caption": "We collaborated with an LX designer to develop the course"
+      },
+      {
+        "title": "Writing the content",
+        "image":"../images/projects/weather-forecast/process-step-3.png",
+        "isDone": true,
+        "caption": "I focused on coding exercises and copy. My colleague — on quizzes and overall LX. "
+      },
+      {
+        "title": "Launch",
+        "image":"../images/projects/weather-forecast/process-step-4.png",
+        "isDone": true,
+        "caption": "No promotion, only organic conversion. The results will be in the late June 2023."
+      }      
+    ],
+    "results": "Planning to launch the course. Not so much results yet."
+    }
+  } 

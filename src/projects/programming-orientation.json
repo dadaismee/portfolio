@@ -1,0 +1,49 @@
+{
+  "frontmatter": {
+    "title": "What career to choose in programming",
+    "description": "free online programming course",
+    "image": "../images/projects/start-in-programming/main.png",
+    "tags": ["LX/PM"],
+    "url": "start-in-programming"
+  },
+  "projectData": {
+    "links": {
+      "prod": ["https://practicum.yandex.ru/start-in-programming/"]
+    },
+    "tools": [
+      {
+        "icon": "../images/icons/pm-muscles.png", 
+        "title": "PM muscles"
+      }
+    ],
+    "task": "To develop a free educational course about careers in programming that raises conversion rates into paid product up to 20%.",
+    "whyExists": "As a producer and product manager at Practicum, I was tasked to develop a short marketing course.",
+    "process": [
+      {
+        "title": "Demand test",
+        "image":"../images/projects/weather-forecast/process-step-1.png",
+        "isDone": true,
+        "caption": "To define do we need a full-blown “Intro to coding” or only career navigation"
+      },
+      {
+        "title": "Instructional design",
+        "image":"../images/projects/start-in-programming/process-step-2.png",
+        "isDone": true,
+        "caption": "With LXD, we developed the course structure. With editor, we wrote it"
+      },
+      {
+        "title": "Writing the content",
+        "image":"../images/projects/start-in-programming/process-step-3.png",
+        "isDone": true,
+        "caption": "We decided to write and version in GitHub, for we needed Markdown format"
+      },
+      {
+        "title": "Launch",
+        "image":"../images/projects/start-in-programming/main.png",
+        "isDone": true,
+        "caption": "Launched in August 2022"
+      }      
+    ],
+    "results": "43% conversion into paid courses. 3.5% end-to-end conversion into payment."
+    }
+  } 

@@ -48,7 +48,6 @@ const Wrapper = styled(motion.div)`
   width: var(--card-width);
   max-width: var(--card-max-width);
   padding: 20px;
-  margin: 0px;
 
   border-radius: 25px;
   border: 1px solid var(--color-text);
@@ -62,7 +61,8 @@ const Wrapper = styled(motion.div)`
 `;
 
 const Image = styled(GatsbyImage)`
-  max-height: 215px;
+  height: 100%;
+  min-height: 19.9vh;
   border-radius: 15px;
   border: 1px solid var(--color-text);
 `;

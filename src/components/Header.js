@@ -4,6 +4,19 @@ import { motion } from 'framer-motion';
 import { Link } from 'gatsby';
 
 const Header = () => {
+  const logos = [
+    '(˵ ͡° ͜ʖ ͡°˵)',
+    '❤',
+    '_',
+    '(꒡⌓꒡)',
+    '	(｡◕‿‿◕｡)',
+    '(⌐■_■)',
+    '↑',
+    '©',
+    '/( ﾟヮﾟ)/',
+    '☯',
+  ];
+  const logo = logos[Math.floor(Math.random() * logos.length)];
   return (
     <Wrapper
       initial={{
@@ -20,7 +33,9 @@ const Header = () => {
     >
       <Link to='/'>
         <Logo>
-          <p>V--S</p>
+          <p>
+            V-<span>{logo}</span>-S
+          </p>
         </Logo>
       </Link>
       <Navbar>
@@ -60,6 +75,10 @@ const Logo = styled.div`
     font-weight: 700;
     line-height: 100%; /* 24px */
     transition: var(--transition);
+
+    span {
+      color: var(--color-button-hover);
+    }
 
     &:hover {
       transform: translateY(-5px);
