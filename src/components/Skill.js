@@ -2,7 +2,7 @@ import React from 'react';
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-const Skill = ({ title, level, key }) => {
+const Skill = ({ title, level, index }) => {
   return (
     <Wrapper>
       <SkillTitle
@@ -14,7 +14,7 @@ const Skill = ({ title, level, key }) => {
         }}
         transition={{
           duration: 1,
-          delay: 2 + key * 0.5,
+          delay: index * 0.15,
         }}
         viewport={{ once: true }}
       >
@@ -33,7 +33,7 @@ const Skill = ({ title, level, key }) => {
           transition={{
             ease: [0.165, 0.84, 0.44, 1],
             duration: 2,
-            delay: 2 + key * 0.75,
+            delay: index * 0.15,
           }}
           viewport={{ once: true }}
         />

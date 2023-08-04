@@ -3,7 +3,7 @@ const path = require('path');
 exports.createPages = async ({ graphql, actions }) => {
   const { data } = await graphql(`
     query projects {
-      allMarkdownRemark {
+      allProjectsJson {
         nodes {
           frontmatter {
             url
@@ -13,7 +13,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
-  data.allMarkdownRemark.nodes.forEach((node) => {
+  data.allProjectsJson.nodes.forEach((node) => {
     const { url } = node.frontmatter;
     actions.createPage({
       path: `/${url}`,

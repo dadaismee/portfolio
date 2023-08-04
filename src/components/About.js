@@ -5,7 +5,7 @@ import { Skill } from '../components/index';
 
 const About = () => {
   const skillsMap = skills.map((skill, index) => (
-    <Skill key={index} title={skill.title} level={skill.level} />
+    <Skill key={index} index={index} title={skill.title} level={skill.level} />
   ));
 
   return (

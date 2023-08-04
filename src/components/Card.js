@@ -8,33 +8,35 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 const Card = ({ image, title, description, tags, index, to }) => {
   const cardTags = tags.map((tag, index) => <Tag key={index}>{tag}</Tag>);
   return (
-    <Link to={to}>
-      <Wrapper
-        initial={{
-          opacity: 0,
-          y: 20,
-        }}
-        transition={{
-          ease: [0.165, 0.84, 0.44, 1],
-          duration: 2,
-          delay: 0.5 + index * 0.15,
-        }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-        }}
-        viewport={{ once: true }}
-        transformTemplate={({ y }) => `translateY(-${y}px)`}
-      >
-        <Image image={image} alt={title} />
-        <Title>{title}</Title>
-        <Description>{description}</Description>
-        <TagsWrapper>{cardTags}</TagsWrapper>
-        <Link to={to}>
-          <Button>Explore</Button>
-        </Link>
-      </Wrapper>
-    </Link>
+    // <Link to={to}>
+    <Wrapper
+      initial={{
+        opacity: 0,
+        y: 20,
+      }}
+      transition={{
+        ease: [0.165, 0.84, 0.44, 1],
+        duration: 2,
+        delay: 0.5 + index * 0.15,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      viewport={{ once: true }}
+      transformTemplate={({ y }) => `translateY(-${y}px)`}
+    >
+      <Image image={image} alt={title} />
+      <Title>{title}</Title>
+      <Description>
+        {description[0].toUpperCase() + description.slice(1)}
+      </Description>
+      <TagsWrapper>{cardTags}</TagsWrapper>
+      <Link to={to}>
+        <Button>Explore</Button>
+      </Link>
+    </Wrapper>
+    // </Link>
   );
 };
 
@@ -44,7 +46,7 @@ const Wrapper = styled(motion.div)`
   display: grid;
   box-sizing: border-box;
   width: var(--card-width);
-  /* max-width: var(--card-max-width); */
+  max-width: var(--card-max-width);
   padding: 20px;
   margin: 0px;
 
@@ -79,9 +81,14 @@ const Tag = styled(cardTags)`
   border: solid 1px;
   border-radius: 5px;
   color: var(--color-disabled);
+  transition: var(--transition);
+
+  ${Wrapper}:hover & {
+    color: var(--color-text);
+  }
 `;
 
-const Button = styled.button`
+const Button = styled(motion.button)`
   display: flex;
   height: 48px;
   width: 100%;
@@ -97,6 +104,7 @@ const Button = styled.button`
   line-height: 100%; /* 20px */
   background: var(--color-main);
   transition: var(--transition);
+  transition-delay: 0.125s;
 
   ${Wrapper}:hover & {
     background: var(--color-button-hover);

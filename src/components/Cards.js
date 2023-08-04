@@ -5,30 +5,27 @@ import { styled } from 'styled-components';
 import { Card } from '../components/index';
 
 const Cards = () => {
-  const query = useStaticQuery(
-    graphql`
-      query {
-        allMarkdownRemark {
-          nodes {
-            id
-            frontmatter {
-              description
-              tags
-              url
-              title
-              image {
-                childImageSharp {
-                  gatsbyImageData(placeholder: DOMINANT_COLOR)
-                }
+  const query = useStaticQuery(graphql`
+    query {
+      allProjectsJson {
+        nodes {
+          frontmatter {
+            description
+            tags
+            title
+            url
+            image {
+              childImageSharp {
+                gatsbyImageData(placeholder: DOMINANT_COLOR)
               }
             }
           }
         }
       }
-    `
-  );
+    }
+  `);
 
-  const { nodes } = query.allMarkdownRemark;
+  const { nodes } = query.allProjectsJson;
   const cards = nodes.map((card, index) => {
     const { title, tags, description, url, image } = card.frontmatter;
     const img = getImage(image);

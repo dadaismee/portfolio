@@ -1,7 +1,7 @@
 import React from 'react';
 import { styled } from 'styled-components';
 import { menuAndTags, sectionTitle } from '../styles/TextStyles';
-import telegram from '../images/telegram.svg';
+import telegram from '../images/icons/telegram.svg';
 
 const Contact = () => {
   return (

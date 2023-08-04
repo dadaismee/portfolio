@@ -1,0 +1,33 @@
+{
+  "frontmatter": {
+    "title": "Undulation",
+    "description": "visual identity and landing page design for a Hungarian ambient music label",
+    "image": "../images/projects/undulation/undilation.png",
+    "tags": ["Branding", "UX/UI"],
+    "url": "undulation"
+  },
+  "projectData": {
+    "links": {
+      "prod": []
+    },
+    "tools": [
+      {
+        "icon": "../images/icons/figma-icon.png", 
+        "title": "Figma"
+      }
+    ],
+    "task": "Develop a visual identity, a flexible visual brand for release covers and design a landing page.",
+    "whyExists": "While working on my PhD dissertation, I found that my overeall workflow with reading, processing information and writing was energy-inefficient. So, I researched workflows, adopted one over time and wondered whether I can help solve this problem for other academics and writers",
+    "metaphor": "Marker pen highlights as a symbol of the most important ideas, which are stacked upon each other to show the emergence of larger ideas and entities like papers.",
+    "process": {
+      "steps": [
+        {
+          "title": "G-forms survey"
+        },
+        {
+          "title": "UX Interviews"
+        }
+      ]
+    }
+  }
+}
