@@ -8,7 +8,7 @@ import Arrow from '../images/icons/Arrow.svg';
 
 const project = ({ data }) => {
   // Data from a prject JSON
-  const { links, tools, task, whyExists, metaphor, process, results } =
+  const { links, tools, task, whyExists, metaphor, process, details, results } =
     data.projectsJson.projectData;
   const { title, url, image, description, tags } =
     data.projectsJson.frontmatter;
@@ -38,6 +38,19 @@ const project = ({ data }) => {
         caption={step.caption}
         isDone={step.isDone}
       />
+    );
+  });
+  const detailsBlock = details.map((detail, index) => {
+    return (
+      <TextSection key={index}>
+        <SectionTitle>{detail.title}</SectionTitle>
+        {Boolean(detail.iframe) && (
+          <GridContainer>
+            <Text column='1 / 3'>{detail.text}</Text>
+            <Iframe src={detail.iframe.src} column='5 / 7'></Iframe>
+          </GridContainer>
+        )}
+      </TextSection>
     );
   });
 
@@ -74,7 +87,7 @@ const project = ({ data }) => {
         </FrontmatterWrapper>
         <GridContainer>
           <TextSection column='1 / 3'>
-            <SectionTitle>Why it exists</SectionTitle>
+            <SectionTitle>About</SectionTitle>
             <Text>{whyExists}</Text>
           </TextSection>
           {Boolean(metaphor) && (
@@ -88,8 +101,11 @@ const project = ({ data }) => {
           <SectionTitle>Process</SectionTitle>
           <Process>{processBlock}</Process>
         </TextSection>
+
+        {detailsBlock}
+
         {Boolean(results) && (
-          <TextSection>
+          <TextSection column='1 / 3'>
             <SectionTitle>Results</SectionTitle>
             <Text>{results}</Text>
           </TextSection>
@@ -114,7 +130,7 @@ const ProcessStep = ({ title, image, caption, isDone }) => (
         borderRadius: 'var(--border-radius-ext)',
       }}
     >
-      <Image image={image} style={{ maxWidth: 'var(--card-width)' }} />
+      <Image image={image} />
     </div>
     {Boolean(caption) && <ProcessStepCaption>{caption}</ProcessStepCaption>}
   </ProcessStepWrapper>
@@ -199,6 +215,13 @@ const ProcessStepCaption = styled(paragraph)`
   width: 100%;
 `;
 
+const Iframe = styled.iframe`
+  width: 430px;
+  height: 600px;
+  border: none;
+  grid-column: ${({ column }) => column};
+`;
+
 const SectionTitle = styled(sectionTitle)``;
 const Text = styled(paragraph)``;
 
@@ -246,6 +269,15 @@ export const query = graphql`
           }
           caption
           isDone
+        }
+        details {
+          title
+          text
+          image
+          caption
+          iframe {
+            src
+          }
         }
         results
       }

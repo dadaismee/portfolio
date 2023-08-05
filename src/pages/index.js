@@ -15,7 +15,6 @@ const index = () => {
       <Work />
       <About />
       <Contact />
-      <Footer />
     </Layout>
   );
 };

@@ -1,0 +1,60 @@
+{
+  "frontmatter": {
+    "title": "Random variable",
+    "description": "generative interactive installation and giclee prints",
+    "image": "../images/projects/random-variable/main.png",
+    "tags": ["Art"],
+    "url": "random-variable"
+  },
+  "projectData": {
+    "links": {
+      "prod": []
+    },
+    "tools": [
+      {
+        "icon": "../images/icons/p5js.png", 
+        "title": "p5.js"
+      }
+    ],
+    "task": "To reflect on the relationship between reflexivity and contingency by creating a generative algorithm producing pleasing abstract works and exhibit it.",
+    "whyExists": "The project uses generative algorithm written in p5.js that defines color palettes, shapes and direction of their movement for each time the program runs. An installation lets visitors create their own artworks like these.",
+    "process": [
+      {
+        "title": "Coding",
+        "image":"../images/projects/random-variable/process-step-1.png",
+        "isDone": true,
+        "caption": "I decided to teach myself to code and iterated a lot until got something interesting"
+      },
+      {
+        "title": "Prototyping",
+        "image":"../images/projects/random-variable/process-step-1.png",
+        "isDone": true,
+        "caption": "The final iteration of the installation experience looked like this"
+      },
+      {
+        "title": "Printing",
+        "image":"../images/projects/random-variable/process-step-2.png",
+        "isDone": true,
+        "caption": "After generating 100s of images, I selected 9, printed and framed them"
+      },
+      {
+        "title": "Exhibition",
+        "image":"../images/projects/random-variable/process-step-3.png",
+        "isDone": true,
+        "caption": "With the venue owner, we mounted the pieces and the installation"
+      }     
+    ],
+    "details": [
+      {
+        "title": "Prototype",
+        "text": "The image generation follows user's gesture (or mouse). You can try it yourself!",
+        "image": "",
+        "caption": "",
+        "iframe": {
+          "src": "https://prosvet-auto.glitch.me/"
+        }
+      }
+    ],
+    "results": "Solo exhibiton at Prosvet Coffee in Moscow from January to April 2022. 2/9 pieces sold."
+    }
+  } 

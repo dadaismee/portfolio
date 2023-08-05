@@ -4,19 +4,6 @@ import { motion } from 'framer-motion';
 import { Link } from 'gatsby';
 
 const Header = () => {
-  const logos = [
-    '(˵ ͡° ͜ʖ ͡°˵)',
-    '❤',
-    '_',
-    '(꒡⌓꒡)',
-    '	(｡◕‿‿◕｡)',
-    '(⌐■_■)',
-    '↑',
-    '©',
-    '/( ﾟヮﾟ)/',
-    '☯',
-  ];
-  const logo = logos[Math.floor(Math.random() * logos.length)];
   return (
     <Wrapper
       initial={{
@@ -34,7 +21,7 @@ const Header = () => {
       <Link to='/'>
         <Logo>
           <p>
-            V-<span>{logo}</span>-S
+            V-<span>{createLogo()}</span>-S
           </p>
         </Logo>
       </Link>
@@ -57,10 +44,26 @@ const Header = () => {
 
 export default Header;
 
+export const createLogo = () => {
+  const logos = [
+    '(˵ ͡° ͜ʖ ͡°˵)',
+    '❤',
+    '_',
+    '(꒡⌓꒡)',
+    '	(｡◕‿‿◕｡)',
+    '(⌐■_■)',
+    '↑',
+    '©',
+    '/( ﾟヮﾟ)/',
+    '☯',
+  ];
+  return logos[Math.floor(Math.random() * logos.length)];
+};
+
 const Wrapper = styled(motion.div)`
   display: flex;
   justify-content: space-between;
-  margin: 0px 60px 40px 60px;
+  margin: 20px 60px 40px 60px;
 `;
 
 const Logo = styled.div`

@@ -14,14 +14,14 @@ const Card = ({ image, title, description, tags, index, to }) => {
         opacity: 0,
         y: 20,
       }}
+      animate={{
+        opacity: 1,
+        y: 0,
+      }}
       transition={{
         ease: [0.165, 0.84, 0.44, 1],
         duration: 2,
-        delay: 0.5 + index * 0.15,
-      }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
+        delay: 1 + index * 0.15,
       }}
       viewport={{ once: true }}
       transformTemplate={({ y }) => `translateY(-${y}px)`}
@@ -48,6 +48,7 @@ const Wrapper = styled(motion.div)`
   width: var(--card-width);
   max-width: var(--card-max-width);
   padding: 20px;
+  gap: 20px;
 
   border-radius: 25px;
   border: 1px solid var(--color-text);
@@ -57,6 +58,10 @@ const Wrapper = styled(motion.div)`
     background: var(--color-accent);
     box-shadow: var(--main-shadow);
     transform: translateY(-10px);
+  }
+
+  * {
+    margin: 0;
   }
 `;
 
@@ -94,7 +99,7 @@ const Button = styled(motion.button)`
   width: 100%;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  margin-top: 20px;
 
   border-radius: 15px;
   border: 1px solid #000;
