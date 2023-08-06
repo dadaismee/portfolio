@@ -2,9 +2,10 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { styled } from 'styled-components';
 import { h2, paragraph, sectionTitle } from '../styles/TextStyles';
-import { Layout } from '../components';
+import { Card, Layout } from '../components';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Arrow from '../images/icons/Arrow.svg';
+import { CardsWrapper } from '../components/Cards';
 
 const project = ({ data }) => {
   // Data from a prject JSON
@@ -38,19 +39,6 @@ const project = ({ data }) => {
         caption={step.caption}
         isDone={step.isDone}
       />
-    );
-  });
-  const detailsBlock = details.map((detail, index) => {
-    return (
-      <TextSection key={index}>
-        <SectionTitle>{detail.title}</SectionTitle>
-        {Boolean(detail.iframe) && (
-          <GridContainer>
-            <Text column='1 / 3'>{detail.text}</Text>
-            <Iframe src={detail.iframe.src} column='5 / 7'></Iframe>
-          </GridContainer>
-        )}
-      </TextSection>
     );
   });
 
@@ -102,7 +90,51 @@ const project = ({ data }) => {
           <Process>{processBlock}</Process>
         </TextSection>
 
-        {detailsBlock}
+        {Boolean(details) &&
+          details.map((detail, index) => {
+            return (
+              <TextSection key={index}>
+                <SectionTitle>{detail.title}</SectionTitle>
+                {Boolean(detail.iframe) && (
+                  <GridContainer>
+                    <Text column='1 / 3'>{detail.text}</Text>
+                    <Iframe src={detail.iframe.src} column='5 / 7'></Iframe>
+                  </GridContainer>
+                )}
+
+                {/* <CardsWrapper style={{ margin: '0 -60px' }}> */}
+                <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
+                  {Boolean(detail.images) &&
+                    detail.images.map((image, index) => {
+                      const img = getImage(image.image);
+                      let imageWidth = 0;
+                      {
+                        detail.images.length > 1
+                          ? (imageWidth = 'var(--card-width)')
+                          : (imageWidth = `calc(100% - var(--card-width) * ${detail.images.length})`);
+                      }
+                      return (
+                        <div
+                          style={{
+                            width: imageWidth,
+                            display: 'grid',
+                            gap: '10px',
+                          }}
+                        >
+                          <Image image={img} key={index} />
+                          {Boolean(image.caption) && (
+                            <ProcessStepCaption>
+                              {image.caption}
+                            </ProcessStepCaption>
+                          )}
+                        </div>
+                      );
+                    })}
+                  {/* </CardsWrapper> */}
+                </div>
+              </TextSection>
+            );
+          })}
 
         {Boolean(results) && (
           <TextSection column='1 / 3'>
@@ -193,7 +225,7 @@ const ProcessStepWrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
-  width: 100%;
+  width: var(--card-width);
   opacity: ${({ isDone }) => (isDone ? '1' : '0.5')};
 `;
 
@@ -273,10 +305,16 @@ export const query = graphql`
         details {
           title
           text
-          image
-          caption
           iframe {
             src
+          }
+          images {
+            image {
+              childImageSharp {
+                gatsbyImageData(placeholder: DOMINANT_COLOR)
+              }
+            }
+            caption
           }
         }
         results

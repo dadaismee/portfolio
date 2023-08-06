@@ -26,12 +26,6 @@
         "caption": "I decided to teach myself to code and iterated a lot until got something interesting"
       },
       {
-        "title": "Prototyping",
-        "image":"../images/projects/random-variable/process-step-1.png",
-        "isDone": true,
-        "caption": "The final iteration of the installation experience looked like this"
-      },
-      {
         "title": "Printing",
         "image":"../images/projects/random-variable/process-step-2.png",
         "isDone": true,
@@ -48,11 +42,47 @@
       {
         "title": "Prototype",
         "text": "The image generation follows user's gesture (or mouse). You can try it yourself!",
-        "image": "",
-        "caption": "",
         "iframe": {
           "src": "https://prosvet-auto.glitch.me/"
         }
+      },
+      {
+        "title": "Artworks",
+        "text": "",
+        "images": [
+          {
+            "image": "../images/projects/random-variable/image-1.png",
+            "caption": ""
+          },
+          {
+            "image": "../images/projects/random-variable/image-2.png",
+            "caption": ""
+          },
+          {
+            "image": "../images/projects/random-variable/image-3.png",
+            "caption": ""
+          },
+          {
+            "image": "../images/projects/random-variable/image-4.png",
+            "caption": ""
+          },
+          {
+            "image": "../images/projects/random-variable/image-5.png",
+            "caption": ""
+          },
+          {
+            "image": "../images/projects/random-variable/image-6.png",
+            "caption": ""
+          },
+          {
+            "image": "../images/projects/random-variable/image-7.png",
+            "caption": ""
+          },
+          {
+            "image": "../images/projects/random-variable/image-8.png",
+            "caption": "I also designed a custom cup for the time of exhibition"
+          }
+        ]
       }
     ],
     "results": "Solo exhibiton at Prosvet Coffee in Moscow from January to April 2022. 2/9 pieces sold."

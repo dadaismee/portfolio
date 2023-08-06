@@ -42,12 +42,12 @@ const Cards = () => {
     );
   });
 
-  return <Wrapper>{cards}</Wrapper>;
+  return <CardsWrapper>{cards}</CardsWrapper>;
 };
 
 export default Cards;
 
-const Wrapper = styled.div`
+export const CardsWrapper = styled.div`
   display: grid;
   grid-template-columns: var(--grid-columns);
   gap: 20px;

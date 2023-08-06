@@ -44,6 +44,38 @@
           "isDone": false,
           "caption": ""
         }
+      ],
+      "details": [
+        {
+          "title": "Styleboard",
+          "images": [
+            {
+              "image": "../images/projects/undulation/process-step-1.png",
+              "caption": "Composition references for each screen on the left. References for typography, colors and stylistic method on the right."
+            }
+          ]
+        },
+        {
+          "title": "Visual system",
+          "images": [
+            {
+              "image": "../images/projects/undulation/image-1.png",
+              "caption": "Composition references for each screen on the left. References for typography, colors and stylistic method on the right."
+            },
+            {
+              "image": "../images/projects/undulation/image-2.png"
+            }
+          ]
+        },
+        {
+          "title": "UI design",
+          "images": [
+            {
+              "image": "../images/projects/undulation/image-3.png",
+              "caption": "Composition references for each screen on the left. References for typography, colors and stylistic method on the right."
+            }
+          ]
+        }   
       ]
   }
 }
