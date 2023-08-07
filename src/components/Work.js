@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 import { sectionTitle } from '../styles/TextStyles';
 import { Tags, Cards } from '../components/index';
 
 const Work = () => {
+  const [activeTag, setActiveTag] = useState('All');
+  // const [isClicked, setIsClicked] = useState(false);
+
+  const selectTag = (e, tag) => {
+    e.preventDefault();
+    setActiveTag(tag);
+    // setIsClicked(!isClicked);
+  };
+
   return (
     <Wrapper
       id='work'
@@ -21,8 +30,12 @@ const Work = () => {
       viewport={{ once: true }}
     >
       <SectionTitle>Work</SectionTitle>
-      <Tags />
-      <Cards />
+      <Tags
+        activeTag={activeTag}
+        handleClick={selectTag}
+        // isClicked={isClicked}
+      />
+      <Cards filter={activeTag} />
     </Wrapper>
   );
 };

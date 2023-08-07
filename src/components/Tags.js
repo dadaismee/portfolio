@@ -1,26 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { styled } from 'styled-components';
 import { menuAndTags } from '../styles/TextStyles';
-import { graphql, useStaticQuery } from 'gatsby';
 
-const Tags = () => {
-  const [activeTag, setActiveTag] = useState(true);
-  const [tagFilter, setTagFilter] = useState(null);
-
-  const handleClick = (tag) => {
-    setActiveTag(tag);
-    setTagFilter(tag);
-  };
-
+const Tags = ({ activeTag, handleClick, isClicked }) => {
   return (
     <Wrapper>
       {tagsData.map((tag, index) => (
         <Tag
           key={index}
-          active={tag === activeTag}
-          onClick={() => handleClick(tag)}
+          active={activeTag === tag}
+          onClick={(e) => handleClick(e, tag)}
+          // variants={tagVariants}
+          // initial='unclicked'
+          // animate={isClicked ? 'clicked' : 'unclicked'}
         >
-          {tag.title}
+          {tag}
         </Tag>
       ))}
     </Wrapper>
@@ -29,14 +23,14 @@ const Tags = () => {
 
 export default Tags;
 
-const tagsData = [
-  { title: 'All' },
-  { title: 'PM/LX' },
-  { title: 'UX/UI' },
-  { title: 'Branding' },
-  { title: 'WebDev' },
-  { title: '3D' },
-  { title: 'Art' },
+export const tagsData = [
+  'All',
+  'PM/LX',
+  'UX/UI',
+  'Branding',
+  'WebDev',
+  '3D',
+  'Art',
 ];
 
 const Wrapper = styled.div`
@@ -63,14 +57,16 @@ const Tag = styled(menuAndTags)`
   }
 `;
 
-// export const query = graphql`
-//   query TagQuery($tag: String) {
-//     allProjectsJson(frontmatter: { tags: { eq: $tag } }) {
-//       nodes {
-//         frontmatter {
-//           tag
-//         }
-//       }
-//     }
-//   }
-// `;
+// const tagVariants = {
+//   unclicked: {
+//     padding: '10px 0px',
+//     border: 'none',
+//     color: 'var(--color-disabled)',
+//   },
+//   clicked: {
+//     padding: '10px 20px',
+//     border: 'solid 1px',
+//     borderRadius: '5px',
+//     color: 'var(--color-text)',
+//   },
+// };

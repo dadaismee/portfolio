@@ -20,8 +20,8 @@ const Card = ({ image, title, description, tags, index, to }) => {
       }}
       transition={{
         ease: [0.165, 0.84, 0.44, 1],
-        duration: 2,
-        delay: 1 + index * 0.15,
+        duration: 1,
+        delay: 0.5 + index * 0.15,
       }}
       viewport={{ once: true }}
       transformTemplate={({ y }) => `translateY(-${y}px)`}
@@ -36,6 +36,7 @@ const Card = ({ image, title, description, tags, index, to }) => {
         <Button>Explore</Button>
       </Link>
     </Wrapper>
+
     // </Link>
   );
 };
@@ -47,6 +48,7 @@ const Wrapper = styled(motion.div)`
   box-sizing: border-box;
   width: var(--card-width);
   max-width: var(--card-max-width);
+  height: calc(var(--card-width) * 1.5);
   padding: 20px;
   gap: 20px;
 

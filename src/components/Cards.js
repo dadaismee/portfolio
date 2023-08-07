@@ -4,10 +4,10 @@ import { getImage } from 'gatsby-plugin-image';
 import { styled } from 'styled-components';
 import { Card } from '../components/index';
 
-const Cards = () => {
+const Cards = ({ filter }) => {
   const query = useStaticQuery(graphql`
-    query ($tag: String) {
-      allProjectsJson(filter: { frontmatter: { tags: { eq: $tag } } }) {
+    query {
+      allProjectsJson {
         nodes {
           frontmatter {
             description
@@ -24,23 +24,29 @@ const Cards = () => {
       }
     }
   `);
-
   const { nodes } = query.allProjectsJson;
-  const cards = nodes.map((card, index) => {
-    const { title, tags, description, url, image } = card.frontmatter;
-    const img = getImage(image);
-    return (
-      <Card
-        key={index}
-        index={index}
-        to={`/${url}`}
-        image={img}
-        title={title}
-        description={description}
-        tags={tags}
-      />
-    );
-  });
+  const cards = nodes
+    .filter((card) => {
+      const { tags } = card.frontmatter;
+      return filter !== 'All' ? tags.includes(filter) : tags;
+    })
+    .map((card, index) => {
+      const { title, tags, description, url, image } = card.frontmatter;
+      const img = getImage(image);
+
+      return (
+        <Card
+          key={index}
+          index={index}
+          to={`/${url}`}
+          image={img}
+          title={title}
+          description={description}
+          tags={tags}
+          filter={filter}
+        />
+      );
+    });
 
   return <CardsWrapper>{cards}</CardsWrapper>;
 };

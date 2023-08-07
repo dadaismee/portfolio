@@ -7,6 +7,7 @@ exports.createPages = async ({ graphql, actions }) => {
         nodes {
           frontmatter {
             url
+            tags
           }
         }
       }
@@ -18,7 +19,7 @@ exports.createPages = async ({ graphql, actions }) => {
     actions.createPage({
       path: `/${url}`,
       component: path.resolve('./src/templates/project.js'),
-      context: { url },
+      context: { url, tags },
     });
   });
 };
