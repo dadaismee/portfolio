@@ -1,10 +1,10 @@
 {
   "frontmatter": {
-    "title": "Random variable",
-    "description": "generative interactive installation and giclee prints",
-    "image": "../images/projects/random-variable/main.png",
+    "title": "Performance of meaning",
+    "description": "interactive installation assisting users to draw abstract artworks",
+    "image": "../images/projects/performance-of-meaning/main.png",
     "tags": ["Art"],
-    "url": "random-variable"
+    "url": "performance-of-meaning"
   },
   "projectData": {
     "links": {
@@ -44,12 +44,22 @@
         "text": "The image generation follows user's gesture (or mouse). You can try it yourself!",
         "iframes": [
           {
-            "src": "https://sepia-neighborly-trade.glitch.me"
+            "src": "https://performance-of-meaning-1-basic.glitch.me/",
+            "caption": "Algorithm 1"
+          },
+          {
+            "src": "https://performance-of-meaning-3-straight.glitch.me/",
+            "caption": "Algorithm 2"
+          },
+          {
+            "src": "https://performance-of-meaning-2-circular.glitch.me/",
+            "caption": "Algorithm 3"
           }
         ]
       },
       {
         "title": "Artworks",
+        "text": "",
         "images": [
           {
             "image": "../images/projects/random-variable/image-1.png",

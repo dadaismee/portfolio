@@ -6,8 +6,8 @@ import { Card } from '../components/index';
 
 const Cards = () => {
   const query = useStaticQuery(graphql`
-    query {
-      allProjectsJson {
+    query ($tag: String) {
+      allProjectsJson(filter: { frontmatter: { tags: { eq: $tag } } }) {
         nodes {
           frontmatter {
             description

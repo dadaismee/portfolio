@@ -2,10 +2,9 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { styled } from 'styled-components';
 import { h2, paragraph, sectionTitle } from '../styles/TextStyles';
-import { Card, Layout } from '../components';
+import { Layout } from '../components';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Arrow from '../images/icons/Arrow.svg';
-import { CardsWrapper } from '../components/Cards';
 
 const project = ({ data }) => {
   // Data from a prject JSON
@@ -32,13 +31,25 @@ const project = ({ data }) => {
   const processBlock = process.map((step, index) => {
     const img = getImage(step.image);
     return (
-      <ProcessStep
-        key={index}
-        title={step.title}
-        image={img}
-        caption={step.caption}
-        isDone={step.isDone}
-      />
+      <>
+        <ProcessStep
+          key={index}
+          title={step.title}
+          image={img}
+          caption={step.caption}
+          isDone={step.isDone}
+        />
+        {index !== process.length - 1 && (
+          <img
+            style={{
+              display: 'flex',
+              alignSelf: 'flex-start',
+              marginTop: '20px',
+            }}
+            src={Arrow}
+          />
+        )}
+      </>
     );
   });
 
@@ -95,21 +106,43 @@ const project = ({ data }) => {
             return (
               <TextSection key={index}>
                 <SectionTitle>{detail.title}</SectionTitle>
-                {Boolean(detail.iframe) && (
-                  <GridContainer>
-                    <Text column='1 / 3'>{detail.text}</Text>
-                    <Iframe src={detail.iframe.src} column='5 / 7'></Iframe>
-                  </GridContainer>
+                {Boolean(detail.iframes) && (
+                  <FrontmatterWrapper style={{ gap: '20px' }}>
+                    {Boolean(detail.text) && (
+                      <Text style={{ width: 'var(--card-width)' }}>
+                        {detail.text}
+                      </Text>
+                    )}
+                    <GridContainer>
+                      {detail.iframes.map((iframe, index) => {
+                        let style =
+                          detail.iframes.length > 1
+                            ? 'height: var(--card-width);  width: var(--card-width); border: solid 1px var(--color-text); border-radius: var(--border-radius-ext);'
+                            : 'height: calc(var(--card-width) * 1.5); width: calc(var(--card-width) * 2 + 20px); border: none;';
+                        return (
+                          <FrontmatterWrapper style={{ gap: '10px' }}>
+                            <Iframe
+                              key={index}
+                              src={iframe.src}
+                              styles={style}
+                            ></Iframe>
+                            <ProcessStepCaption>
+                              {iframe.caption}
+                            </ProcessStepCaption>
+                          </FrontmatterWrapper>
+                        );
+                      })}
+                    </GridContainer>
+                  </FrontmatterWrapper>
                 )}
 
-                {/* <CardsWrapper style={{ margin: '0 -60px' }}> */}
                 <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
                   {Boolean(detail.images) &&
                     detail.images.map((image, index) => {
                       const img = getImage(image.image);
                       let imageWidth = 0;
                       {
-                        detail.images.length > 1
+                        detail.images.length > 2
                           ? (imageWidth = 'var(--card-width)')
                           : (imageWidth = `calc(100% - var(--card-width) * ${detail.images.length})`);
                       }
@@ -130,17 +163,18 @@ const project = ({ data }) => {
                         </div>
                       );
                     })}
-                  {/* </CardsWrapper> */}
                 </div>
               </TextSection>
             );
           })}
 
         {Boolean(results) && (
-          <TextSection column='1 / 3'>
-            <SectionTitle>Results</SectionTitle>
-            <Text>{results}</Text>
-          </TextSection>
+          <GridContainer>
+            <TextSection column='1 / 3'>
+              <SectionTitle>Results</SectionTitle>
+              <Text>{results}</Text>
+            </TextSection>
+          </GridContainer>
         )}
       </Wrapper>
     </Layout>
@@ -152,7 +186,7 @@ export default project;
 const ProcessStep = ({ title, image, caption, isDone }) => (
   <ProcessStepWrapper isDone={isDone}>
     <ProcessStepTitle>{title}</ProcessStepTitle>
-    {/* <img src={Arrow} /> */}
+
     <div
       style={{
         display: 'flex',
@@ -192,6 +226,7 @@ const FrontmatterWrapper = styled.div`
 const GridContainer = styled.div`
   display: grid;
   grid-template-columns: var(--grid-columns);
+  gap: 20px;
 
   * {
     width: var(--card-width);
@@ -217,7 +252,7 @@ const Icon = styled(GatsbyImage)`
 
 const Process = styled.div`
   display: flex;
-  gap: 20px;
+  gap: 5px;
 `;
 
 const ProcessStepWrapper = styled.div`
@@ -248,10 +283,12 @@ const ProcessStepCaption = styled(paragraph)`
 `;
 
 const Iframe = styled.iframe`
-  width: 430px;
-  height: 600px;
-  border: none;
-  grid-column: ${({ column }) => column};
+  ${({ styles }) => styles};
+  /* height: calc(var(--card-width) * 1.5);
+  width: calc(var(--card-width) * 2 + 20px);
+  border: none; */
+  /* border: solid 1px var(--color-text);
+  border-radius: var(--border-radius-ext); */
 `;
 
 const SectionTitle = styled(sectionTitle)``;
@@ -305,8 +342,9 @@ export const query = graphql`
         details {
           title
           text
-          iframe {
+          iframes {
             src
+            caption
           }
           images {
             image {

@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { styled } from 'styled-components';
 import { menuAndTags } from '../styles/TextStyles';
+import { graphql, useStaticQuery } from 'gatsby';
 
 const Tags = () => {
   const [activeTag, setActiveTag] = useState(true);
+  const [tagFilter, setTagFilter] = useState(null);
 
   const handleClick = (tag) => {
     setActiveTag(tag);
+    setTagFilter(tag);
   };
 
   return (
@@ -59,3 +62,15 @@ const Tag = styled(menuAndTags)`
     color: var(--color-text);
   }
 `;
+
+// export const query = graphql`
+//   query TagQuery($tag: String) {
+//     allProjectsJson(frontmatter: { tags: { eq: $tag } }) {
+//       nodes {
+//         frontmatter {
+//           tag
+//         }
+//       }
+//     }
+//   }
+// `;
