@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
-import { graphql } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import { styled } from 'styled-components';
 import { h2, paragraph, sectionTitle } from '../styles/TextStyles';
-import { Layout, SEO } from '../components';
+import { Layout, SEO, Contact } from '../components';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Arrow from '../images/icons/Arrow.svg';
+import { useProjectMetadata } from '../hooks/useProjectMetadata';
 
 const project = ({ data }) => {
   // Data from a prject JSON
@@ -15,7 +16,7 @@ const project = ({ data }) => {
   const img = getImage(image);
   const tagsBlock = tags.map((tag, index) => <Text key={index}>{tag}</Text>);
   const linksBlock = links.prod.map((link, index) => (
-    <a key={index} href={link}>
+    <a key={index} href={link} target='_blank'>
       🔗
     </a>
   ));
@@ -177,6 +178,7 @@ const project = ({ data }) => {
           </GridContainer>
         )}
       </Wrapper>
+      <Contact />
     </Layout>
   );
 };
@@ -361,17 +363,7 @@ export const query = graphql`
   }
 `;
 
-// const data = useStaticQuery(graphql`
-//   query {
-//     site {
-//       siteMetadata {
-//         title
-//         description
-//         image
-//         siteUrl
-//       }
-//     }
-//   }
-// `);
-
-// export const Head = () => <SEO title={query.projectsJson.frontmatter.title} />;
+export const Head = ({ data }) => {
+  const { title, description } = data.projectsJson.frontmatter;
+  return <SEO title={title + ' | V--S project'} description={description} />;
+};
