@@ -1,11 +1,10 @@
-import React, { useEffect } from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
-import { styled } from 'styled-components';
-import { h2, paragraph, sectionTitle } from '../styles/TextStyles';
-import { Layout, SEO, Contact } from '../components';
+import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import React from 'react';
+import { styled } from 'styled-components';
+import { Contact, Layout, SEO } from '../components';
 import Arrow from '../images/icons/Arrow.svg';
-import { useProjectMetadata } from '../hooks/useProjectMetadata';
+import { h2, paragraph, sectionTitle } from '../styles/TextStyles';
 
 const project = ({ data }) => {
   // Data from a prject JSON
@@ -73,8 +72,11 @@ const project = ({ data }) => {
             <TextSection>
               <SectionTitle>Tools</SectionTitle>
               <div
-                style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}
-              >
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '5px',
+                }}>
                 {toolsBlock}
               </div>
             </TextSection>
@@ -125,8 +127,7 @@ const project = ({ data }) => {
                             <Iframe
                               key={index}
                               src={iframe.src}
-                              styles={style}
-                            ></Iframe>
+                              styles={style}></Iframe>
                             <ProcessStepCaption>
                               {iframe.caption}
                             </ProcessStepCaption>
@@ -153,8 +154,7 @@ const project = ({ data }) => {
                             width: imageWidth,
                             display: 'grid',
                             gap: '10px',
-                          }}
-                        >
+                          }}>
                           <Image image={img} key={index} />
                           {Boolean(image.caption) && (
                             <ProcessStepCaption>
@@ -196,8 +196,7 @@ const ProcessStep = ({ title, image, caption, isDone }) => (
         backgroundColor: image.backgroundColor,
         height: '100%',
         borderRadius: 'var(--border-radius-ext)',
-      }}
-    >
+      }}>
       <Image image={image} />
     </div>
     {Boolean(caption) && <ProcessStepCaption>{caption}</ProcessStepCaption>}
