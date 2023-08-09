@@ -33,7 +33,7 @@ export const logoAndCardTitles = styled.h4`
   line-height: 100%; /* 24px */
 `;
 
-export const menuAndTags = styled(motion.button)`
+export const menuAndTags = styled.button`
   color: var(--color-text);
   font-size: 20px;
   font-style: normal;

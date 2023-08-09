@@ -8,7 +8,7 @@ const Header = () => {
     <Wrapper
       initial={{
         opacity: 0,
-        y: 20,
+        y: 0,
       }}
       whileInView={{
         opacity: 1,

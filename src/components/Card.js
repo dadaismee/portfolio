@@ -47,10 +47,10 @@ const Wrapper = styled(motion.div)`
   display: grid;
   box-sizing: border-box;
   width: var(--card-width);
-  max-width: var(--card-max-width);
-  height: calc(var(--card-width) * 1.5);
-  padding: 20px;
-  gap: 20px;
+  /* max-width: var(--card-max-width); */
+  max-height: calc(var(--card-max-width) * 1.5);
+  padding: 1.38vw; // 20px;
+  gap: 1.38vw; //20px;
 
   border-radius: 25px;
   border: 1px solid var(--color-text);

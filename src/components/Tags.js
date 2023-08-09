@@ -2,7 +2,7 @@ import React from 'react';
 import { styled } from 'styled-components';
 import { menuAndTags } from '../styles/TextStyles';
 
-const Tags = ({ activeTag, handleClick, isClicked }) => {
+const Tags = ({ activeTag, handleClick }) => {
   return (
     <Wrapper>
       {tagsData.map((tag, index) => (
@@ -46,11 +46,10 @@ const Tag = styled(menuAndTags)`
   transition: var(--transition);
   box-sizing: border-box;
   cursor: pointer;
-  border: none;
   ${({ active }) =>
     active
-      ? 'padding: 10px 20px; border: solid 1px; border-radius: 5px; color: var(--color-text);'
-      : 'padding: 10px 0px; border: none'}
+      ? 'padding: 10px 20px; border: solid 1px var(--color-text); border-radius: 5px; color: var(--color-text);'
+      : 'padding: 10px 0px; border: solid 1px transparent'}
 
   &:hover {
     color: var(--color-text);

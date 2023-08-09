@@ -8,7 +8,7 @@ import code from '../images/icons/code.svg';
 const Footer = () => {
   return (
     <Wrapper>
-      <Copy>V--S © 2023</Copy>
+      <Copy>V--S © {new Date().getFullYear()}</Copy>
       <Branding>
         <Image src={design} />
         /

@@ -56,7 +56,7 @@ export default Cards;
 export const CardsWrapper = styled.div`
   display: grid;
   grid-template-columns: var(--grid-columns);
-  gap: 20px;
+  gap: 1.38vw; //20px;
   overflow-x: auto;
   padding: 10px 0 20px 60px;
 

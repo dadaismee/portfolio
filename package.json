@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@mdx-js/react": "^2.3.0",
+    "@react-icons/all-files": "^4.1.0",
     "babel-plugin-styled-components": "^2.1.4",
     "framer-motion": "^10.15.0",
     "gatsby": "^5.11.0",
@@ -30,6 +31,7 @@
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.10.1",
     "styled-components": "^6.0.5"
   }
 }

@@ -2,24 +2,32 @@ import React from 'react';
 import { styled } from 'styled-components';
 import { menuAndTags, sectionTitle } from '../styles/TextStyles';
 import telegram from '../images/icons/telegram.svg';
+import mail from '../images/icons/email.svg';
 
 const Contact = () => {
   return (
     <Wrapper>
       <Title>Contact</Title>
       <ContentWrapper>
-        <EmailForm>
-          <EmailTitle>Send an email</EmailTitle>
-          {/* <Email /> */}
-        </EmailForm>
-        <Telegram>
-          <TelegramTitle>Write in Telegram</TelegramTitle>
+        <ButtonBlock>
+          <BlockTitle>Send an email</BlockTitle>
+          <a
+            href='mailto:valerii.s.shevchenko@gmail.com?subject=PROJECT INQUIRY&body=Hi, Valerii! %0D%0A %0D%0A I have a project in mind. Here are the details. %0D%0A %0D%0A Task: %0D%0A %0D%0A Context: %0D%0A %0D%0A Budget: %0D%0A %0D%0A Desirable deadline: %0D%0A %0D%0A …'
+            target='_blank'
+          >
+            <Button>
+              <img src={mail} />
+            </Button>
+          </a>
+        </ButtonBlock>
+        <ButtonBlock>
+          <BlockTitle>Write in Telegram</BlockTitle>
           <a href='https://t.me/emsiadad' target='_blank'>
             <Button>
               <img src={telegram} />
             </Button>
           </a>
-        </Telegram>
+        </ButtonBlock>
       </ContentWrapper>
     </Wrapper>
   );
@@ -38,21 +46,16 @@ const ContentWrapper = styled.div`
   gap: 20px;
 `;
 
-const EmailForm = styled.div`
-  width: var(--card-width);
-  gap: 20px;
-`;
-const EmailTitle = styled(menuAndTags)`
-  border: none;
-  background-color: transparent;
-`;
-const Telegram = styled.div`
+const ButtonBlock = styled.div`
   box-sizing: border-box;
   display: flex;
+  width: var(--card-width);
+  height: var(--card-width);
   flex-direction: column;
   gap: 20px;
 `;
-const TelegramTitle = styled(menuAndTags)`
+
+const BlockTitle = styled(menuAndTags)`
   border: none;
   background-color: transparent;
   text-align: left;
@@ -74,6 +77,8 @@ const Button = styled.button`
   }
 
   img {
+    height: calc(var(--card-width) / 4);
+    width: calc(var(--card-width) / 4);
     transition: var(--transition);
   }
 
