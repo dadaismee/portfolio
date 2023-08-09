@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { graphql } from 'gatsby';
 import { styled } from 'styled-components';
 import { h2, paragraph, sectionTitle } from '../styles/TextStyles';
-import { Layout } from '../components';
+import { Layout, SEO } from '../components';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Arrow from '../images/icons/Arrow.svg';
 
@@ -360,3 +360,18 @@ export const query = graphql`
     }
   }
 `;
+
+// const data = useStaticQuery(graphql`
+//   query {
+//     site {
+//       siteMetadata {
+//         title
+//         description
+//         image
+//         siteUrl
+//       }
+//     }
+//   }
+// `);
+
+// export const Head = () => <SEO title={query.projectsJson.frontmatter.title} />;

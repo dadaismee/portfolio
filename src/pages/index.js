@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  Layout,
-  Hero,
-  Work,
-  About,
-  Contact,
-  Footer,
-} from '../components/index';
+import { Layout, Hero, Work, About, Contact, SEO } from '../components/index';
 
 const index = () => {
   return (
@@ -21,4 +14,4 @@ const index = () => {
 
 export default index;
 
-export const Head = () => <title>V--S | Designer and creative coder</title>;
+export const Head = () => <SEO />;

@@ -3,8 +3,10 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `v-s-portfolio`,
+    title: `Valerii Shevchenko`,
+    description: `Design, product management and web development services by design generalist and creative coder Valerii Shevchenko`,
     siteUrl: `https://www.yourdomain.tld`,
+    image: `/images/icon.png`,
   },
   plugins: [
     `gatsby-plugin-image`,
