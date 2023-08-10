@@ -1,9 +1,9 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
-import { cardTags, logoAndCardTitles, paragraph } from '../styles/TextStyles';
+import { Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import React from 'react';
+import { styled } from 'styled-components';
+import { cardTags, logoAndCardTitles, paragraph } from '../styles/TextStyles';
 
 const Card = ({ image, title, description, tags, index, to }) => {
   const cardTags = tags.map((tag, index) => <Tag key={index}>{tag}</Tag>);
@@ -18,14 +18,17 @@ const Card = ({ image, title, description, tags, index, to }) => {
         opacity: 1,
         y: 0,
       }}
+      exit={{
+        opacity: 0,
+        y: 20,
+      }}
       transition={{
         ease: [0.165, 0.84, 0.44, 1],
         duration: 1,
         delay: 0.5 + index * 0.15,
       }}
       viewport={{ once: true }}
-      transformTemplate={({ y }) => `translateY(-${y}px)`}
-    >
+      transformTemplate={({ y }) => `translateY(-${y}px)`}>
       <Image image={image} alt={title} />
       <Title>{title}</Title>
       <Description>

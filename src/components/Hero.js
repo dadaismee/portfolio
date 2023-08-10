@@ -20,8 +20,7 @@ const Hero = () => {
             delay: 0.25,
           },
         }}
-        viewport={{ once: true }}
-      >
+        viewport={{ once: true }}>
         Valerii Shevchenko
       </Title>
       <GridWrapper>
@@ -39,8 +38,7 @@ const Hero = () => {
               delay: 0.5,
             },
           }}
-          viewport={{ once: true }}
-        >
+          viewport={{ once: true }}>
           design generalist
         </Subtitle>
         <Subtitle
@@ -57,8 +55,7 @@ const Hero = () => {
               delay: 0.5,
             },
           }}
-          viewport={{ once: true }}
-        >
+          viewport={{ once: true }}>
           creative coder
         </Subtitle>
       </GridWrapper>
@@ -72,11 +69,14 @@ const Wrapper = styled.div`
   margin: 0 60px;
 `;
 
-const Title = styled(h1)``;
+const Title = styled(h1)`
+  margin: 20px 0;
+`;
 
 const GridWrapper = styled.div`
   display: grid;
   grid-template-columns: var(--grid-columns);
+  /* margin-bottom: 40px; */
 `;
 
 const Subtitle = styled(h2)`
