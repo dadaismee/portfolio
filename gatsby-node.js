@@ -22,13 +22,4 @@ exports.createPages = async ({ graphql, actions }) => {
       context: { url },
     });
   });
-
-  // const tagsData = ['PM-LX', 'UX-UI', 'Branding', 'WebDev', '3D', 'Art'];
-  // tagsData.forEach((tag) => {
-  //   actions.createPage({
-  //     path: `/${tag}`,
-  //     component: path.resolve('./src/components/index.js'),
-  //     context: { tag },
-  //   });
-  // });
 };

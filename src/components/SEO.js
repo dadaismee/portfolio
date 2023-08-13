@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSiteMetadata } from '../hooks/useStaticQuery';
+import { useSiteMetadata } from '../hooks/useSiteMetadata';
 
 const SEO = ({ title, description, pathname, children }) => {
   const {
