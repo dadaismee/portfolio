@@ -1,7 +1,7 @@
 import React from 'react';
 import { styled } from 'styled-components';
-import { paragraph, sectionTitle } from '../styles/TextStyles';
 import { Skill } from '../components/index';
+import { paragraph, sectionTitle } from '../styles/TextStyles';
 
 const About = () => {
   const skillsMap = skills.map((skill, index) => (
@@ -9,7 +9,7 @@ const About = () => {
   ));
 
   return (
-    <Wrapper>
+    <Wrapper id='about'>
       <AboutBlock>
         <Title>About</Title>
         <Text>

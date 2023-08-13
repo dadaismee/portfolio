@@ -1,20 +1,19 @@
 import React from 'react';
 import { styled } from 'styled-components';
-import { menuAndTags, sectionTitle } from '../styles/TextStyles';
-import telegram from '../images/icons/telegram.svg';
 import mail from '../images/icons/email.svg';
+import telegram from '../images/icons/telegram.svg';
+import { menuAndTags, sectionTitle } from '../styles/TextStyles';
 
 const Contact = () => {
   return (
-    <Wrapper>
+    <Wrapper id='contact'>
       <Title>Contact</Title>
       <ContentWrapper>
         <ButtonBlock>
           <BlockTitle>Send an email</BlockTitle>
           <a
             href='mailto:valerii.s.shevchenko@gmail.com?subject=PROJECT INQUIRY&body=Hi, Valerii! %0D%0A %0D%0A I have a project in mind. Here are the details. %0D%0A %0D%0A Task: %0D%0A %0D%0A Context: %0D%0A %0D%0A Budget: %0D%0A %0D%0A Desirable deadline: %0D%0A %0D%0A …'
-            target='_blank'
-          >
+            target='_blank'>
             <Button>
               <img src={mail} />
             </Button>

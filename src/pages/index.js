@@ -7,7 +7,7 @@ const index = () => {
       <Hero />
       <Work />
       <About />
-      <Contact />
+      <Contact id='#contact' />
     </Layout>
   );
 };

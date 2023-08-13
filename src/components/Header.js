@@ -1,9 +1,18 @@
-import React from 'react';
-import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 import { Link } from 'gatsby';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
+import React from 'react';
+import { useLocation } from 'react-router-dom';
+import { styled } from 'styled-components';
 
 const Header = () => {
+  const location = useLocation();
+  const sectionLinks = [
+    { name: 'Work', url: `/#work` },
+    { name: 'About', url: `/#about` },
+    { name: 'Contact', url: `${location.pathname}#contact` },
+  ];
+
   return (
     <Wrapper
       initial={{
@@ -16,8 +25,7 @@ const Header = () => {
       }}
       transition={{
         duration: 0.25,
-      }}
-    >
+      }}>
       <Link to='/'>
         <Logo>
           <p>
@@ -27,15 +35,13 @@ const Header = () => {
       </Link>
       <Navbar>
         <ul>
-          <li>
-            <Link to='/work'>Work</Link>
-          </li>
-          <li>
-            <Link to='/about'>About</Link>
-          </li>
-          <li>
-            <Link to='/contact'>Contact</Link>
-          </li>
+          {sectionLinks.map((link) => (
+            <li>
+              <AnchorLink key={link.name} to={link.url}>
+                {link.name}
+              </AnchorLink>
+            </li>
+          ))}
         </ul>
       </Navbar>
     </Wrapper>

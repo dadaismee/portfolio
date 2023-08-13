@@ -2,6 +2,7 @@
   "frontmatter": {
     "title": "Weather forecast with Python in 1 hour",
     "description": "free online programming course for Practicum",
+    "date": "2023-03-23",
     "image": "../images/projects/weather-forecast/main.png",
     "tags": ["PM/LX"],
     "url": "weather-forecast"

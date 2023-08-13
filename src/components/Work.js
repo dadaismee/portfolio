@@ -1,8 +1,8 @@
+import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import { styled } from 'styled-components';
-import { motion } from 'framer-motion';
+import { Cards, Tags } from '../components/index';
 import { sectionTitle } from '../styles/TextStyles';
-import { Tags, Cards } from '../components/index';
 
 const Work = () => {
   const [activeTag, setActiveTag] = useState('All');
@@ -27,8 +27,7 @@ const Work = () => {
         duration: 1,
         delay: 0.5,
       }}
-      viewport={{ once: true }}
-    >
+      viewport={{ once: true }}>
       <SectionTitle>Work</SectionTitle>
       <Tags
         activeTag={activeTag}

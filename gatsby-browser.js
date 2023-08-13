@@ -1,5 +1,10 @@
 import { AnimatePresence } from 'framer-motion';
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+
+export const wrapRootElement = ({ element }) => {
+  return <BrowserRouter>{element}</BrowserRouter>;
+};
 
 export const wrapPageElement = ({ element }) => (
   <AnimatePresence mode='wait'>{element}</AnimatePresence>

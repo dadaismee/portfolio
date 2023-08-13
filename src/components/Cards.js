@@ -1,17 +1,18 @@
-import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
+import React from 'react';
 import { styled } from 'styled-components';
 import { Card } from '../components/index';
 
 const Cards = ({ filter }) => {
   const query = useStaticQuery(graphql`
     query {
-      allProjectsJson {
+      allProjectsJson(sort: { frontmatter: { date: DESC } }) {
         nodes {
           frontmatter {
             description
             tags
+            date
             title
             url
             image {

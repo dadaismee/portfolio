@@ -1,12 +1,12 @@
-import { graphql } from 'gatsby';
+import { graphql, navigate } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { styled } from 'styled-components';
 import { Contact, Layout, SEO } from '../components';
 import Arrow from '../images/icons/Arrow.svg';
 import { h2, paragraph, sectionTitle } from '../styles/TextStyles';
 
-const project = ({ data }) => {
+const Project = ({ data }) => {
   // Data from a prject JSON
   const { links, tools, task, whyExists, metaphor, process, details, results } =
     data.projectsJson.projectData;
@@ -52,6 +52,34 @@ const project = ({ data }) => {
       </>
     );
   });
+
+  // Navigation between projects on keyboard
+  const pages = data.allProjectsJson.nodes.map((project) => {
+    const { url } = project.frontmatter;
+    return url;
+  });
+
+  useEffect(() => {
+    const handleKeyUp = (e) => {
+      if (e.keyCode === 39 && Boolean(pages[pages.indexOf(url) + 1])) {
+        navigate(`/${pages[pages.indexOf(url) + 1]}`);
+      }
+      if (e.keyCode === 37 && Boolean(pages[pages.indexOf(url) - 1])) {
+        navigate(`/${pages[pages.indexOf(url) - 1]}`);
+      }
+      if (e.keyCode === 67) {
+        navigate(
+          `mailto:valerii.s.shevchenko@gmail.com?subject=PROJECT INQUIRY&body=Hi, Valerii! %0D%0A %0D%0A I have a project in mind. Here are the details. %0D%0A %0D%0A Task: %0D%0A %0D%0A Context: %0D%0A %0D%0A Budget: %0D%0A %0D%0A Desirable deadline: %0D%0A %0D%0A …`
+        );
+      }
+    };
+
+    window.document.addEventListener('keyup', handleKeyUp);
+
+    return () => {
+      window.document.removeEventListener('keyup', handleKeyUp);
+    };
+  }, []);
 
   // Rendered component
   return (
@@ -178,12 +206,12 @@ const project = ({ data }) => {
           </GridContainer>
         )}
       </Wrapper>
-      <Contact />
+      <Contact id='#contact' />
     </Layout>
   );
 };
 
-export default project;
+export default Project;
 
 const ProcessStep = ({ title, image, caption, isDone }) => (
   <ProcessStepWrapper isDone={isDone}>
@@ -304,9 +332,10 @@ export const query = graphql`
   query ProjectQuery($url: String) {
     projectsJson(frontmatter: { url: { eq: $url } }) {
       frontmatter {
-        description
-        tags
         title
+        description
+        date
+        tags
         url
         image {
           childImageSharp {
@@ -357,6 +386,15 @@ export const query = graphql`
           }
         }
         results
+      }
+    }
+    allProjectsJson(sort: { frontmatter: { date: DESC } }) {
+      nodes {
+        frontmatter {
+          title
+          date
+          url
+        }
       }
     }
   }

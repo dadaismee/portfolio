@@ -9,6 +9,12 @@ module.exports = {
     image: `/images/icon.png`,
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-anchor-links',
+      options: {
+        duration: 500,
+      },
+    },
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
