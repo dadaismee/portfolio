@@ -67,11 +67,6 @@ const Project = ({ data }) => {
       if (e.keyCode === 37 && Boolean(pages[pages.indexOf(url) - 1])) {
         navigate(`/${pages[pages.indexOf(url) - 1]}`);
       }
-      if (e.keyCode === 67) {
-        navigate(
-          `mailto:valerii.s.shevchenko@gmail.com?subject=PROJECT INQUIRY&body=Hi, Valerii! %0D%0A %0D%0A I have a project in mind. Here are the details. %0D%0A %0D%0A Task: %0D%0A %0D%0A Context: %0D%0A %0D%0A Budget: %0D%0A %0D%0A Desirable deadline: %0D%0A %0D%0A …`
-        );
-      }
     };
 
     window.document.addEventListener('keyup', handleKeyUp);
