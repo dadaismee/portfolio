@@ -6,7 +6,7 @@ import { Contact, Layout, SEO } from '../components';
 import Arrow from '../images/icons/Arrow.svg';
 import { h2, paragraph, sectionTitle } from '../styles/TextStyles';
 
-const Project = ({ data }) => {
+const project = ({ data }) => {
   // Data from a prject JSON
   const { links, tools, task, whyExists, metaphor, process, details, results } =
     data.projectsJson.projectData;
@@ -211,7 +211,7 @@ const Project = ({ data }) => {
   );
 };
 
-export default Project;
+export default project;
 
 const ProcessStep = ({ title, image, caption, isDone }) => (
   <ProcessStepWrapper isDone={isDone}>
