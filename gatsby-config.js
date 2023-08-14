@@ -43,7 +43,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-anchor-links',
       options: {
-        duration: 500,
+        duration: 1000,
       },
     },
     `gatsby-plugin-image`,

@@ -13,14 +13,10 @@ const About = () => {
       <AboutBlock>
         <Title>About</Title>
         <Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa
-          mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla,
-          mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis
-          tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non
-          suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at
-          maximus ante fermentum sit amet. Pellentesque commodo lacus at sodales
-          sodales. Quisque sagittis orci ut diam condimentum, vel euismod erat
-          placerat.
+          Valerii Shevchenko designs and develops websites and apps and manages
+          production of educational products, mostly courses. He leverages his
+          unique blend of experise in education, product management, generative
+          art and design to ship thoughtful, conceptual and modern products.
         </Text>
       </AboutBlock>
       <SkillsBlock>

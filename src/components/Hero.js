@@ -56,7 +56,7 @@ const Hero = () => {
             },
           }}
           viewport={{ once: true }}>
-          creative coder
+          product manager
         </Subtitle>
       </GridWrapper>
     </Wrapper>

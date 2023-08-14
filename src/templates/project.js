@@ -59,16 +59,21 @@ const Project = ({ data }) => {
     return url;
   });
 
-  useEffect(() => {
-    const handleKeyUp = (e) => {
-      if (e.keyCode === 39 && Boolean(pages[pages.indexOf(url) + 1])) {
-        navigate(`/${pages[pages.indexOf(url) + 1]}`);
-      }
-      if (e.keyCode === 37 && Boolean(pages[pages.indexOf(url) - 1])) {
-        navigate(`/${pages[pages.indexOf(url) - 1]}`);
-      }
-    };
+  const handleKeyUp = (e) => {
+    if (e.keyCode === 39 && Boolean(pages[pages.indexOf(url) + 1])) {
+      navigate(`/${pages[pages.indexOf(url) + 1]}`);
+    }
+    if (e.keyCode === 37 && Boolean(pages[pages.indexOf(url) - 1])) {
+      navigate(`/${pages[pages.indexOf(url) - 1]}`);
+    }
+    if (e.keyCode === 67) {
+      navigate(
+        `mailto:valerii.s.shevchenko@gmail.com?subject=PROJECT INQUIRY&body=Hi, Valerii! %0D%0A %0D%0A I have a project in mind. Here are the details. %0D%0A %0D%0A Task: %0D%0A %0D%0A Context: %0D%0A %0D%0A Budget: %0D%0A %0D%0A Desirable deadline: %0D%0A %0D%0A …`
+      );
+    }
+  };
 
+  useEffect(() => {
     window.document.addEventListener('keyup', handleKeyUp);
 
     return () => {
@@ -78,7 +83,7 @@ const Project = ({ data }) => {
 
   // Rendered component
   return (
-    <Layout>
+    <Layout type='buttons' pages={pages} url={url}>
       <Wrapper>
         <Title>
           <b>{title}</b> — {description}
@@ -216,7 +221,10 @@ const ProcessStep = ({ title, image, caption, isDone }) => (
       style={{
         display: 'flex',
         alignItems: 'center',
-        backgroundColor: image.backgroundColor,
+        backgroundColor:
+          image.backgroundColor === '#080808'
+            ? 'var(--color-main'
+            : image.backgroundColor,
         height: '100%',
         borderRadius: 'var(--border-radius-ext)',
       }}>

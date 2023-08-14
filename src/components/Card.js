@@ -83,10 +83,12 @@ const Description = styled(paragraph)``;
 
 const TagsWrapper = styled.div`
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 `;
 
 const Tag = styled(cardTags)`
+  align-self: center;
   padding: 10px 20px;
   border: solid 1px;
   border-radius: 5px;

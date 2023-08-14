@@ -3,7 +3,7 @@ import { About, Contact, Hero, Layout, SEO, Work } from '../components/index';
 
 const index = () => {
   return (
-    <Layout>
+    <Layout type='menu'>
       <Hero />
       <Work />
       <About />

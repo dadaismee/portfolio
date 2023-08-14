@@ -5,7 +5,7 @@ import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import React from 'react';
 import { styled } from 'styled-components';
 
-const Header = () => {
+const Header = ({ type, pages, url }) => {
   const location = useLocation();
   const sectionLinks = [
     { name: 'Work', url: `/#work` },
@@ -13,6 +13,8 @@ const Header = () => {
     { name: 'Contact', url: `${location.pathname}#contact` },
   ];
 
+  console.log('url >>', url);
+  console.log('pages >>', pages);
   return (
     <Wrapper
       initial={{
@@ -33,17 +35,38 @@ const Header = () => {
           </p>
         </Logo>
       </Link>
-      <Navbar>
-        <ul>
-          {sectionLinks.map((link) => (
-            <li>
-              <AnchorLink key={link.name} to={link.url}>
-                {link.name}
-              </AnchorLink>
-            </li>
-          ))}
-        </ul>
-      </Navbar>
+      {type === 'menu' ? (
+        <Navbar>
+          <ul>
+            {sectionLinks.map((link) => (
+              <li>
+                <AnchorLink key={link.name} to={link.url}>
+                  {link.name}
+                </AnchorLink>
+              </li>
+            ))}
+          </ul>
+        </Navbar>
+      ) : (
+        <FlexContainer>
+          {Boolean(pages[pages.indexOf(url) - 1]) && (
+            <Flex>
+              <Button>←</Button>
+              <p>back</p>
+            </Flex>
+          )}
+          <Flex>
+            <Button>C</Button>
+            <p>contact</p>
+          </Flex>
+          {Boolean(pages[pages.indexOf(url) + 1]) && (
+            <Flex>
+              <Button>→</Button>
+              <p>next</p>
+            </Flex>
+          )}
+        </FlexContainer>
+      )}
     </Wrapper>
   );
 };
@@ -113,4 +136,39 @@ const Navbar = styled.nav`
       }
     }
   }
+`;
+
+const Button = styled.div`
+  display: flex;
+  height: 20px;
+  width: 20px;
+  padding: 10px;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-disabled);
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: 'Space Grotesk';
+`;
+
+const FlexContainer = styled.div`
+  display: flex;
+  padding: 10px;
+  align-items: flex-start;
+  gap: 20px;
+
+  p {
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0px;
+    text-align: center;
+  }
+`;
+
+const Flex = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
