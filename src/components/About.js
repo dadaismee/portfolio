@@ -14,9 +14,10 @@ const About = () => {
         <Title>About</Title>
         <Text>
           Valerii Shevchenko designs and develops websites and apps and manages
-          production of educational products, mostly courses. He leverages his
-          unique blend of experise in education, product management, generative
-          art and design to ship thoughtful, conceptual and modern products.
+          educational products about programming (mostly courses) at Practicum.
+          He leverages his unique blend of experise in education, product
+          management, generative art and design to ship thoughtful, conceptual
+          and modern products.
         </Text>
       </AboutBlock>
       <SkillsBlock>
