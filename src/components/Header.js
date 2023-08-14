@@ -1,8 +1,8 @@
+import { useLocation } from '@reach/router';
 import { motion } from 'framer-motion';
 import { Link } from 'gatsby';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import React from 'react';
-import { useLocation } from 'react-router-dom';
 import { styled } from 'styled-components';
 
 const Header = () => {

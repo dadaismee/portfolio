@@ -2,9 +2,6 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
-  // flags: {
-  //   DEV_SSR: true,
-  // },
   siteMetadata: {
     title: `Valerii Shevchenko`,
     description: `Design, product management and web development services by design generalist and creative coder Valerii Shevchenko`,
