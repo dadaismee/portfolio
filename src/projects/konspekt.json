@@ -30,7 +30,7 @@
         "title": "Netlify Functions"
       }
     ],
-    "task": "To develop a brand of an educational product for academic writing and make a website for it.",
+    "task": "To develop a brand for an educational product dedicated to academic writing, and make a landing page for it.",
     "whyExists": "While working on my PhD dissertation, I found that my overeall workflow with reading, processing information and writing was energy-inefficient. So, I researched workflows, adopted one over time and wondered whether I can help solve this problem for other academics and writers",
     "metaphor": "Marker pen highlights as a symbol of the most important ideas, which are stacked upon each other to show the emergence of larger ideas and entities like papers.",
     "process": [
@@ -108,6 +108,9 @@
       {
         "title": "Mockups",
         "images": [
+          {
+            "image": "../images/projects/konspekt/main.png"
+          },
           {
             "image": "../images/projects/konspekt/mockups-1.png"
           },
