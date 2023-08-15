@@ -17,9 +17,9 @@
         "title": "Figma"
       }
     ],
-    "task": "Develop a visual identity, a flexible visual brand for release covers and design a landing page.",
-    "whyExists": "While working on my PhD dissertation, I found that my overeall workflow with reading, processing information and writing was energy-inefficient. So, I researched workflows, adopted one over time and wondered whether I can help solve this problem for other academics and writers",
-    "metaphor": "Marker pen highlights as a symbol of the most important ideas, which are stacked upon each other to show the emergence of larger ideas and entities like papers.",
+    "task": "Develop a visual identity, a flexible visual system for release covers and design a landing page for a music label.",
+    "whyExists": "I came up with the name for the label and suggested to build the brand around the notion of the wave. I proposed a flexible visual system based on quarter-circles and iterative transformation.",
+    "metaphor": "A wave, both marine and sound one, was chosen as a metaphor. It represents the movement, calmness and continuity.",
     "process": [
         {
           "title": "Styleboard",
@@ -60,8 +60,7 @@
           "title": "Visual system",
           "images": [
             {
-              "image": "../images/projects/undulation/image-1.png",
-              "caption": "Composition references for each screen on the left. References for typography, colors and stylistic method on the right."
+              "image": "../images/projects/undulation/image-1.png"
             },
             {
               "image": "../images/projects/undulation/image-2.png"
@@ -72,8 +71,7 @@
           "title": "UI design",
           "images": [
             {
-              "image": "../images/projects/undulation/image-3.png",
-              "caption": "Composition references for each screen on the left. References for typography, colors and stylistic method on the right."
+              "image": "../images/projects/undulation/image-3.png"
             }
           ]
         }   

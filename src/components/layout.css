@@ -8,6 +8,8 @@
   --color-disabled: #bfbfbf;
   --color-text: #211414;
 
+  --section-margin: 20px 60px 40px 60px;
+
   --border-radius-ext: 25px;
   --border-radius-int: 15px;
   --transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);

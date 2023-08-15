@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import React from 'react';
 import { styled } from 'styled-components';
+import { mediaQueries } from '../styles/GlobalStyles';
 
 const Header = ({ type, pages, url }) => {
   const location = useLocation();
@@ -93,6 +94,11 @@ const Wrapper = styled(motion.div)`
   display: flex;
   justify-content: space-between;
   margin: 20px 60px 40px 60px;
+
+  @media (max-width: ${mediaQueries.phone}) {
+    width: 100%;
+    margin: 20px;
+  }
 `;
 
 const Logo = styled.div`
@@ -116,6 +122,10 @@ const Logo = styled.div`
       transform: translateY(-5px);
     }
   }
+
+  @media (max-width: ${mediaQueries.phone}) {
+    width: 100%;
+  }
 `;
 
 const Navbar = styled.nav`
@@ -135,6 +145,10 @@ const Navbar = styled.nav`
         transform: translateY(-5px);
       }
     }
+  }
+
+  @media (max-width: ${mediaQueries.phone}) {
+    display: none;
   }
 `;
 

@@ -14,11 +14,13 @@ const Project = ({ data }) => {
     data.projectsJson.frontmatter;
   const img = getImage(image);
   const tagsBlock = tags.map((tag, index) => <Text key={index}>{tag}</Text>);
-  const linksBlock = links.prod.map((link, index) => (
-    <a key={index} href={link} target='_blank'>
-      🔗
-    </a>
-  ));
+  const linksBlock = links.prod.map((link, index) => {
+    return (
+      <a key={index} href={link} target='_blank'>
+        🔗
+      </a>
+    );
+  });
   const toolsBlock = tools.map((tool, index) => {
     const img = getImage(tool.icon);
     return (
@@ -173,14 +175,17 @@ const Project = ({ data }) => {
                       let imageWidth = 0;
                       {
                         detail.images.length > 2
-                          ? (imageWidth = 'var(--card-width)')
-                          : (imageWidth = `calc(100% - var(--card-width) * ${detail.images.length})`);
+                          ? index % 2 == 0
+                            ? (imageWidth = `calc(100% - var(--card-width) * 2 + 20px)`)
+                            : (imageWidth = `calc(var(--card-width) + 20px)`)
+                          : (imageWidth = `calc(100% - var(--card-width) * 2)`);
                       }
                       return (
                         <div
                           style={{
                             width: imageWidth,
-                            display: 'grid',
+                            display: 'flex',
+                            flexDirection: 'column',
                             gap: '10px',
                           }}>
                           <Image image={img} key={index} />

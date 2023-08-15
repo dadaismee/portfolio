@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import { styled } from 'styled-components';
 import { Cards, Tags } from '../components/index';
+import { mediaQueries } from '../styles/GlobalStyles';
 import { sectionTitle } from '../styles/TextStyles';
 
 const Work = () => {
@@ -43,6 +44,10 @@ export default Work;
 
 const Wrapper = styled(motion.div)`
   margin: 0px;
+
+  @media (max-width: ${mediaQueries.phone}) {
+    width: 100%;
+  }
 `;
 
 const SectionTitle = styled(sectionTitle)`

@@ -9,7 +9,7 @@
   },
   "projectData": {
     "links": {
-      "prod": ["https://konspekt.netlify.app"],
+      "prod": ["https://konspekt.netlify.app, https://github.com/dadaismee/konspekt-website"],
       "github": "https://github.com/dadaismee/konspekt-website"
     },
     "tools": [
@@ -30,7 +30,7 @@
         "title": "Netlify Functions"
       }
     ],
-    "task": "Develop a brand and make a website for it.",
+    "task": "To develop a brand of an educational product for academic writing and make a website for it.",
     "whyExists": "While working on my PhD dissertation, I found that my overeall workflow with reading, processing information and writing was energy-inefficient. So, I researched workflows, adopted one over time and wondered whether I can help solve this problem for other academics and writers",
     "metaphor": "Marker pen highlights as a symbol of the most important ideas, which are stacked upon each other to show the emergence of larger ideas and entities like papers.",
     "process": [
@@ -63,6 +63,58 @@
         "title": "Development",
         "image":"../images/projects/konspekt/process-step-6.png",
         "isDone": true
+      }
+    ],
+    "details": [
+      {
+        "title": "Identity design",
+        "images": [
+          {
+            "image": "../images/projects/konspekt/concept.png",
+            "caption": "Second (final) concept"
+          }
+        ]
+      },
+      {
+        "title": "Wireframes",
+        "images": [
+          {
+            "image": "../images/projects/konspekt/wireframe-1.png",
+            "caption": "While wireframing, I mark the React components that need to be implemented"
+          }
+        ]
+      },
+      {
+        "title": "UI design",
+        "images": [
+          {
+            "image": "../images/projects/konspekt/ui-design-1.png",
+            "caption": "Reusable components for easier translation to code"
+          },
+          {
+            "image": "../images/projects/konspekt/ui-design-2.png",
+            "caption": "Hero section"
+          },
+          {
+            "image": "../images/projects/konspekt/ui-design-3.png",
+            "caption": "Explanation image for the main page"
+          },
+          {
+            "image": "../images/projects/konspekt/ui-design-4.png",
+            "caption": "Cards"
+          }
+        ]
+      },
+      {
+        "title": "Mockups",
+        "images": [
+          {
+            "image": "../images/projects/konspekt/mockups-1.png"
+          },
+          {
+            "image": "../images/projects/konspekt/mockups-2.png"
+          }
+        ]
       }
     ],
     "results": "Planning to launch the course. Not so much results yet."

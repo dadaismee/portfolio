@@ -1,11 +1,11 @@
 import React from 'react';
 import { styled } from 'styled-components';
+import { mediaQueries } from '../styles/GlobalStyles';
 import { h1, h2 } from '../styles/TextStyles';
 
 const Hero = () => {
   return (
     <Wrapper>
-      {/* <Canvas /> */}
       <Title
         initial={{
           opacity: 0,
@@ -66,11 +66,15 @@ const Hero = () => {
 export default Hero;
 
 const Wrapper = styled.div`
-  margin: 0 60px;
+  padding: 0 60px;
+
+  @media (max-width: ${mediaQueries.phone}) {
+    padding: 0 20px;
+  }
 `;
 
 const Title = styled(h1)`
-  margin: 20px 0;
+  padding: 20px 0;
 `;
 
 const GridWrapper = styled.div`

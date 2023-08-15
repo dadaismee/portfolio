@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { styled } from 'styled-components';
+import { mediaQueries } from './GlobalStyles';
 
 export const h1 = styled(motion.h1)`
   color: var(--color-text);
@@ -7,6 +8,10 @@ export const h1 = styled(motion.h1)`
   font-style: normal;
   font-weight: 700;
   line-height: 100%; /* 72px */
+
+  @media (max-width: ${mediaQueries.phone}) {
+    font-size: 40px;
+  }
 `;
 
 export const h2 = styled(motion.h2)`
