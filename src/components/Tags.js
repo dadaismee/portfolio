@@ -1,5 +1,6 @@
 import React from 'react';
 import { styled } from 'styled-components';
+import { mediaQueries } from '../styles/GlobalStyles';
 import { menuAndTags } from '../styles/TextStyles';
 
 const Tags = ({ activeTag, handleClick }) => {
@@ -38,6 +39,10 @@ const Wrapper = styled.div`
   align-items: center;
   gap: 20px;
   margin: 0 60px;
+
+  @media (max-width: ${mediaQueries.phone}) {
+    display: none;
+  }
 `;
 
 const Tag = styled(menuAndTags)`

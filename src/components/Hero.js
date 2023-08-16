@@ -77,10 +77,14 @@ const Title = styled(h1)`
   padding: 20px 0;
 `;
 
-const GridWrapper = styled.div`
+export const GridWrapper = styled.div`
   display: grid;
   grid-template-columns: var(--grid-columns);
   /* margin-bottom: 40px; */
+
+  @media (max-width: ${mediaQueries.phone}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 const Subtitle = styled(h2)`
@@ -88,4 +92,9 @@ const Subtitle = styled(h2)`
   margin: 0px;
   padding-left: 1.38vw; // 20px;
   text-align: left;
+
+  @media (max-width: ${mediaQueries.phone}) {
+    grid-column: 1 / 3;
+    text-align: right;
+  }
 `;

@@ -29,7 +29,10 @@ const Work = () => {
         delay: 0.5,
       }}
       viewport={{ once: true }}>
-      <SectionTitle>Work</SectionTitle>
+      <TitleWrapper>
+        <SectionTitle>Work</SectionTitle>
+        <FilterButton>Filter</FilterButton>
+      </TitleWrapper>
       <Tags
         activeTag={activeTag}
         handleClick={selectTag}
@@ -43,14 +46,32 @@ const Work = () => {
 export default Work;
 
 const Wrapper = styled(motion.div)`
-  margin: 0px;
-
   @media (max-width: ${mediaQueries.phone}) {
-    width: 100%;
+    padding-top: 40px;
   }
 `;
 
-const SectionTitle = styled(sectionTitle)`
-  /* margin-bottom: 40px; */
+const TitleWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
   margin: 0 60px 40px;
+
+  @media (max-width: ${mediaQueries.phone}) {
+    margin: 20px;
+  }
+`;
+
+const SectionTitle = styled(sectionTitle)``;
+
+const FilterButton = styled(sectionTitle)`
+  display: none;
+
+  @media (max-width: ${mediaQueries.phone}) {
+    display: inline-flex;
+    border: 1px solid var(--color-text);
+    border-radius: 15px;
+    padding: 10px 20px;
+  }
 `;

@@ -10,7 +10,7 @@ export const h1 = styled(motion.h1)`
   line-height: 100%; /* 72px */
 
   @media (max-width: ${mediaQueries.phone}) {
-    font-size: 40px;
+    font-size: 36px;
   }
 `;
 
@@ -20,6 +20,10 @@ export const h2 = styled(motion.h2)`
   font-style: normal;
   font-weight: 700;
   line-height: 100%; /* 48px */
+
+  @media (max-width: ${mediaQueries.phone}) {
+    font-size: 30px;
+  }
 `;
 
 export const sectionTitle = styled.h3`
@@ -28,6 +32,10 @@ export const sectionTitle = styled.h3`
   font-style: normal;
   font-weight: 700;
   line-height: 100%; /* 32px */
+
+  @media (max-width: ${mediaQueries.phone}) {
+    font-size: 24px;
+  }
 `;
 
 export const logoAndCardTitles = styled.h4`
