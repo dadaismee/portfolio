@@ -2,6 +2,7 @@ import React from 'react';
 import { styled } from 'styled-components';
 import mail from '../images/icons/email.svg';
 import telegram from '../images/icons/telegram.svg';
+import { mediaQueries } from '../styles/GlobalStyles';
 import { menuAndTags, sectionTitle } from '../styles/TextStyles';
 
 const Contact = () => {
@@ -36,6 +37,10 @@ export default Contact;
 
 const Wrapper = styled.div`
   margin: 0 60px;
+
+  @media (max-width: ${mediaQueries.phone}) {
+    margin: var(--padding-mobile);
+  }
 `;
 
 const Title = styled(sectionTitle)``;
@@ -48,22 +53,31 @@ const ContentWrapper = styled.div`
 const ButtonBlock = styled.div`
   box-sizing: border-box;
   display: flex;
+  flex-direction: row;
   width: var(--card-width);
   height: var(--card-width);
   flex-direction: column;
   gap: 20px;
+
+  @media (max-width: ${mediaQueries.phone}) {
+    width: 100%;
+  }
 `;
 
 const BlockTitle = styled(menuAndTags)`
   border: none;
   background-color: transparent;
   text-align: left;
+
+  @media (max-width: ${mediaQueries.phone}) {
+    display: none;
+  }
 `;
 const Button = styled.button`
   border: solid 1px var(--color-text);
   background-color: transparent;
   border-radius: var(--border-radius-ext);
-  height: 341px;
+  height: var(--card-width);
   width: var(--card-width);
   padding: 0 20px;
   transition: var(--transition);
@@ -75,6 +89,12 @@ const Button = styled.button`
     cursor: pointer;
   }
 
+  &:active {
+    transform: translateY(-10px);
+    box-shadow: var(--main-shadow);
+    background-color: var(--color-button-hover);
+  }
+
   img {
     height: calc(var(--card-width) / 4);
     width: calc(var(--card-width) / 4);
@@ -83,5 +103,10 @@ const Button = styled.button`
 
   &:hover img {
     transform: scale(1.5);
+  }
+
+  @media (max-width: ${mediaQueries.phone}) {
+    width: 100%;
+    height: 175px;
   }
 `;

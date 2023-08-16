@@ -66,15 +66,24 @@ const Hero = () => {
 export default Hero;
 
 const Wrapper = styled.div`
-  padding: 0 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  padding: var(--padding);
+  /* padding: 0 60px 40px; */
 
   @media (max-width: ${mediaQueries.phone}) {
-    padding: 0 20px;
+    gap: 20px;
+    padding: var(--padding-mobile) 40px;
   }
 `;
 
 const Title = styled(h1)`
   padding: 20px 0;
+
+  @media (max-width: ${mediaQueries.phone}) {
+    padding: 0;
+  }
 `;
 
 export const GridWrapper = styled.div`

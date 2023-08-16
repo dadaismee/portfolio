@@ -1,6 +1,7 @@
 import React from 'react';
 import { styled } from 'styled-components';
 import { Skill } from '../components/index';
+import { mediaQueries } from '../styles/GlobalStyles';
 import { paragraph, sectionTitle } from '../styles/TextStyles';
 
 const About = () => {
@@ -34,10 +35,19 @@ const Wrapper = styled.div`
   margin: 0 60px;
   display: grid;
   grid-template-columns: var(--grid-columns);
+
+  @media (max-width: ${mediaQueries.phone}) {
+    margin: var(--padding-mobile);
+    display: block;
+  }
 `;
 
 const AboutBlock = styled.div`
   grid-column: 1 / 3;
+
+  @media (max-width: ${mediaQueries.phone}) {
+    padding-top: 20px;
+  }
 `;
 const Title = styled(sectionTitle)``;
 const Text = styled(paragraph)``;
@@ -45,6 +55,10 @@ const Text = styled(paragraph)``;
 const SkillsBlock = styled.div`
   grid-column: 5 / 7;
   padding-left: 20px;
+
+  @media (max-width: ${mediaQueries.phone}) {
+    padding-left: 0px;
+  }
 `;
 
 const Skills = styled.div`

@@ -8,6 +8,7 @@ export const h1 = styled(motion.h1)`
   font-style: normal;
   font-weight: 700;
   line-height: 100%; /* 72px */
+  margin: 0;
 
   @media (max-width: ${mediaQueries.phone}) {
     font-size: 36px;

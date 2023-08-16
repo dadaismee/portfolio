@@ -13,9 +13,6 @@ const Header = ({ type, pages, url }) => {
     { name: 'About', url: `/#about` },
     { name: 'Contact', url: `${location.pathname}#contact` },
   ];
-
-  console.log('url >>', url);
-  console.log('pages >>', pages);
   return (
     <Wrapper
       initial={{

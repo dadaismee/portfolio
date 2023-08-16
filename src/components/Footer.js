@@ -1,9 +1,9 @@
 import React from 'react';
 import { styled } from 'styled-components';
-import { paragraph } from '../styles/TextStyles';
-import { createLogo } from './Header';
-import design from '../images/icons/design.svg';
 import code from '../images/icons/code.svg';
+import design from '../images/icons/design.svg';
+import { mediaQueries } from '../styles/GlobalStyles';
+import { paragraph } from '../styles/TextStyles';
 
 const Footer = () => {
   return (
@@ -26,6 +26,11 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 5px;
+
+  @media (max-width: ${mediaQueries.phone}) {
+    margin: var(--padding-mobile);
+    margin-top: 80px;
+  }
 `;
 
 const Copy = styled(paragraph)`

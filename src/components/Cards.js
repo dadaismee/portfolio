@@ -3,6 +3,7 @@ import { getImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { styled } from 'styled-components';
 import { Card } from '../components/index';
+import { mediaQueries } from '../styles/GlobalStyles';
 
 const Cards = ({ filter }) => {
   const query = useStaticQuery(graphql`
@@ -63,5 +64,10 @@ export const CardsWrapper = styled.div`
 
   &::-webkit-scrollbar {
     display: none;
+  }
+
+  @media (max-width: ${mediaQueries.phone}) {
+    padding: 10px 0px 10px 20px;
+    gap: 20px;
   }
 `;

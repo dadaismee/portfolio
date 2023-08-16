@@ -7,12 +7,10 @@ import { sectionTitle } from '../styles/TextStyles';
 
 const Work = () => {
   const [activeTag, setActiveTag] = useState('All');
-  // const [isClicked, setIsClicked] = useState(false);
 
   const selectTag = (e, tag) => {
     e.preventDefault();
     setActiveTag(tag);
-    // setIsClicked(!isClicked);
   };
 
   return (
@@ -31,13 +29,9 @@ const Work = () => {
       viewport={{ once: true }}>
       <TitleWrapper>
         <SectionTitle>Work</SectionTitle>
-        <FilterButton>Filter</FilterButton>
+        {/* <FilterButton>Filter</FilterButton> */}
       </TitleWrapper>
-      <Tags
-        activeTag={activeTag}
-        handleClick={selectTag}
-        // isClicked={isClicked}
-      />
+      <Tags activeTag={activeTag} handleClick={selectTag} />
       <Cards filter={activeTag} />
     </Wrapper>
   );
@@ -54,16 +48,16 @@ const Wrapper = styled(motion.div)`
 const TitleWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  background-color: #fff;
-  margin: 0 60px 40px;
+  margin: 0 60px 20px;
 
   @media (max-width: ${mediaQueries.phone}) {
-    margin: 20px;
+    margin: 0 20px;
   }
 `;
 
-const SectionTitle = styled(sectionTitle)``;
+const SectionTitle = styled(sectionTitle)`
+  margin: 0;
+`;
 
 const FilterButton = styled(sectionTitle)`
   display: none;
