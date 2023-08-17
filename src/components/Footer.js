@@ -41,5 +41,9 @@ const Branding = styled.div`
   align-items: center;
   justify-content: center;
   gap: 1px;
+
+  @media (max-width: ${mediaQueries.phone}) {
+    display: none;
+  }
 `;
 const Image = styled.img``;

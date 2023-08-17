@@ -51,7 +51,7 @@ const TitleWrapper = styled.div`
   margin: 0 60px 20px;
 
   @media (max-width: ${mediaQueries.phone}) {
-    margin: 0 20px;
+    margin: 0 0 0 20px;
   }
 `;
 

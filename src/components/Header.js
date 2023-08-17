@@ -93,8 +93,8 @@ const Wrapper = styled(motion.div)`
   margin: 20px 60px 40px 60px;
 
   @media (max-width: ${mediaQueries.phone}) {
-    width: 100%;
-    margin: 20px;
+    width: calc(100% - 20px);
+    margin: var(--padding-mobile);
   }
 `;
 
@@ -118,10 +118,6 @@ const Logo = styled.div`
     &:hover {
       transform: translateY(-5px);
     }
-  }
-
-  @media (max-width: ${mediaQueries.phone}) {
-    width: 100%;
   }
 `;
 
@@ -176,6 +172,12 @@ const FlexContainer = styled.div`
     font-weight: bold;
     margin: 0px;
     text-align: center;
+  }
+
+  @media (max-width: ${mediaQueries.phone}) {
+    /* margin: var(--padding-mobile);
+    padding: 10px 0; */
+    display: none;
   }
 `;
 

@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import { styled } from 'styled-components';
 import { Contact, Layout, SEO } from '../components';
 import Arrow from '../images/icons/Arrow.svg';
+import { mediaQueries } from '../styles/GlobalStyles';
 import { h2, paragraph, sectionTitle } from '../styles/TextStyles';
 
 const Project = ({ data }) => {
@@ -141,11 +142,7 @@ const Project = ({ data }) => {
                 <SectionTitle>{detail.title}</SectionTitle>
                 {Boolean(detail.iframes) && (
                   <FrontmatterWrapper style={{ gap: '20px' }}>
-                    {Boolean(detail.text) && (
-                      <Text style={{ width: 'var(--card-width)' }}>
-                        {detail.text}
-                      </Text>
-                    )}
+                    {Boolean(detail.text) && <Text>{detail.text}</Text>}
                     <GridContainer>
                       {detail.iframes.map((iframe, index) => {
                         let style =
@@ -168,36 +165,34 @@ const Project = ({ data }) => {
                   </FrontmatterWrapper>
                 )}
 
-                <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
+                <ImageWrapper>
                   {Boolean(detail.images) &&
                     detail.images.map((image, index) => {
                       const img = getImage(image.image);
                       let imageWidth = 0;
                       {
-                        detail.images.length > 2
-                          ? index % 2 == 0
-                            ? (imageWidth = `calc(100% - var(--card-width) * 2 + 20px)`)
-                            : (imageWidth = `calc(var(--card-width) + 20px)`)
-                          : (imageWidth = `calc(100% - var(--card-width) * 2)`);
+                        {
+                          detail.images.length < 2
+                            ? (imageWidth = `calc(var(--card-width) * 2 + 20px)`)
+                            : (imageWidth = `var(--card-max-width)`);
+                        }
                       }
                       return (
-                        <div
-                          style={{
-                            width: imageWidth,
-                            display: 'flex',
-                            flexDirection: 'column',
-                            gap: '10px',
-                          }}>
-                          <Image image={img} key={index} />
+                        <DetailImageWrapper imageWidth={imageWidth}>
+                          <Image
+                            style={{ width: imageWidth }}
+                            image={img}
+                            key={index}
+                          />
                           {Boolean(image.caption) && (
                             <ProcessStepCaption>
                               {image.caption}
                             </ProcessStepCaption>
                           )}
-                        </div>
+                        </DetailImageWrapper>
                       );
                     })}
-                </div>
+                </ImageWrapper>
               </TextSection>
             );
           })}
@@ -248,16 +243,30 @@ const Wrapper = styled.div`
   * {
     margin: 0px;
   }
+
+  @media (max-width: ${mediaQueries.phone}) {
+    margin: 0;
+    gap: 40px;
+  }
 `;
 
 const Title = styled(h2)`
   font-weight: 400;
+
+  @media (max-width: ${mediaQueries.phone}) {
+    margin: var(--padding-mobile);
+    padding-top: 40px;
+  }
 `;
 
 const FrontmatterWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 40px;
+
+  @media (max-width: ${mediaQueries.phone}) {
+    width: 100%;
+  }
 `;
 
 const GridContainer = styled.div`
@@ -268,6 +277,16 @@ const GridContainer = styled.div`
   * {
     width: var(--card-width);
   }
+
+  @media (max-width: ${mediaQueries.phone}) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    * {
+      width: auto;
+    }
+  }
 `;
 
 const TextSection = styled.div`
@@ -275,6 +294,11 @@ const TextSection = styled.div`
   flex-direction: column;
   gap: 20px;
   grid-column: ${({ column }) => column};
+
+  @media (max-width: ${mediaQueries.phone}) {
+    padding: var(--padding-mobile);
+    gap: 10px;
+  }
 `;
 
 const Tags = styled.div`
@@ -290,6 +314,11 @@ const Icon = styled(GatsbyImage)`
 const Process = styled.div`
   display: flex;
   gap: 5px;
+
+  @media (max-width: ${mediaQueries.phone}) {
+    overflow-x: scroll;
+    margin: 0 -20px;
+  }
 `;
 
 const ProcessStepWrapper = styled.div`
@@ -299,6 +328,11 @@ const ProcessStepWrapper = styled.div`
   gap: 10px;
   width: var(--card-width);
   opacity: ${({ isDone }) => (isDone ? '1' : '0.5')};
+
+  @media (max-width: ${mediaQueries.phone}) {
+    min-width: 300px;
+    padding: 0 20px;
+  }
 `;
 
 const ProcessStepTitle = styled(sectionTitle)`
@@ -326,14 +360,52 @@ const Iframe = styled.iframe`
   border: none; */
   /* border: solid 1px var(--color-text);
   border-radius: var(--border-radius-ext); */
+
+  @media (max-width: ${mediaQueries.phone}) {
+    width: calc(100vw - 40px);
+  }
 `;
 
 const SectionTitle = styled(sectionTitle)``;
-const Text = styled(paragraph)``;
+const Text = styled(paragraph)`
+  width: 'var(--card-width)';
+  @media (max-width: ${mediaQueries.phone}) {
+    width: 100%;
+  }
+`;
 
 const Image = styled(GatsbyImage)`
   border-radius: var(--border-radius-ext);
   height: max-content;
+
+  @media (max-width: ${mediaQueries.phone}) {
+    height: 100%;
+    margin: var(--padding-mobile);
+  }
+`;
+
+const ImageWrapper = styled.div`
+  display: flex;
+  overflow-x: scroll;
+  gap: 20px;
+  margin: 0 -60px;
+  padding: 0 60px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (max-width: ${mediaQueries.phone}) {
+    margin: 0 -20px 0 -40px;
+    padding: 0 40px 0 20px;
+  }
+`;
+
+const DetailImageWrapper = styled.div`
+  width: ${({ imageWidth }) => imageWidth};
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 `;
 
 export const query = graphql`
