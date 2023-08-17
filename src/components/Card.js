@@ -32,11 +32,16 @@ const Card = ({ image, title, description, tags, index, to }) => {
         whileTap={hoverStyles.on}
         transformTemplate={({ y }) => `translateY(-${y}px)`}>
         <Image image={image} alt={title} />
-        <Title>{title}</Title>
-        <Description>
-          {description[0].toUpperCase() + description.slice(1)}
-        </Description>
-        <TagsWrapper>{cardTags}</TagsWrapper>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+          <div
+            style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <Title>{title}</Title>
+            <Description>
+              {description[0].toUpperCase() + description.slice(1)}
+            </Description>
+          </div>
+          <TagsWrapper>{cardTags}</TagsWrapper>
+        </div>
         {/* <Link to={to}> */}
         <Button>Explore</Button>
         {/* </Link> */}
@@ -64,7 +69,7 @@ const Wrapper = styled(motion.div)`
   display: grid;
   box-sizing: border-box;
   width: var(--card-width);
-  min-height: calc(var(--card-max-width) * 1.4);
+  min-height: calc(var(--card-max-width) * 1.35);
   height: auto;
   padding: 1.38vw; // 20px;
   gap: 1.38vw; //20px;
@@ -93,9 +98,9 @@ const Wrapper = styled(motion.div)`
 `;
 
 const Image = styled(GatsbyImage)`
-  height: 100%;
-  max-height: 25vh;
+  height: 25vh;
   border-radius: 15px;
+  object-fit: fill;
   border: 1px solid var(--color-text);
 
   @media (max-width: ${mediaQueries.phone}) {

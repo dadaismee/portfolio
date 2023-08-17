@@ -39,7 +39,7 @@ const Hero = () => {
             },
           }}
           viewport={{ once: true }}>
-          design generalist
+          designer
         </Subtitle>
         <Subtitle
           initial={{

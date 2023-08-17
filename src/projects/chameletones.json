@@ -1,0 +1,47 @@
+{
+  "frontmatter": {
+    "title": "Chameletones",
+    "description": "3D models and landing page for a concept of adaptable headphones",
+    "date": "2023-07-23",
+    "image": "../images/projects/chameletones/main.png",
+    "tags": ["UX/UI", "WebDev"],
+    "url": "chameletones"
+  },
+  "projectData": {
+    "links": {
+      "prod": []
+    },
+    "tools": [
+      {
+        "icon": "../images/icons/figma-icon.png", 
+        "title": "Figma"
+      },
+      {
+        "icon": "../images/icons/react.png", 
+        "title": "React"
+      }
+    ],
+    "task": "To create a concept of a non-existent product, model it in 3D and pack into a landing to practice modeling",
+    "whyExists": "",
+    "process": [
+      {
+        "title": "Coding",
+        "image":"../images/projects/random-variable/process-step-1.png",
+        "isDone": true,
+        "caption": "I decided to teach myself to code and iterated a lot until got something interesting"
+      },
+      {
+        "title": "Printing",
+        "image":"../images/projects/random-variable/process-step-2.png",
+        "isDone": true,
+        "caption": "After generating 100s of images, I selected 9, printed and framed them"
+      },
+      {
+        "title": "Exhibition",
+        "image":"../images/projects/random-variable/process-step-3.png",
+        "isDone": true,
+        "caption": "With the venue owner, we mounted the pieces and the installation"
+      }     
+    ]
+  }
+  } 

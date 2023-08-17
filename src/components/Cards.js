@@ -56,11 +56,11 @@ const Cards = ({ filter }) => {
 export default Cards;
 
 export const CardsWrapper = styled.div`
-  display: grid;
-  grid-template-columns: var(--grid-columns);
+  display: flex;
+  /* grid-template-columns: var(--grid-columns); */
   gap: 1.38vw; //20px;
   overflow-x: scroll;
-  padding: 10px 0 20px 60px;
+  padding: 10px 60px 20px;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 

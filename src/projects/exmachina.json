@@ -1,0 +1,59 @@
+{
+  "frontmatter": {
+    "title": "ex machina",
+    "description": "8-channel generative sound installation",
+    "date": "2021-06-16",
+    "image": "../images/projects/exmachina/main.png",
+    "tags": ["Art"],
+    "url": "ex-machina"
+  },
+  "projectData": {
+    "links": {
+      "prod": []
+    },
+    "tools": [
+      {
+        "icon": "../images/icons/tidalcycles.png", 
+        "title": "Tidal Cycles"
+      }
+    ],
+    "task": "To reflect on an idea that if an artist is a systems architect, and not a producer of individual objects, then how to determine the ontological and legal boundaries of systems producing objects?",
+    "whyExists": "The work is the code written in TidalCycles environment and executed autonomously, 8-channel audio generated in real time, and a wall projection of the code. A generative algorithm creates endless sound art piece by randomizing the combination of samples and effects.",
+    "process": [
+      {
+        "title": "Coding",
+        "image":"../images/projects/exmachina/process-step-1.png",
+        "isDone": true,
+        "caption": "Since I used Tidal to play live coding sets, I started by scripting the generative sequence"
+      },
+      {
+        "title": "Testing and setup",
+        "image":"../images/projects/exmachina/main.png",
+        "isDone": true,
+        "caption": "I spent hours trying to make the installation work on 8-channel setup, but it eventually worked"
+      },
+      {
+        "title": "Exhibition",
+        "image":"../images/projects/exmachina/process-step-3.png",
+        "isDone": true,
+        "caption": "Me at the exhibition opening, showing that it is safe to come and overall QUALITY ASSURED"
+      }     
+    ],
+    "details": [
+      {
+        "title": "Documentation",
+        "iframes": [
+          {
+            "src": "https://player.vimeo.com/video/855490624?h=17acfc7e3a",
+            "caption": "Working installation"
+          },
+          {
+            "src": "https://bandcamp.com/EmbeddedPlayer/album=325046453/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/track=1487315792/transparent=true/",
+            "caption": "Live-coded version"            
+          }
+        ]
+      }
+    ],
+    "results": "Self-titled solo exhibition at SA_)))gallery, Moscow, from June to August 2021."
+    }
+  } 

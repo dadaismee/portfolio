@@ -29,7 +29,6 @@ const Work = () => {
       viewport={{ once: true }}>
       <TitleWrapper>
         <SectionTitle>Work</SectionTitle>
-        {/* <FilterButton>Filter</FilterButton> */}
       </TitleWrapper>
       <Tags activeTag={activeTag} handleClick={selectTag} />
       <Cards filter={activeTag} />
@@ -57,15 +56,4 @@ const TitleWrapper = styled.div`
 
 const SectionTitle = styled(sectionTitle)`
   margin: 0;
-`;
-
-const FilterButton = styled(sectionTitle)`
-  display: none;
-
-  @media (max-width: ${mediaQueries.phone}) {
-    display: inline-flex;
-    border: 1px solid var(--color-text);
-    border-radius: 15px;
-    padding: 10px 20px;
-  }
 `;

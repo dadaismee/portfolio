@@ -60,17 +60,3 @@ const Tag = styled(menuAndTags)`
     color: var(--color-text);
   }
 `;
-
-// const tagVariants = {
-//   unclicked: {
-//     padding: '10px 0px',
-//     border: 'none',
-//     color: 'var(--color-disabled)',
-//   },
-//   clicked: {
-//     padding: '10px 20px',
-//     border: 'solid 1px',
-//     borderRadius: '5px',
-//     color: 'var(--color-text)',
-//   },
-// };

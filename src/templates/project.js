@@ -154,15 +154,17 @@ const Project = ({ data }) => {
                             ? 'height: var(--card-width);  width: var(--card-width); border: solid 1px var(--color-text); border-radius: var(--border-radius-ext);'
                             : 'height: calc(var(--card-width) * 1.5); width: calc(var(--card-width) * 2 + 20px); border: none;';
                         return (
-                          <FrontmatterWrapper style={{ gap: '10px' }}>
-                            <Iframe
-                              key={index}
-                              src={iframe.src}
-                              styles={style}></Iframe>
-                            <ProcessStepCaption>
-                              {iframe.caption}
-                            </ProcessStepCaption>
-                          </FrontmatterWrapper>
+                          <Zoom>
+                            <FrontmatterWrapper style={{ gap: '10px' }}>
+                              <Iframe
+                                key={index}
+                                src={iframe.src}
+                                styles={style}></Iframe>
+                              <ProcessStepCaption>
+                                {iframe.caption}
+                              </ProcessStepCaption>
+                            </FrontmatterWrapper>
+                          </Zoom>
                         );
                       })}
                     </GridContainer>
@@ -230,7 +232,7 @@ const ProcessStep = ({ title, image, caption, isDone }) => (
         alignItems: 'center',
         backgroundColor:
           image.backgroundColor === '#080808'
-            ? 'var(--color-main'
+            ? 'var(--color-main)'
             : image.backgroundColor,
         height: '100%',
         borderRadius: 'var(--border-radius-ext)',
@@ -366,11 +368,6 @@ const ProcessStepCaption = styled(paragraph)`
 
 const Iframe = styled.iframe`
   ${({ styles }) => styles};
-  /* height: calc(var(--card-width) * 1.5);
-  width: calc(var(--card-width) * 2 + 20px);
-  border: none; */
-  /* border: solid 1px var(--color-text);
-  border-radius: var(--border-radius-ext); */
 
   @media (max-width: ${mediaQueries.phone}) {
     width: calc(100vw - 40px);
@@ -387,7 +384,7 @@ const Text = styled(paragraph)`
 
 const Image = styled(GatsbyImage)`
   border-radius: var(--border-radius-ext);
-  height: max-content;
+  width: 100%;
 
   @media (max-width: ${mediaQueries.phone}) {
     height: 100%;
