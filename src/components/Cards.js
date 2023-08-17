@@ -59,8 +59,10 @@ export const CardsWrapper = styled.div`
   display: grid;
   grid-template-columns: var(--grid-columns);
   gap: 1.38vw; //20px;
-  overflow-x: auto;
+  overflow-x: scroll;
   padding: 10px 0 20px 60px;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 
   &::-webkit-scrollbar {
     display: none;

@@ -1,6 +1,8 @@
 import { graphql, navigate } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React, { useEffect } from 'react';
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css';
 import { styled } from 'styled-components';
 import { Contact, Layout, SEO } from '../components';
 import Arrow from '../images/icons/Arrow.svg';
@@ -116,7 +118,9 @@ const Project = ({ data }) => {
               <Text>{task}</Text>
             </TextSection>
           </GridContainer>
-          <Image image={img} alt={title} />
+          <Zoom>
+            <Image image={img} alt={title} />
+          </Zoom>
         </FrontmatterWrapper>
         <GridContainer>
           <TextSection column='1 / 3'>
@@ -179,11 +183,14 @@ const Project = ({ data }) => {
                       }
                       return (
                         <DetailImageWrapper imageWidth={imageWidth}>
-                          <Image
-                            style={{ width: imageWidth }}
-                            image={img}
-                            key={index}
-                          />
+                          <Zoom>
+                            <Image
+                              style={{ width: imageWidth }}
+                              image={img}
+                              key={index}
+                              alt={image.title}
+                            />
+                          </Zoom>
                           {Boolean(image.caption) && (
                             <ProcessStepCaption>
                               {image.caption}
@@ -228,7 +235,9 @@ const ProcessStep = ({ title, image, caption, isDone }) => (
         height: '100%',
         borderRadius: 'var(--border-radius-ext)',
       }}>
-      <Image image={image} />
+      <Zoom>
+        <Image image={image} />
+      </Zoom>
     </div>
     {Boolean(caption) && <ProcessStepCaption>{caption}</ProcessStepCaption>}
   </ProcessStepWrapper>
@@ -318,6 +327,8 @@ const Process = styled.div`
   @media (max-width: ${mediaQueries.phone}) {
     overflow-x: scroll;
     margin: 0 -20px;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
 `;
 
@@ -390,6 +401,8 @@ const ImageWrapper = styled.div`
   gap: 20px;
   margin: 0 -60px;
   padding: 0 60px;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 
   &::-webkit-scrollbar {
     display: none;
