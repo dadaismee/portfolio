@@ -69,28 +69,24 @@ const Skills = styled.div`
 
 const skills = [
   {
-    title: 'LX design / Production',
+    title: 'LX Design / Product Management',
     level: 90,
   },
   {
-    title: 'Product Management',
+    title: 'UX/UI Design',
     level: 75,
   },
   {
-    title: 'UX/UI Design',
+    title: 'Web Development',
     level: 70,
   },
   {
     title: 'Brand Design',
-    level: 65,
-  },
-  {
-    title: 'Web Development',
     level: 60,
   },
   {
     title: 'Creative Coding',
-    level: 55,
+    level: 65,
   },
   {
     title: '3D (Blender)',
