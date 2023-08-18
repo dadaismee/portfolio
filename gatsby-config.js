@@ -6,7 +6,7 @@ module.exports = {
     DEV_SSR: true,
   },
   siteMetadata: {
-    title: `Valerii Shevchenko`,
+    title: `Valerii Shevchenko | Designer`,
     description: `Designer, web developer and ed product manager`,
     siteUrl: `https://www.yourdomain.tld`,
     image: `/images/icon.png`,

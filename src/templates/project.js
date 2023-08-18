@@ -286,9 +286,8 @@ const FrontmatterWrapper = styled.div`
 `;
 
 const GridContainer = styled.div`
-  /* display: grid; */
-  /* grid-template-columns: var(--grid-columns); */
-  display: flex;
+  display: grid;
+  grid-template-columns: var(--grid-columns);
   gap: 20px;
 
   * {
@@ -309,7 +308,7 @@ const GridContainer = styled.div`
 const TextSection = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
   grid-column: ${({ column }) => column};
 
   @media (max-width: ${mediaQueries.phone}) {
@@ -506,5 +505,7 @@ export const query = graphql`
 
 export const Head = ({ data }) => {
   const { title, description } = data.projectsJson.frontmatter;
-  return <SEO title={title + ' | V--S project'} description={description} />;
+  return (
+    <SEO title={title + ' | Valerii Shevchenko'} description={description} />
+  );
 };

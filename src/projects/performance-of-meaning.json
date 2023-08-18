@@ -17,26 +17,26 @@
         "title": "p5.js"
       }
     ],
-    "task": "To reflect on the relationship between reflexivity and contingency by creating a generative algorithm producing pleasing abstract works and exhibit it.",
+    "task": "To create a commissioned interactive artwork for 'Art of the future' Biennal Moscow and reflect on the relationship between reflexivity and contingency by creating a generative algorithm producing pleasing abstract works and exhibit it.",
     "whyExists": "The project uses generative algorithm written in p5.js that defines color palettes, shapes and direction of their movement for each time the program runs. An installation lets visitors create their own artworks like these.",
     "process": [
       {
         "title": "Coding",
-        "image":"../images/projects/random-variable/process-step-1.png",
+        "image":"../images/projects/performance-of-meaning/process-step-1.png",
         "isDone": true,
-        "caption": "I decided to teach myself to code and iterated a lot until got something interesting"
+        "caption": "The curators of MAMM asked me to create an artwork. I developed one algorithm and its three variations"
       },
       {
-        "title": "Printing",
-        "image":"../images/projects/random-variable/process-step-2.png",
+        "title": "Testing",
+        "image":"../images/projects/performance-of-meaning/process-step-2.png",
         "isDone": true,
-        "caption": "After generating 100s of images, I selected 9, printed and framed them"
+        "caption": "Tested and calibrated it on different screens "
       },
       {
         "title": "Exhibition",
-        "image":"../images/projects/random-variable/process-step-3.png",
+        "image":"../images/projects/performance-of-meaning/main.png",
         "isDone": true,
-        "caption": "With the venue owner, we mounted the pieces and the installation"
+        "caption": "Exhibited the work along such artists like Stanza and Nonotak Studio"
       }     
     ],
     "details": [
@@ -57,46 +57,7 @@
             "caption": "Algorithm 3"
           }
         ]
-      },
-      {
-        "title": "Artworks",
-        "text": "",
-        "images": [
-          {
-            "image": "../images/projects/random-variable/image-1.png",
-            "caption": ""
-          },
-          {
-            "image": "../images/projects/random-variable/image-2.png",
-            "caption": ""
-          },
-          {
-            "image": "../images/projects/random-variable/image-3.png",
-            "caption": ""
-          },
-          {
-            "image": "../images/projects/random-variable/image-4.png",
-            "caption": ""
-          },
-          {
-            "image": "../images/projects/random-variable/image-5.png",
-            "caption": ""
-          },
-          {
-            "image": "../images/projects/random-variable/image-6.png",
-            "caption": ""
-          },
-          {
-            "image": "../images/projects/random-variable/image-7.png",
-            "caption": ""
-          },
-          {
-            "image": "../images/projects/random-variable/image-8.png",
-            "caption": "I also designed a custom cup for the time of exhibition"
-          }
-        ]
       }
-    ],
-    "results": "Solo exhibiton at Prosvet Coffee in Moscow from January to April 2022. 2/9 pieces sold."
+    ]
     }
   } 

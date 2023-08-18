@@ -10,11 +10,7 @@ const Tags = ({ activeTag, handleClick }) => {
         <Tag
           key={index}
           active={activeTag === tag}
-          onClick={(e) => handleClick(e, tag)}
-          // variants={tagVariants}
-          // initial='unclicked'
-          // animate={isClicked ? 'clicked' : 'unclicked'}
-        >
+          onClick={(e) => handleClick(e, tag)}>
           {tag}
         </Tag>
       ))}
@@ -24,15 +20,7 @@ const Tags = ({ activeTag, handleClick }) => {
 
 export default Tags;
 
-export const tagsData = [
-  'All',
-  'PM/LX',
-  'UX/UI',
-  'Branding',
-  'WebDev',
-  '3D',
-  'Art',
-];
+export const tagsData = ['All', 'PM/LX', 'UX/UI', 'Branding', 'WebDev', 'Art'];
 
 const Wrapper = styled.div`
   display: inline-flex;

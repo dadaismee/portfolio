@@ -45,7 +45,8 @@
         "text": "The image generation follows user's gesture (or mouse). You can try it yourself!",
         "iframes": [
           {
-            "src": "https://sepia-neighborly-trade.glitch.me"
+            "src": "https://sepia-neighborly-trade.glitch.me",
+            "height": "500px"
           }
         ]
       },

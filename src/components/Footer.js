@@ -8,12 +8,12 @@ import { paragraph } from '../styles/TextStyles';
 const Footer = () => {
   return (
     <Wrapper>
-      <Copy>V--S © {new Date().getFullYear()}</Copy>
+      <Copy>Valerii Shevchenko © {new Date().getFullYear()}</Copy>
       <Branding>
         <Image src={design} />
         /
         <Image src={code} style={{ marginRight: '5px' }} />
-        <Copy>by V--S</Copy>
+        <Copy>by V-S</Copy>
       </Branding>
     </Wrapper>
   );
