@@ -69,7 +69,7 @@ export const CardsWrapper = styled.div`
   }
 
   @media (max-width: ${mediaQueries.phone}) {
-    padding: 10px 0px 10px 20px;
+    padding: 10px 20px 10px 20px;
     gap: 20px;
   }
 `;

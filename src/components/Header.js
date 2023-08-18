@@ -170,7 +170,7 @@ const FlexContainer = styled.div`
   p {
     font-size: 12px;
     font-weight: bold;
-    margin: 0px;
+    margin: 5px 0;
     text-align: center;
   }
 

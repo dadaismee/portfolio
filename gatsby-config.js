@@ -7,7 +7,7 @@ module.exports = {
   },
   siteMetadata: {
     title: `Valerii Shevchenko`,
-    description: `Design, product management and web development services by design generalist and creative coder Valerii Shevchenko`,
+    description: `Designer, web developer and ed product manager`,
     siteUrl: `https://www.yourdomain.tld`,
     image: `/images/icon.png`,
   },

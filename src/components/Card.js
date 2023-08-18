@@ -54,9 +54,9 @@ export default Card;
 
 const hoverStyles = {
   on: {
-    background: 'var(--color-accent)',
     boxShadow: 'var(--main-shadow)',
-    transform: 'translateY(-10px)',
+    transition: { duration: 0.25 },
+    delay: 0.5,
   },
   off: {
     background: 'transparent',
@@ -92,8 +92,8 @@ const Wrapper = styled(motion.div)`
   @media (max-width: ${mediaQueries.phone}) {
     padding: 20px;
     gap: 20px;
-    width: 300px;
-    max-height: calc(var(--card-max-width) * 1.125);
+    width: 70vw;
+    min-height: calc(var(--card-max-width) * 1);
   }
 `;
 
@@ -104,6 +104,7 @@ const Image = styled(GatsbyImage)`
   border: 1px solid var(--color-text);
 
   @media (max-width: ${mediaQueries.phone}) {
+    height: 19vh;
     min-height: auto;
   }
 `;

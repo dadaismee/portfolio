@@ -150,21 +150,26 @@ const Project = ({ data }) => {
                     <GridContainer>
                       {detail.iframes.map((iframe, index) => {
                         let style =
-                          detail.iframes.length > 1
+                          detail.iframes.length >= 2
                             ? 'height: var(--card-width);  width: var(--card-width); border: solid 1px var(--color-text); border-radius: var(--border-radius-ext);'
-                            : 'height: calc(var(--card-width) * 1.5); width: calc(var(--card-width) * 2 + 20px); border: none;';
+                            : 'height: 100%; width: calc(var(--card-width) * 2 + 20px); border: none;';
+
                         return (
-                          <Zoom>
-                            <FrontmatterWrapper style={{ gap: '10px' }}>
-                              <Iframe
-                                key={index}
-                                src={iframe.src}
-                                styles={style}></Iframe>
-                              <ProcessStepCaption>
-                                {iframe.caption}
-                              </ProcessStepCaption>
-                            </FrontmatterWrapper>
-                          </Zoom>
+                          <FrontmatterWrapper
+                            style={{
+                              gap: '10px',
+                            }}>
+                            <Iframe
+                              key={index}
+                              src={iframe.src}
+                              styles={style}
+                              width={iframe.width}
+                              height={iframe.height}
+                              allowFullscreen={iframe.allowFullscreen}></Iframe>
+                            <ProcessStepCaption>
+                              {iframe.caption}
+                            </ProcessStepCaption>
+                          </FrontmatterWrapper>
                         );
                       })}
                     </GridContainer>
@@ -281,8 +286,9 @@ const FrontmatterWrapper = styled.div`
 `;
 
 const GridContainer = styled.div`
-  display: grid;
-  grid-template-columns: var(--grid-columns);
+  /* display: grid; */
+  /* grid-template-columns: var(--grid-columns); */
+  display: flex;
   gap: 20px;
 
   * {
@@ -368,6 +374,10 @@ const ProcessStepCaption = styled(paragraph)`
 
 const Iframe = styled.iframe`
   ${({ styles }) => styles};
+  position: relative;
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
+  object-fit: cover;
 
   @media (max-width: ${mediaQueries.phone}) {
     width: calc(100vw - 40px);
@@ -377,6 +387,7 @@ const Iframe = styled.iframe`
 const SectionTitle = styled(sectionTitle)``;
 const Text = styled(paragraph)`
   width: 'var(--card-width)';
+
   @media (max-width: ${mediaQueries.phone}) {
     width: 100%;
   }
@@ -384,10 +395,10 @@ const Text = styled(paragraph)`
 
 const Image = styled(GatsbyImage)`
   border-radius: var(--border-radius-ext);
-  width: 100%;
 
   @media (max-width: ${mediaQueries.phone}) {
-    height: 100%;
+    width: auto;
+    /* height: 100%; */
     margin: var(--padding-mobile);
   }
 `;
@@ -465,6 +476,9 @@ export const query = graphql`
           iframes {
             src
             caption
+            width
+            height
+            allowFullscreen
           }
           images {
             image {

@@ -44,7 +44,9 @@
         "title": "Prototype",
         "iframes": [
           {
-            "src": "https://player.vimeo.com/video/490655996?h=648271119f"
+            "src": "https://player.vimeo.com/video/490655996?h=648271119f",
+            "width": "50vw",
+            "height": "29vw"
           }
         ]
       }

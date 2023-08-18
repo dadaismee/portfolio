@@ -44,12 +44,18 @@
         "title": "Documentation",
         "iframes": [
           {
+            "text": "First iframe",
             "src": "https://player.vimeo.com/video/855490624?h=17acfc7e3a",
+            "width": "",
+            "height": "",
+            "allowFullscreen": "allowFullscreen",
             "caption": "Working installation"
           },
           {
-            "src": "https://bandcamp.com/EmbeddedPlayer/album=325046453/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/track=1487315792/transparent=true/",
-            "caption": "Live-coded version"            
+            "src": "https://bandcamp.com/EmbeddedPlayer/album=325046453/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=true/transparent=false/",
+            "width": "var(--card-width)",
+            "height": "var(--card-width)",
+            "caption": "Live-coded version"         
           }
         ]
       }

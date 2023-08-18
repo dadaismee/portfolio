@@ -9,7 +9,7 @@
   },
   "projectData": {
     "links": {
-      "prod": ["https://konspekt.netlify.app, https://github.com/dadaismee/konspekt-website"],
+      "prod": ["https://konspekt.netlify.app", "https://github.com/dadaismee/konspekt-website"],
       "github": "https://github.com/dadaismee/konspekt-website"
     },
     "tools": [
