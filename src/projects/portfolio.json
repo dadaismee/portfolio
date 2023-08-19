@@ -93,7 +93,7 @@
       },
       {
         "title": "Development",
-        "text": "The project is written in Gatsby which is a framework on top of React, Styled Components and Framer Motion for animations.",
+        "text": "The project is written in Gatsby, GraphQL (as seen in Gatsby), Styled Components and Framer Motion for animations.",
         "images": [
           {
             "image": "../images/projects/portfolio/process-step-2.png"
