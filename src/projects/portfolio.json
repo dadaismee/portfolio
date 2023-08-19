@@ -33,8 +33,8 @@
         "title": "Framer Motion"
       }
     ],
-    "task": "To showcase my design and development skills by building a portfolio site with convenient UX centered around my work.",
-    "whyExists": "Please, see the detailed exaplanation of design decisions below.",
+    "task": "To make a fast online showcase of my design and development works with convenient UX and centered around my work",
+    "whyExists": "Design portfolios are often quite large, and if they are online, they might be slow. I wanted to make a fast online portfolio whose which is easy to maintain and whose speed does not depend on the amount of projects added. See the detailed exaplanation of design decisions below.",
     "process": [
       {
         "title": "UX Design",
