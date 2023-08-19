@@ -6,7 +6,7 @@ module.exports = {
     DEV_SSR: true,
   },
   siteMetadata: {
-    title: `Valerii Shevchenko | Designer`,
+    title: `Valerii Shevchenko`,
     description: `Designer, web developer and ed product manager`,
     siteUrl: `https://www.yourdomain.tld`,
     image: `/images/icon.png`,
@@ -47,6 +47,7 @@ module.exports = {
       resolve: 'gatsby-plugin-anchor-links',
       options: {
         duration: 1000,
+        offset: -50,
       },
     },
     `gatsby-plugin-image`,

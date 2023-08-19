@@ -33,25 +33,25 @@
         "title": "Framer Motion"
       }
     ],
-    "task": "To make a fast online showcase of my design and development works with convenient UX and centered around my work",
-    "whyExists": "Design portfolios are often quite large, and if they are online, they might be slow. I wanted to make a fast online portfolio whose which is easy to maintain and whose speed does not depend on the amount of projects added. See the detailed exaplanation of design decisions below.",
+    "task": "To make a lighweight online showcase of my design and development works with convenient UX and centered around my work",
+    "whyExists": "Design portfolios are often quite large, and if they are online, they might be slow. I wanted to make a fast online portfolio which is easy to maintain and whose speed does not depend on the amount of projects added. See the detailed exaplanation of design decisions below.",
     "process": [
       {
         "title": "UX Design",
         "image":"../images/projects/portfolio/user-flow.jpeg",
         "isDone": true,
-        "caption": "i wanted users to come to the contacts section from iether main page or a project page"
+        "caption": "i wanted users to come to the contacts section from either the main page or a project page"
       },
       {
         "title": "UI Design",
         "image":"../images/projects/portfolio/process-step-1.png",
         "isDone": true,
-        "caption": "Filters and horizontal scroll easy navigation to all the sections"
+        "caption": "Filters and horizontal scroll for easy navigation to all the sections"
       },
       {
         "title": "System Design",
         "image":"../images/projects/portfolio/process-step-3.png",
-        "caption": "To add a project, I need to make a new JSON file from template and fill several fields",
+        "caption": "To add a project, I need to make a new JSON file from a template and fill in several fields",
         "isDone": true
       },
       {
@@ -64,7 +64,7 @@
     "details": [
       {
         "title": "UX Design",
-        "text": "I wanted to make an accent on my work, so I decided to build UX and UI around this. On the UX side, i wanted users to come to the contacts section from iether main page or a project page as depicted on the image on the side.",
+        "text": "I wanted to make an accent on my work, so I decided to build UX and UI around this. On the UX side, I wanted users to come to the contact section from either the main page or a project page as shown on the image on the side.",
         "images": [
           {
             "image": "../images/projects/portfolio/user-flow.jpeg",
@@ -74,7 +74,7 @@
       },
       {
         "title": "UI Design",
-        "text": "As I wanted users to view different aspects of my work in a non-exhausting way, without constant scrolling, I descided to use filters and horizontal scroll, to enable them to easily navigate to all the sections on the page.",
+        "text": "As I wanted users to view different aspects of my work in a non-exhausting way and without constant vertical scrolling, I descided to use filters and horizontal scroll easy navigation to all the sections of the page.",
         "images": [
           {
             "image": "../images/projects/portfolio/process-step-1.png"
@@ -83,7 +83,7 @@
       },
       {
         "title": "System Design",
-        "text": "I needed both user-friendliness and maintanability for the site, so I can add projects easily. I decided to use Gatsby, for it is brilliant at static site generation, and this is what I wanted: to create project pages dynamically from a DIY template and a Markdown file. However, I was not satisfied with the rendering of Markdown in Gatsby (it is too narrow, and I need more fine-grained control), so I opted for JSON as project data files.",
+        "text": "I needed both user-friendliness and maintanability for the site to add projects easily. I decided to use Gatsby, for it is brilliant at static site generation, and this is what I wanted: to create project pages dynamically from a DIY template and a Markdown file. However, I was not satisfied with the rendering of Markdown in Gatsby (it is too narrow, and I needed more granular control), so I opted for JSON as project data files.",
         "longtext": "This very text is written in JSON. So I wrote a detailed template — a huge React component to account for many possible scenarios like using one or more iframes, images or different sections. By the time I finished, I have realized having reinvented an admin panel, which immediately made me feel not so cool and clever. But I feel good anyway!",
         "images": [
           {
@@ -93,7 +93,7 @@
       },
       {
         "title": "Development",
-        "text": "The project is written in Gatsby using Styled Components and Framer Motion for animations. I am now learning TypeScript.",
+        "text": "The project is written in Gatsby which is a framework on top of React, Styled Components and Framer Motion for animations.",
         "images": [
           {
             "image": "../images/projects/portfolio/process-step-2.png"
@@ -102,7 +102,7 @@
       },
       {
         "title": "Bonus",
-        "text": "As you might have noticed, I love recursuin jokes."
+        "text": "As you might have noticed, I love jokes involving recursion."
       }
     ]
     }

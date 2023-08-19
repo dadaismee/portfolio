@@ -14,11 +14,11 @@ const About = () => {
       <AboutBlock>
         <Title>About</Title>
         <Text>
-          Valerii Shevchenko designs and develops websites and apps and manages
-          educational products about programming (mostly courses) at Practicum.
-          He leverages his unique blend of experise in education, product
-          management, generative art and design to ship thoughtful, conceptual
-          and modern products.
+          Hi there! I design and develop websites and manage educational
+          products. I leverage my blend of experise in education, product
+          management, design and generative art to ship thoughtful, conceptual
+          and modern products. In my spare time, I juggle doing a PhD in
+          philosophy of science and hanging out with my family.
         </Text>
       </AboutBlock>
       <SkillsBlock>
@@ -55,6 +55,9 @@ const Text = styled(paragraph)``;
 const SkillsBlock = styled.div`
   grid-column: 5 / 7;
   padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 
   @media (max-width: ${mediaQueries.phone}) {
     padding-left: 0px;

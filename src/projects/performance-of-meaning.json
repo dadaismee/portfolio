@@ -42,7 +42,6 @@
     "details": [
       {
         "title": "Prototype",
-        "text": "The image generation follows user's gesture (or mouse). You can try it yourself!",
         "iframes": [
           {
             "src": "https://performance-of-meaning-1-basic.glitch.me/",
