@@ -11,7 +11,6 @@ const Contact = () => {
       <Title>Contact</Title>
       <ContentWrapper>
         <ButtonBlock>
-          <BlockTitle>Send an email</BlockTitle>
           <a
             href='mailto:valerii.s.shevchenko@gmail.com?subject=PROJECT INQUIRY&body=Hi, Valerii! %0D%0A %0D%0A I have a project in mind. Here are the details. %0D%0A %0D%0A Task: %0D%0A %0D%0A Context: %0D%0A %0D%0A Budget: %0D%0A %0D%0A Desirable deadline: %0D%0A %0D%0A …'
             target='_blank'>
@@ -21,7 +20,6 @@ const Contact = () => {
           </a>
         </ButtonBlock>
         <ButtonBlock>
-          <BlockTitle>Write in Telegram</BlockTitle>
           <a href='https://t.me/emsiadad' target='_blank'>
             <Button>
               <img src={telegram} />
@@ -36,14 +34,19 @@ const Contact = () => {
 export default Contact;
 
 const Wrapper = styled.div`
-  margin: 0 60px;
+  margin: 60px 60px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 
   @media (max-width: ${mediaQueries.phone}) {
     margin: var(--padding-mobile);
   }
 `;
 
-const Title = styled(sectionTitle)``;
+const Title = styled(sectionTitle)`
+  margin: 0;
+`;
 
 const ContentWrapper = styled.div`
   display: flex;

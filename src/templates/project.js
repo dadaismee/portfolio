@@ -144,69 +144,85 @@ const Project = ({ data }) => {
             return (
               <TextSection key={index}>
                 <SectionTitle>{detail.title}</SectionTitle>
-                {Boolean(detail.iframes) && (
-                  <FrontmatterWrapper style={{ gap: '20px' }}>
-                    {Boolean(detail.text) && <Text>{detail.text}</Text>}
-                    <GridContainer>
-                      {detail.iframes.map((iframe, index) => {
-                        let style =
-                          detail.iframes.length >= 2
-                            ? 'height: var(--card-width);  width: var(--card-width); border: solid 1px var(--color-text); border-radius: var(--border-radius-ext);'
-                            : 'height: 100%; width: calc(var(--card-width) * 2 + 20px); border: none;';
+                <FlexContainer>
+                  {Boolean(detail.text) && (
+                    <div
+                      style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '10px',
+                      }}>
+                      <Text>{detail.text}</Text>
+                      {Boolean(detail.longtext) && (
+                        <Text>{detail.longtext}</Text>
+                      )}
+                    </div>
+                  )}
+                  {Boolean(detail.iframes) && (
+                    <FrontmatterWrapper style={{ gap: '20px' }}>
+                      <GridContainer>
+                        {detail.iframes.map((iframe, index) => {
+                          let style =
+                            detail.iframes.length >= 2
+                              ? 'height: var(--card-width);  width: var(--card-width); border: solid 1px var(--color-text); border-radius: var(--border-radius-ext);'
+                              : 'height: 100%; width: calc(var(--card-width) * 2 + 20px); border: none;';
 
+                          return (
+                            <FrontmatterWrapper
+                              style={{
+                                gap: '10px',
+                              }}>
+                              <Iframe
+                                key={index}
+                                src={iframe.src}
+                                styles={style}
+                                width={iframe.width}
+                                height={iframe.height}
+                                allowFullscreen={
+                                  iframe.allowFullscreen
+                                }></Iframe>
+                              <ProcessStepCaption>
+                                {iframe.caption}
+                              </ProcessStepCaption>
+                            </FrontmatterWrapper>
+                          );
+                        })}
+                      </GridContainer>
+                    </FrontmatterWrapper>
+                  )}
+
+                  <ImageWrapper>
+                    {Boolean(detail.images) &&
+                      detail.images.map((image, index) => {
+                        const img = getImage(image.image);
+                        let imageWidth = 0;
+                        {
+                          {
+                            detail.images.length < 2
+                              ? (imageWidth = `calc(var(--card-width) * 2)`)
+                              : (imageWidth = `var(--card-max-width)`);
+                          }
+                        }
                         return (
-                          <FrontmatterWrapper
-                            style={{
-                              gap: '10px',
-                            }}>
-                            <Iframe
-                              key={index}
-                              src={iframe.src}
-                              styles={style}
-                              width={iframe.width}
-                              height={iframe.height}
-                              allowFullscreen={iframe.allowFullscreen}></Iframe>
-                            <ProcessStepCaption>
-                              {iframe.caption}
-                            </ProcessStepCaption>
-                          </FrontmatterWrapper>
+                          <DetailImageWrapper imageWidth={imageWidth}>
+                            <Zoom>
+                              <Image
+                                style={{ width: imageWidth }}
+                                image={img}
+                                key={index}
+                                alt={image.title}
+                              />
+                            </Zoom>
+                            {Boolean(image.caption) && (
+                              <ProcessStepCaption>
+                                {image.caption}
+                              </ProcessStepCaption>
+                            )}
+                          </DetailImageWrapper>
                         );
                       })}
-                    </GridContainer>
-                  </FrontmatterWrapper>
-                )}
-
-                <ImageWrapper>
-                  {Boolean(detail.images) &&
-                    detail.images.map((image, index) => {
-                      const img = getImage(image.image);
-                      let imageWidth = 0;
-                      {
-                        {
-                          detail.images.length < 2
-                            ? (imageWidth = `calc(var(--card-width) * 2 + 20px)`)
-                            : (imageWidth = `var(--card-max-width)`);
-                        }
-                      }
-                      return (
-                        <DetailImageWrapper imageWidth={imageWidth}>
-                          <Zoom>
-                            <Image
-                              style={{ width: imageWidth }}
-                              image={img}
-                              key={index}
-                              alt={image.title}
-                            />
-                          </Zoom>
-                          {Boolean(image.caption) && (
-                            <ProcessStepCaption>
-                              {image.caption}
-                            </ProcessStepCaption>
-                          )}
-                        </DetailImageWrapper>
-                      );
-                    })}
-                </ImageWrapper>
+                  </ImageWrapper>
+                </FlexContainer>
               </TextSection>
             );
           })}
@@ -385,7 +401,7 @@ const Iframe = styled.iframe`
 
 const SectionTitle = styled(sectionTitle)``;
 const Text = styled(paragraph)`
-  width: 'var(--card-width)';
+  width: var(--card-width);
 
   @media (max-width: ${mediaQueries.phone}) {
     width: 100%;
@@ -426,6 +442,16 @@ const DetailImageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+`;
+
+const FlexContainer = styled.div`
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+
+  @media (max-width: ${mediaQueries.phone}) {
+    flex-direction: column;
+  }
 `;
 
 export const query = graphql`
@@ -472,6 +498,7 @@ export const query = graphql`
         details {
           title
           text
+          longtext
           iframes {
             src
             caption

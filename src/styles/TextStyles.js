@@ -33,7 +33,8 @@ export const sectionTitle = styled.h3`
   font-style: normal;
   font-weight: 700;
   line-height: 100%; /* 32px */
-  margin-bottom: 20px;
+  margin: 0;
+  /* margin-bottom: 20px; */
 
   @media (max-width: ${mediaQueries.phone}) {
     font-size: 24px;

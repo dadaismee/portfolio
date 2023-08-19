@@ -98,7 +98,7 @@ const Wrapper = styled(motion.div)`
 `;
 
 const Image = styled(GatsbyImage)`
-  height: 25vh;
+  height: 22.5vh;
   border-radius: 15px;
   object-fit: fill;
   border: 1px solid var(--color-text);
