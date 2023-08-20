@@ -324,7 +324,7 @@ const GridContainer = styled.div`
 const TextSection = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
   grid-column: ${({ column }) => column};
 
   @media (max-width: ${mediaQueries.phone}) {
