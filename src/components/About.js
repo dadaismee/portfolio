@@ -32,13 +32,15 @@ const About = () => {
 export default About;
 
 const Wrapper = styled.div`
-  margin: 0 60px;
+  margin: 60px 60px 0;
   display: grid;
   grid-template-columns: var(--grid-columns);
 
   @media (max-width: ${mediaQueries.phone}) {
     margin: var(--padding-mobile);
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
   }
 `;
 

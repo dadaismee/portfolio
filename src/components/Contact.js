@@ -40,7 +40,7 @@ const Wrapper = styled.div`
   gap: 20px;
 
   @media (max-width: ${mediaQueries.phone}) {
-    margin: var(--padding-mobile);
+    margin: 60px 20px 0;
   }
 `;
 
