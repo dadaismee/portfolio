@@ -18,7 +18,7 @@
       }
     ],
     "task": "To develop an MVP of a new format of an educationl product for the top of the funnel to raise conversion rate into paid products.",
-    "whyExists": "While working on my PhD dissertation, I found that my overeall workflow with reading, processing information and writing was energy-inefficient. So, I researched workflows, adopted one over time and wondered whether I can help solve this problem for other academics and writers",
+    "whyExists": "This was quite a challenge, for I was tasked to create an MVP in 3 weeks while not having a team yet. So, I teamed up with an LX designer and we thought through the entire learning experneince. We wrote and produced the entire course including texts, quizzes, images, Python tests quizzes and uploaded to our LMS.",
     "process": [
       {
         "title": "User survey",
@@ -42,9 +42,8 @@
         "title": "Launch",
         "image":"../images/projects/weather-forecast/process-step-4.png",
         "isDone": true,
-        "caption": "No promotion, only organic conversion. The results will be in the late June 2023."
+        "caption": "No promotion, only organic conversion."
       }      
-    ],
-    "results": "Planning to launch the course. Not so much results yet."
+    ]
     }
   } 
