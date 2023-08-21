@@ -11,16 +11,42 @@ const About = () => {
 
   return (
     <Wrapper id='about'>
-      <AboutBlock>
+      <AboutBlock column='1 / 3'>
         <Title>About</Title>
         <Text>
-          Hi there! I design and develop websites and manage educational
-          products. I leverage my blend of experise in education, product
-          management, design and generative art to ship thoughtful, conceptual
-          and modern products. In my spare time, I juggle doing a PhD in
-          philosophy of science and hanging out with my family.
+          Hi there! I'm Valerii Shevchenko, a passionate design generalist and
+          experienced product manager. I specialize in bridging the gap between
+          design consultancy and hands-on creation, ensuring a holistic approach
+          that drives ownership and innovation. My expertise in education,
+          product management, design, and generative art allows me to deliver
+          thoughtful and modern products. When I'm not immersed in design, I'm
+          pursuing a PhD in philosophy of science and spending quality time with
+          my family.
         </Text>
       </AboutBlock>
+      {/* <AboutBlock column='5 / 7'>
+        <Title>Services</Title>
+        <Text>
+          <ul>
+            <li>
+              UX/UI Design: Creating intuitive and engaging user experiences
+              that drive results
+            </li>
+            <li>
+              Branding: Crafting compelling brand identities that resonate with
+              your audience
+            </li>
+            <li>
+              3D Design: Transforming ideas into striking three-dimensional
+              visuals
+            </li>
+            <li>
+              Product & Service Design: Conceptualizing and developing
+              innovative products and services
+            </li>
+          </ul>
+        </Text>
+      </AboutBlock> */}
       <SkillsBlock>
         <Title>Skills</Title>
         <Skills>{skillsMap}</Skills>
@@ -36,6 +62,8 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: var(--grid-columns);
 
+  /* display: flex; */
+
   @media (max-width: ${mediaQueries.phone}) {
     margin: var(--padding-mobile);
     display: flex;
@@ -45,14 +73,26 @@ const Wrapper = styled.div`
 `;
 
 const AboutBlock = styled.div`
-  grid-column: 1 / 3;
+  grid-column: ${({ column }) => column};
+  width: var(--card-width);
 
   @media (max-width: ${mediaQueries.phone}) {
     padding-top: 20px;
   }
 `;
 const Title = styled(sectionTitle)``;
-const Text = styled(paragraph)``;
+const Text = styled(paragraph)`
+  ul {
+    margin: 0 -20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  li {
+    list-style: disc;
+  }
+`;
 
 const SkillsBlock = styled.div`
   grid-column: 5 / 7;
