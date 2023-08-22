@@ -24,33 +24,33 @@ const About = () => {
           my family.
         </Text>
       </AboutBlock>
-      {/* <AboutBlock column='5 / 7'>
+      <AboutBlock column='5 / 7'>
         <Title>Services</Title>
         <Text>
           <ul>
             <li>
-              UX/UI Design: Creating intuitive and engaging user experiences
-              that drive results
+              <strong>Product & Service Design</strong> — conceptualizing and
+              developing innovative products and services
             </li>
             <li>
-              Branding: Crafting compelling brand identities that resonate with
-              your audience
+              <strong>UX/UI Design and WebDev</strong> — creating intuitive and
+              engaging user experiences that drive results
             </li>
             <li>
-              3D Design: Transforming ideas into striking three-dimensional
-              visuals
+              <strong>Branding</strong> — crafting compelling brand identities
+              that resonate with your audience
             </li>
             <li>
-              Product & Service Design: Conceptualizing and developing
-              innovative products and services
+              <strong>3D Design</strong> — transforming ideas into striking
+              three-dimensional visuals
             </li>
           </ul>
         </Text>
-      </AboutBlock> */}
-      <SkillsBlock>
+      </AboutBlock>
+      {/* <SkillsBlock>
         <Title>Skills</Title>
         <Skills>{skillsMap}</Skills>
-      </SkillsBlock>
+      </SkillsBlock> */}
     </Wrapper>
   );
 };
@@ -86,7 +86,7 @@ const Text = styled(paragraph)`
     margin: 0 -20px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
   }
 
   li {

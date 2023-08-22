@@ -1,7 +1,5 @@
 import React from 'react';
 import { styled } from 'styled-components';
-import code from '../images/icons/code.svg';
-import design from '../images/icons/design.svg';
 import { mediaQueries } from '../styles/GlobalStyles';
 import { paragraph } from '../styles/TextStyles';
 
@@ -9,12 +7,13 @@ const Footer = () => {
   return (
     <Wrapper>
       <Copy>Valerii Shevchenko © {new Date().getFullYear()}</Copy>
-      <Branding>
+      <Copy>All rights reserved.</Copy>
+      {/* <Branding>
         <Image src={design} />
         /
         <Image src={code} style={{ marginRight: '5px' }} />
         <Copy>by V-S</Copy>
-      </Branding>
+      </Branding> */}
     </Wrapper>
   );
 };
