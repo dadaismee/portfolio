@@ -1,0 +1,66 @@
+{
+  "frontmatter": {
+    "title": "ANR Lab annual report",
+    "description": "optimized collaborative academic writing pipeline",
+    "date": "2023-08-25",
+    "image": "../images/projects/anr-lab-report/main.png",
+    "tags": ["Service"],
+    "ongoing": true,
+    "url": "and-lab-report"
+  },
+  "projectData": {
+    "links": {
+      "prod": ["https://github.com/dadaismee/anr-lab-report/"]
+    },
+    "tools": [
+      {
+        "icon": "../images/icons/pm-muscles.png", 
+        "title": "Service design muscles"
+      },
+      {
+        "icon": "../images/icons/github-mark.png", 
+        "title": "GitHub Actions"
+      }
+    ],
+    "task": "To optimize the process of the preparation of an annual report for a network science lab so that it drives both team engagement and boosts brand awareness of the lab outside. ",
+    "whyExists": "Applied Network Research Lab of the HSE University in Moscow asked me to optimize the report workflow in a way that fulfills a marketing and an UX goals. For this, I assembled a framework, set up a technical system and conducted seminars where I showed the team members how to use the system to optimize the writing process. The main idea is separation of concerns: text, images, academic references and formatting templates are all separated from each other and then compiled according to a DIY template. Another goal is to write content once and use it both as an inner report and a website. I used Markdown for writing content, Zotero for reference management, Pandoc for document compilation and GitHub actions for automating final document compilation. Please, see the 'Process' section for deteailed explanation of design decisions. ",
+    "process": [
+      {
+        "title": "Discussion",
+        "image":"../images/projects/weather-forecast/process-step-1.png",
+        "isDone": true,
+        "caption": "After ideating, I came up with a possible solution and I pitched it to the team, and it was not readily accepted as it required some technical know-how."
+      },
+      {
+        "title": "Prototype",
+        "image":"../images/projects/weather-forecast/process-step-1.png",
+        "isDone": true,
+        "caption": "However, after iterated discussion and settling on this solution, I wanted to build a prototype of the system to show it to the team"
+      },
+      {
+        "title": "Seminars",
+        "image":"../images/projects/weather-forecast/process-step-2.png",
+        "isDone": true,
+        "caption": "I held two seminars with a walktrhough of the process of adding a bit of text to a final report and helped team members to make their first 'commit'"
+      },
+      {
+        "title": "Writing the content",
+        "image":"../images/projects/weather-forecast/process-step-3.png",
+        "isDone": false,
+        "caption": "Currently the team is working on the content of the annual report"
+      },
+      {
+        "title": "Website design",
+        "image":"../images/projects/weather-forecast/process-step-4.png",
+        "isDone": false,
+        "caption": "To fulfill the marketing goal, I will be designings a website with report data"
+      },
+      {
+        "title": "Website development",
+        "image":"../images/projects/weather-forecast/process-step-4.png",
+        "isDone": false,
+        "caption": "On a technical side, this website will be building from the same source as the report itself."
+      }      
+    ]
+    }
+  } 

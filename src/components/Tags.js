@@ -20,7 +20,15 @@ const Tags = ({ activeTag, handleClick }) => {
 
 export default Tags;
 
-export const tagsData = ['All', 'PM/LX', 'UX/UI', 'Branding', 'WebDev', 'Art'];
+export const tagsData = [
+  'All',
+  'PM/LX',
+  'Service',
+  'UX/UI',
+  'Branding',
+  'WebDev',
+  'Art',
+];
 
 const Wrapper = styled.div`
   display: inline-flex;

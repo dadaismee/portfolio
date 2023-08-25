@@ -6,7 +6,7 @@ import { styled } from 'styled-components';
 import { mediaQueries } from '../styles/GlobalStyles';
 import { cardTags, logoAndCardTitles, paragraph } from '../styles/TextStyles';
 
-const Card = ({ image, title, description, tags, index, to }) => {
+const Card = ({ image, title, description, tags, index, to, ongoing }) => {
   const cardTags = tags.map((tag, index) => <Tag key={index}>{tag}</Tag>);
   return (
     <Link to={to}>
@@ -31,6 +31,7 @@ const Card = ({ image, title, description, tags, index, to }) => {
         viewport={{ once: true }}
         whileTap={hoverStyles.on}
         transformTemplate={({ y }) => `translateY(-${y}px)`}>
+        {Boolean(ongoing) && <Badge>ONGOING</Badge>}
         <Image image={image} alt={title} />
         <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
           <div
@@ -67,6 +68,7 @@ const hoverStyles = {
 
 const Wrapper = styled(motion.div)`
   display: grid;
+  position: relative;
   box-sizing: border-box;
   width: var(--card-width);
   min-height: calc(var(--card-max-width) * 1.35);
@@ -95,6 +97,20 @@ const Wrapper = styled(motion.div)`
     width: 70vw;
     min-height: calc(var(--card-max-width) * 1);
   }
+`;
+
+const Badge = styled.div`
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: auto;
+  padding: 10px;
+  color: var(--color-main);
+  background-color: var(--color-text);
+  border-radius: 15px;
+  text-align: center;
+  z-index: 1;
+  font-size: 13px;
 `;
 
 const Image = styled(GatsbyImage)`

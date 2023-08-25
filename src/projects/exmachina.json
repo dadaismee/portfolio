@@ -5,6 +5,7 @@
     "date": "2021-06-16",
     "image": "../images/projects/exmachina/main.png",
     "tags": ["Art"],
+    "ongoing": false,
     "url": "ex-machina"
   },
   "projectData": {

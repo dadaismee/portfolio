@@ -15,6 +15,7 @@ const Cards = ({ filter }) => {
             tags
             date
             title
+            ongoing
             url
             image {
               childImageSharp {
@@ -33,7 +34,8 @@ const Cards = ({ filter }) => {
       return filter !== 'All' ? tags.includes(filter) : tags;
     })
     .map((card, index) => {
-      const { title, tags, description, url, image } = card.frontmatter;
+      const { title, tags, description, url, image, ongoing } =
+        card.frontmatter;
       const img = getImage(image);
 
       return (
@@ -45,6 +47,7 @@ const Cards = ({ filter }) => {
           title={title}
           description={description}
           tags={tags}
+          ongoing={ongoing}
           filter={filter}
         />
       );
