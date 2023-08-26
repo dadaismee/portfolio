@@ -34,7 +34,7 @@ const Wrapper = styled.div`
   display: inline-flex;
   align-items: center;
   gap: 20px;
-  margin: 0 60px;
+  margin: 0 60px 5px;
 
   @media (max-width: ${mediaQueries.phone}) {
     display: none;
