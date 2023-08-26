@@ -1,11 +1,16 @@
+import { ReactLenis, useLenis } from '@studio-freight/react-lenis';
 import { motion } from 'framer-motion';
 import React from 'react';
 import { Footer, Header } from '../components/index';
 import './layout.css';
 
 const Layout = ({ children, type, pages, url }) => {
+  const lenis = useLenis(({ scroll }) => {
+    // called every scroll
+  });
   return (
-    <>
+    <ReactLenis root>
+      {/* <> */}
       <motion.header
         initial={{ opacity: 0, x: 200 }}
         animate={{ opacity: 1, x: 0 }}
@@ -32,7 +37,8 @@ const Layout = ({ children, type, pages, url }) => {
         {children}
       </motion.main>
       <Footer />
-    </>
+      {/* </> */}
+    </ReactLenis>
   );
 };
 

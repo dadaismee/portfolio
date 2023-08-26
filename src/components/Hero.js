@@ -39,9 +39,9 @@ const Hero = () => {
             },
           }}
           viewport={{ once: true }}>
-          designer
+          product and service designer
         </Subtitle>
-        <Subtitle
+        {/* <Subtitle
           initial={{
             opacity: 0,
             y: 10,
@@ -57,7 +57,7 @@ const Hero = () => {
           }}
           viewport={{ once: true }}>
           product manager
-        </Subtitle>
+        </Subtitle> */}
       </GridWrapper>
     </Wrapper>
   );

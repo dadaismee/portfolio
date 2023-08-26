@@ -129,7 +129,7 @@ const Project = ({ data }) => {
           </TextSection>
           {Boolean(metaphor) && (
             <TextSection column='5 / 7'>
-              <SectionTitle>Metaphor</SectionTitle>
+              <SectionTitle>Metaphor / Main Idea</SectionTitle>
               <Text>{metaphor}</Text>
             </TextSection>
           )}

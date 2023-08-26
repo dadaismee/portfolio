@@ -24,7 +24,7 @@ const About = () => {
           my family.
         </Text>
       </AboutBlock>
-      <AboutBlock column='5 / 7'>
+      {/* <AboutBlock column='5 / 7'>
         <Title>Services</Title>
         <Text>
           <ul>
@@ -46,11 +46,11 @@ const About = () => {
             </li>
           </ul>
         </Text>
-      </AboutBlock>
-      {/* <SkillsBlock>
+      </AboutBlock> */}
+      <SkillsBlock>
         <Title>Skills</Title>
         <Skills>{skillsMap}</Skills>
-      </SkillsBlock> */}
+      </SkillsBlock>
     </Wrapper>
   );
 };
@@ -126,8 +126,12 @@ const skills = [
     level: 70,
   },
   {
+    title: 'Service Design',
+    level: 65,
+  },
+  {
     title: 'Brand Design',
-    level: 60,
+    level: 65,
   },
   {
     title: 'Creative Coding',

@@ -10,57 +10,101 @@
   },
   "projectData": {
     "links": {
-      "prod": ["https://github.com/dadaismee/anr-lab-report/"]
+      "prod": []
     },
     "tools": [
       {
         "icon": "../images/icons/pm-muscles.png", 
-        "title": "Service design muscles"
+        "title": "PM and service design muscles"
       },
       {
         "icon": "../images/icons/github-mark.png", 
         "title": "GitHub Actions"
       }
     ],
-    "task": "To optimize the process of the preparation of an annual report for a network science lab so that it drives both team engagement and boosts brand awareness of the lab outside. ",
-    "whyExists": "Applied Network Research Lab of the HSE University in Moscow asked me to optimize the report workflow in a way that fulfills a marketing and an UX goals. For this, I assembled a framework, set up a technical system and conducted seminars where I showed the team members how to use the system to optimize the writing process. The main idea is separation of concerns: text, images, academic references and formatting templates are all separated from each other and then compiled according to a DIY template. Another goal is to write content once and use it both as an inner report and a website. I used Markdown for writing content, Zotero for reference management, Pandoc for document compilation and GitHub actions for automating final document compilation. Please, see the 'Process' section for deteailed explanation of design decisions. ",
+    "task": "To optimize the preparation process of an annual report for a network science lab so that it drives both team engagement and lab brand awareness. ",
+    "whyExists": "Applied Network Research Lab of the HSE University in Moscow asked me to manage the annual report. For this, I decided to optimize the writing workflow to enable both focus on the contents (and not on the formatting) and content repurposing. To do this, I assembled a framework, set up a technical system and conducted seminars where I onboarded team members to use the system. Please, see the 'Process' section for deteailed explanation of design decisions.",
+    "metaphor": "The main idea is 'separation of concerns': text, images, academic references and formatting templates are all separated from each other and then compiled according to a DIY template. Another goal is to write content once and use it both as an inner report and a website. I chose Markdown languauge for writing content, Obsidian as a text editor for its ease of use, Zotero for reference management, Pandoc for document compilation and GitHub actions for automating the final document compilation.",
     "process": [
       {
         "title": "Discussion",
-        "image":"../images/projects/weather-forecast/process-step-1.png",
-        "isDone": true,
-        "caption": "After ideating, I came up with a possible solution and I pitched it to the team, and it was not readily accepted as it required some technical know-how."
+        "image":"../images/projects/anr-lab-report/process-step-1.png",
+        "isDone": true
+      },
+      {
+        "title": "User flow",
+        "image":"../images/projects/anr-lab-report/process-step-2.png",
+        "isDone": true
       },
       {
         "title": "Prototype",
-        "image":"../images/projects/weather-forecast/process-step-1.png",
-        "isDone": true,
-        "caption": "However, after iterated discussion and settling on this solution, I wanted to build a prototype of the system to show it to the team"
+        "image":"../images/projects/anr-lab-report/process-step-3.png",
+        "isDone": true
       },
       {
         "title": "Seminars",
-        "image":"../images/projects/weather-forecast/process-step-2.png",
-        "isDone": true,
-        "caption": "I held two seminars with a walktrhough of the process of adding a bit of text to a final report and helped team members to make their first 'commit'"
+        "image":"../images/projects/anr-lab-report/process-step-4.png",
+        "isDone": true
       },
       {
-        "title": "Writing the content",
-        "image":"../images/projects/weather-forecast/process-step-3.png",
-        "isDone": false,
-        "caption": "Currently the team is working on the content of the annual report"
+        "title": "Content writing",
+        "image":"../images/projects/wip.png",
+        "isDone": false
       },
       {
         "title": "Website design",
-        "image":"../images/projects/weather-forecast/process-step-4.png",
-        "isDone": false,
-        "caption": "To fulfill the marketing goal, I will be designings a website with report data"
+        "image":"../images/projects/wip.png",
+        "isDone": false
       },
       {
         "title": "Website development",
-        "image":"../images/projects/weather-forecast/process-step-4.png",
-        "isDone": false,
-        "caption": "On a technical side, this website will be building from the same source as the report itself."
+        "image":"../images/projects/wip.png",
+        "isDone": false
       }      
+    ],
+    "details": [
+      {
+        "title": "Discussion",
+        "text": "After ideating, I came up with a possible solution and pitched it to the team. It was not readily accepted as it required some technical know-how, but eventually we settled on this solution.",
+        "images": [
+          {
+            "image": "../images/projects/anr-lab-report/process-step-1.png",
+            "caption": "Presentation slide with Obsidian and Zotero apps"
+          }
+          ]
+      },
+      {
+        "title": "User flow",
+        "text": "After discussion, I built a detailed user flow of the system and shared it with the team. It required me to use the following apps and services: Obsidian, Zotero, Pandoc, GitHub and GitHub Actions. The UX of the process for the user looks like this.",
+        "images": [
+          {
+            "image": "../images/projects/anr-lab-report/process-step-2.png",
+            "caption": "The user flow of the collaborative writing pipeline"
+          }
+          ]
+      },
+      {
+        "title": "Prototype",
+        "text": "With a help of a lab colleague, I wrote a Continuous Integration script for GitHub Actions to automatically compile a final PDF of the report any time a team member adds new piece of text to the repository.",
+        "longtext": "Now all the formatting, bibliography insertions and 'References' sections are done automatically, and team members only need to care about authoring the report in plain text.",
+        "images": [
+          {
+            "image": "../images/projects/anr-lab-report/process-step-3.png",
+            "caption": "The CI script for the GitHub Actions"
+          }
+          ]
+      },
+      {
+        "title": "Seminars",
+        "text": "I held several seminars for the team members with a walktrhough of the process and helped them to make their first 'commit'.",
+        "longtext": "Now we are finally testing the workflow and starting to work on the contents of the report.",
+        "images": [
+          {
+            "image": "../images/projects/anr-lab-report/process-step-4.png",
+            "caption": "Zoom call with the team"
+          }
+          ]
+      }
     ]
     }
   } 

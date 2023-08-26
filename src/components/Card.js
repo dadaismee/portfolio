@@ -141,7 +141,7 @@ const TagsWrapper = styled.div`
 
 const Tag = styled(cardTags)`
   align-self: center;
-  padding: 10px 20px;
+  padding: 10px;
   border: solid 1px;
   border-radius: 5px;
   color: var(--color-disabled);
