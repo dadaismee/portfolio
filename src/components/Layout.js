@@ -10,7 +10,6 @@ const Layout = ({ children, type, pages, url }) => {
   });
   return (
     <ReactLenis root>
-      {/* <> */}
       <motion.header
         initial={{ opacity: 0, x: 200 }}
         animate={{ opacity: 1, x: 0 }}
@@ -37,7 +36,6 @@ const Layout = ({ children, type, pages, url }) => {
         {children}
       </motion.main>
       <Footer />
-      {/* </> */}
     </ReactLenis>
   );
 };

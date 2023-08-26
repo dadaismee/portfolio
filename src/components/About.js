@@ -78,6 +78,7 @@ const AboutBlock = styled.div`
 
   @media (max-width: ${mediaQueries.phone}) {
     padding-top: 20px;
+    width: auto;
   }
 `;
 const Title = styled(sectionTitle)``;
