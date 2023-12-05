@@ -14,14 +14,14 @@ const About = () => {
       <AboutBlock column='1 / 3'>
         <Title>About</Title>
         <Text>
-          Hi there! I'm Valerii Shevchenko, a passionate design generalist and
-          experienced product manager. I specialize in bridging the gap between
-          design consultancy and hands-on creation, ensuring a holistic approach
-          that drives ownership and innovation. My expertise in education,
-          product management, design, and generative art allows me to deliver
-          thoughtful and modern products. When I'm not immersed in design, I'm
-          pursuing a PhD in philosophy of science and spending quality time with
-          my family.
+          Hi there! I'm Valerii Shevchenko, a passionate design generalist,
+          experienced edtech product manager and academic philosopher of science
+          . I specialize in bridging the gap between design consultancy and
+          hands-on creation, ensuring a holistic approach. My expertise in
+          education, product management, design, and creative coding allow me to
+          create thoughtful products and experiences. When I'm not immersed in
+          design, I'm pursuing a PhD in philosophy of science and spending
+          quality time with my family.
         </Text>
       </AboutBlock>
       {/* <AboutBlock column='5 / 7'>
@@ -127,15 +127,11 @@ const skills = [
     level: 70,
   },
   {
-    title: 'Service Design',
+    title: 'Creative Coding',
     level: 65,
   },
   {
     title: 'Brand Design',
-    level: 65,
-  },
-  {
-    title: 'Creative Coding',
     level: 65,
   },
   {

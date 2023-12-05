@@ -39,7 +39,8 @@ const Hero = () => {
             },
           }}
           viewport={{ once: true }}>
-          product and service designer
+          design generalist <br />
+          creative coder
         </Subtitle>
         {/* <Subtitle
           initial={{

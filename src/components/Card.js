@@ -114,7 +114,7 @@ const Badge = styled.div`
 `;
 
 const Image = styled(GatsbyImage)`
-  height: 22.5vh;
+  height: 25.5vh;
   border-radius: 15px;
   object-fit: fill;
   border: 1px solid var(--color-text);
