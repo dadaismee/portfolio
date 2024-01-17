@@ -4,6 +4,7 @@
     "description": "8-channel generative sound installation",
     "date": "2021-06-16",
     "image": "../images/projects/exmachina/main.png",
+    "animation": null, 
     "tags": ["Art"],
     "ongoing": false,
     "url": "ex-machina"

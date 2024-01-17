@@ -23,3 +23,14 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 };
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+  const typeDefs = `
+    type ProjectsJsonFrontmatter {
+      animation: String
+      # Other existing fields
+    }
+  `
+  createTypes(typeDefs)
+}

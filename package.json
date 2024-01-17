@@ -26,10 +26,12 @@
     "gatsby-plugin-styled-components": "^6.11.0",
     "gatsby-source-filesystem": "^5.11.0",
     "gatsby-transformer-json": "^5.11.0",
+    "gatsby-transformer-remark": "^6.13.0",
     "gatsby-transformer-sharp": "^5.11.0",
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-gif-player": "^0.4.2",
     "react-medium-image-zoom": "^5.1.8",
     "react-router-dom": "^6.15.0",
     "styled-components": "^6.0.5"

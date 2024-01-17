@@ -4,7 +4,8 @@
     "description": "optimized collaborative academic writing pipeline",
     "date": "2023-08-25",
     "image": "../images/projects/anr-lab-report/main.png",
-    "tags": ["Service"],
+    "animation": null,
+    "tags": ["Interaction"],
     "ongoing": false,
     "url": "and-lab-report"
   },

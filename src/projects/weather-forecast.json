@@ -4,7 +4,8 @@
     "description": "free online programming course for Practicum",
     "date": "2023-03-23",
     "image": "../images/projects/weather-forecast/main.png",
-    "tags": ["PM/LX"],
+    "animation": null,
+    "tags": ["Ed Product"],
     "ongoing": false,
     "url": "weather-forecast"
   },

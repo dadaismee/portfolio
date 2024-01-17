@@ -6,7 +6,7 @@ import { styled } from 'styled-components';
 import { mediaQueries } from '../styles/GlobalStyles';
 import { cardTags, logoAndCardTitles, paragraph } from '../styles/TextStyles';
 
-const Card = ({ image, title, description, tags, index, to, ongoing }) => {
+const Card = ({ image, animation, title, description, tags, index, to, ongoing }) => {
   const cardTags = tags.map((tag, index) => <Tag key={index}>{tag}</Tag>);
   return (
     <Link to={to}>
@@ -33,6 +33,7 @@ const Card = ({ image, title, description, tags, index, to, ongoing }) => {
         transformTemplate={({ y }) => `translateY(-${y}px)`}>
         {Boolean(ongoing) && <Badge>ONGOING</Badge>}
         <Image image={image} alt={title} />
+        {Boolean(animation) && <Animation src={animation} loop autoPlat />}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
           <div
             style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
@@ -117,6 +118,7 @@ const Image = styled(GatsbyImage)`
   height: 25.5vh;
   border-radius: 15px;
   object-fit: fill;
+  width: 100%;
   border: 1px solid var(--color-text);
 
   @media (max-width: ${mediaQueries.phone}) {
@@ -124,6 +126,21 @@ const Image = styled(GatsbyImage)`
     min-height: auto;
   }
 `;
+
+const Animation = styled.video`
+  height: 25.5vh;
+  border-radius: 15px;
+  object-fit: fill;
+  width: 100%;
+  border: 1px solid var;
+
+  @media (max-width: ${mediaQueries.phone}) {
+    height: 19vh;
+    min-height: auto;
+  }
+`;
+
+
 
 const Title = styled(logoAndCardTitles)``;
 
@@ -173,8 +190,8 @@ const Button = styled(motion.button)`
   line-height: 100%; /* 20px */
   background: var(--color-main);
   transition: var(--transition);
-  transition-delay: 0.125s;
-
+  /* transition-delay: 0.125s; */
+  /**/
   ${Wrapper}:hover & {
     background: var(--color-button-hover);
     color: var(--color-main);

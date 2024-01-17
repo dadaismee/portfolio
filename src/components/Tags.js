@@ -22,12 +22,13 @@ export default Tags;
 
 export const tagsData = [
   'All',
-  'PM/LX',
-  'Service',
+  'Concept',
   'UX/UI',
-  'Branding',
-  'WebDev',
+  'Web Dev',
+  'Ed Product',
   'Art',
+  'Branding',
+  'Interaction',
 ];
 
 const Wrapper = styled.div`

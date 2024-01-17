@@ -8,12 +8,13 @@ import { Contact, Layout, SEO } from '../components';
 import Arrow from '../images/icons/Arrow.svg';
 import { mediaQueries } from '../styles/GlobalStyles';
 import { h2, paragraph, sectionTitle } from '../styles/TextStyles';
+import animations from '../images/projects/simpl-quiz/simpl-quiz-animated.mp4';
 
 const Project = ({ data }) => {
   // Data from a prject JSON
   const { links, tools, task, whyExists, metaphor, process, details, results } =
     data.projectsJson.projectData;
-  const { title, url, image, description, tags } =
+  const { title, url, image, animation, description, tags } =
     data.projectsJson.frontmatter;
   const img = getImage(image);
   const tagsBlock = tags.map((tag, index) => <Text key={index}>{tag}</Text>);
@@ -118,9 +119,9 @@ const Project = ({ data }) => {
               <Text>{task}</Text>
             </TextSection>
           </GridContainer>
-          <Zoom>
+          {Boolean(animation) ? <Animation src={animations} loop autoPlay/> : <Zoom>
             <Image image={img} alt={title} />
-          </Zoom>
+          </Zoom>}
         </FrontmatterWrapper>
         <GridContainer>
           <TextSection column='1 / 3'>
@@ -196,8 +197,8 @@ const Project = ({ data }) => {
                       detail.images.map((image, index) => {
                         const img = getImage(image.image);
                         let imageWidth = 0;
+                      {
                         {
-                          {
                             detail.images.length < 2
                               ? (imageWidth = `calc(var(--card-width) * 2)`)
                               : (imageWidth = `var(--card-max-width)`);
@@ -252,9 +253,9 @@ const ProcessStep = ({ title, image, caption, isDone }) => (
         display: 'flex',
         alignItems: 'center',
         backgroundColor:
-          image.backgroundColor === '#080808'
-            ? 'var(--color-main)'
-            : image.backgroundColor,
+        image.backgroundColor === '#080808'
+          ? 'var(--color-main)'
+          : image.backgroundColor,
         height: '100%',
         borderRadius: 'var(--border-radius-ext)',
       }}>
@@ -267,267 +268,278 @@ const ProcessStep = ({ title, image, caption, isDone }) => (
 );
 
 const Wrapper = styled.div`
-  margin: 0 60px;
-  display: flex;
-  flex-direction: column;
-  gap: 80px;
+margin: 0 60px;
+display: flex;
+flex-direction: column;
+gap: 80px;
 
-  * {
-    margin: 0px;
-  }
+* {
+  margin: 0px;
+}
 
-  @media (max-width: ${mediaQueries.phone}) {
-    margin: 0;
-    gap: 40px;
-  }
+@media (max-width: ${mediaQueries.phone}) {
+  margin: 0;
+  gap: 40px;
+}
 `;
 
 const Title = styled(h2)`
-  font-weight: 400;
+font-weight: 400;
 
-  @media (max-width: ${mediaQueries.phone}) {
-    margin: var(--padding-mobile);
-    padding-top: 40px;
-  }
+@media (max-width: ${mediaQueries.phone}) {
+  margin: var(--padding-mobile);
+  padding-top: 40px;
+}
 `;
 
 const FrontmatterWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
+display: flex;
+flex-direction: column;
+gap: 40px;
 
-  @media (max-width: ${mediaQueries.phone}) {
-    width: 100%;
-  }
+@media (max-width: ${mediaQueries.phone}) {
+  width: 100%;
+}
 `;
 
 const GridContainer = styled.div`
-  display: grid;
-  grid-template-columns: var(--grid-columns);
-  gap: 20px;
+display: grid;
+grid-template-columns: var(--grid-columns);
+gap: 20px;
+
+* {
+  width: var(--card-width);
+}
+
+@media (max-width: ${mediaQueries.phone}) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 
   * {
-    width: var(--card-width);
+    width: auto;
   }
-
-  @media (max-width: ${mediaQueries.phone}) {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
-    * {
-      width: auto;
-    }
-  }
+}
 `;
 
 const TextSection = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  grid-column: ${({ column }) => column};
+display: flex;
+flex-direction: column;
+gap: 15px;
+grid-column: ${({ column }) => column};
 
-  @media (max-width: ${mediaQueries.phone}) {
-    padding: var(--padding-mobile);
-    gap: 10px;
-  }
+@media (max-width: ${mediaQueries.phone}) {
+  padding: var(--padding-mobile);
+  gap: 10px;
+}
 `;
 
 const Tags = styled.div`
-  display: flex;
-  flex-direction: column;
+display: flex;
+flex-direction: column;
 `;
 
 const Icon = styled(GatsbyImage)`
-  max-width: 25px;
-  max-height: 25px;
+max-width: 25px;
+max-height: 25px;
 `;
 
 const Process = styled.div`
-  display: flex;
-  gap: 5px;
+display: flex;
+gap: 5px;
 
-  @media (max-width: ${mediaQueries.phone}) {
-    overflow-x: scroll;
-    margin: 0 -20px;
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
+@media (max-width: ${mediaQueries.phone}) {
+  overflow-x: scroll;
+  margin: 0 -20px;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
 `;
 
 const ProcessStepWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-  width: var(--card-width);
-  opacity: ${({ isDone }) => (isDone ? '1' : '0.5')};
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 10px;
+width: var(--card-width);
+opacity: ${({ isDone }) => (isDone ? '1' : '0.5')};
 
-  @media (max-width: ${mediaQueries.phone}) {
-    min-width: 300px;
-    padding: 0 20px;
-  }
+@media (max-width: ${mediaQueries.phone}) {
+  min-width: 300px;
+  padding: 0 20px;
+}
 `;
 
 const ProcessStepTitle = styled(sectionTitle)`
-  padding: 20px 0;
-  width: 100%;
-  border: solid 1px var(--color-text);
-  border-radius: var(--border-radius-ext);
-  font-size: 16px;
-  text-align: center;
-  text-transform: uppercase;
+padding: 20px 0;
+width: 100%;
+border: solid 1px var(--color-text);
+border-radius: var(--border-radius-ext);
+font-size: 16px;
+text-align: center;
+text-transform: uppercase;
 `;
 
 const ProcessStepCaption = styled(paragraph)`
-  font-style: normal;
-  font-weight: 700;
-  line-height: 125%; /* 25px */
-  padding: 0px 10px;
-  width: 100%;
+font-style: normal;
+font-weight: 700;
+line-height: 125%; /* 25px */
+padding: 0px 10px;
+width: 100%;
 `;
 
 const Iframe = styled.iframe`
-  ${({ styles }) => styles};
-  position: relative;
-  width: ${({ width }) => width};
-  height: ${({ height }) => height};
-  object-fit: cover;
+${({ styles }) => styles};
+position: relative;
+width: ${({ width }) => width};
+height: ${({ height }) => height};
+object-fit: cover;
 
-  @media (max-width: ${mediaQueries.phone}) {
-    width: calc(100vw - 40px);
-  }
+@media (max-width: ${mediaQueries.phone}) {
+  width: calc(100vw - 40px);
+}
 `;
 
 const SectionTitle = styled(sectionTitle)``;
 const Text = styled(paragraph)`
-  width: var(--card-width);
+width: var(--card-width);
 
-  @media (max-width: ${mediaQueries.phone}) {
-    width: 100%;
-  }
+@media (max-width: ${mediaQueries.phone}) {
+  width: 100%;
+}
 `;
 
 const Image = styled(GatsbyImage)`
-  border-radius: var(--border-radius-ext);
+border-radius: var(--border-radius-ext);
 
-  @media (max-width: ${mediaQueries.phone}) {
-    width: auto;
-    /* height: 100%; */
-    margin: var(--padding-mobile);
-  }
+@media (max-width: ${mediaQueries.phone}) {
+  width: auto;
+  /* height: 100%; */
+  margin: var(--padding-mobile);
+}
+`;
+
+const Animation = styled.video`
+border-radius: var(--border-radius-ext);
+  
+@media (max-width: ${mediaQueries.phone}) {
+  width: auto;
+  /* height: 100%; */
+  margin: var(--padding-mobile);
+}
 `;
 
 const ImageWrapper = styled.div`
-  display: flex;
-  overflow-x: scroll;
-  gap: 20px;
-  margin: 0 -60px;
-  padding: 0 60px;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+display: flex;
+overflow-x: scroll;
+gap: 20px;
+margin: 0 -60px;
+padding: 0 60px;
+-ms-overflow-style: none; /* IE and Edge */
+scrollbar-width: none; /* Firefox */
 
-  &::-webkit-scrollbar {
-    display: none;
-  }
+&::-webkit-scrollbar {
+  display: none;
+}
 
-  @media (max-width: ${mediaQueries.phone}) {
-    margin: 0 -20px 0 -40px;
-    padding: 0 40px 0 20px;
-  }
+@media (max-width: ${mediaQueries.phone}) {
+  margin: 0 -20px 0 -40px;
+  padding: 0 40px 0 20px;
+}
 `;
 
 const DetailImageWrapper = styled.div`
-  width: ${({ imageWidth }) => imageWidth};
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+width: ${({ imageWidth }) => imageWidth};
+display: flex;
+flex-direction: column;
+gap: 10px;
 `;
 
 const FlexContainer = styled.div`
-  display: flex;
-  gap: 20px;
-  justify-content: space-between;
+display: flex;
+gap: 20px;
+justify-content: space-between;
 
-  @media (max-width: ${mediaQueries.phone}) {
-    flex-direction: column;
-  }
+@media (max-width: ${mediaQueries.phone}) {
+  flex-direction: column;
+}
 `;
 
 export const query = graphql`
-  query ProjectQuery($url: String) {
-    projectsJson(frontmatter: { url: { eq: $url } }) {
-      frontmatter {
-        title
-        description
-        date
-        tags
-        url
-        image {
-          childImageSharp {
-            gatsbyImageData(placeholder: DOMINANT_COLOR)
-          }
-        }
-      }
-      projectData {
-        links {
-          github
-          prod
-        }
-        tools {
-          title
-          icon {
-            childImageSharp {
-              gatsbyImageData(placeholder: DOMINANT_COLOR)
-            }
-          }
-        }
-        task
-        metaphor
-        whyExists
-        process {
-          title
-          image {
-            childImageSharp {
-              gatsbyImageData(placeholder: DOMINANT_COLOR)
-            }
-          }
-          caption
-          isDone
-        }
-        details {
-          title
-          text
-          longtext
-          iframes {
-            src
-            caption
-            width
-            height
-            allowFullscreen
-          }
-          images {
-            image {
-              childImageSharp {
-                gatsbyImageData(placeholder: DOMINANT_COLOR)
-              }
-            }
-            caption
-          }
-        }
-        results
-      }
-    }
-    allProjectsJson(sort: { frontmatter: { date: DESC } }) {
-      nodes {
-        frontmatter {
-          title
-          date
-          url
-        }
-      }
-    }
-  }
+query ProjectQuery($url: String) {
+projectsJson(frontmatter: { url: { eq: $url } }) {
+frontmatter {
+title
+description
+date
+tags
+url
+animation
+image {
+childImageSharp {
+gatsbyImageData(placeholder: DOMINANT_COLOR)
+}
+}
+}
+projectData {
+links {
+github
+prod
+}
+tools {
+title
+icon {
+childImageSharp {
+gatsbyImageData(placeholder: DOMINANT_COLOR)
+}
+}
+}
+task
+metaphor
+whyExists
+process {
+title
+image {
+childImageSharp {
+gatsbyImageData(placeholder: DOMINANT_COLOR)
+}
+}
+caption
+isDone
+}
+details {
+title
+text
+longtext
+iframes {
+src
+caption
+width
+height
+allowFullscreen
+}
+images {
+image {
+childImageSharp {
+gatsbyImageData(placeholder: DOMINANT_COLOR)
+}
+}
+caption
+}
+}
+results
+}
+}
+allProjectsJson(sort: { frontmatter: { date: DESC } }) {
+nodes {
+frontmatter {
+title
+date
+url
+}
+}
+}
+}
 `;
 
 export const Head = ({ data }) => {

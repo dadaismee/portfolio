@@ -4,6 +4,7 @@ import React from 'react';
 import { styled } from 'styled-components';
 import { Card } from '../components/index';
 import { mediaQueries } from '../styles/GlobalStyles';
+import { animations } from 'framer-motion';
 
 const Cards = ({ filter }) => {
   const query = useStaticQuery(graphql`
@@ -17,6 +18,7 @@ const Cards = ({ filter }) => {
             title
             ongoing
             url
+            animation
             image {
               childImageSharp {
                 gatsbyImageData(placeholder: DOMINANT_COLOR)
@@ -34,7 +36,7 @@ const Cards = ({ filter }) => {
       return filter !== 'All' ? tags.includes(filter) : tags;
     })
     .map((card, index) => {
-      const { title, tags, description, url, image, ongoing } =
+      const { title, tags, description, url, image, animation, ongoing } =
         card.frontmatter;
       const img = getImage(image);
 
@@ -44,6 +46,7 @@ const Cards = ({ filter }) => {
           index={index}
           to={`/${url}`}
           image={img}
+          animation={animation}
           title={title}
           description={description}
           tags={tags}

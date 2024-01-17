@@ -4,7 +4,8 @@
     "description": "visual identity and landing page design for a Hungarian ambient music label",
     "date": "2023-05-15",
     "image": "../images/projects/undulation/main.png",
-    "tags": ["Branding", "UX/UI"],
+    "animation": null,
+    "tags": ["Concept", "Branding", "UX/UI"],
     "ongoing": false,
     "url": "undulation"
   },

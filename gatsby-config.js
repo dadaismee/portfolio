@@ -6,9 +6,9 @@ module.exports = {
     DEV_SSR: true,
   },
   siteMetadata: {
-    title: `Valerii Shevchenko | Product and service designer`,
-    description: `UX/UI, branding, 3D, and product/service design. With a unique blend of a background in education, product management, and generative art, I create modern and conceptual products that resonate. Explore my work now.`,
-    keywords: `designer, product manager, UX/UI design, branding, 3D design, product design, service design, generative art, algorithmic design, design consultant, modern products, Valerii Shevchenko, portfolio`,
+    title: `Valerii Shevchenko | Design engineer and eudcator`,
+    description: `As a design engineer, educator and philosopher of science, I mainly design and code interfaces, develop and launch educational courses, write academic papers and occasinally teach and make algorithmic art. Needless to say how (surely) unique my perspective is. If you want, you can explore my work now (or later).`,
+    keywords: `designer, product manager, UX/UI design, branding, product design, generative art, algorithmic design, design consultant, modern products, Valerii Shevchenko, portfolio`,
     siteUrl: `https://valerii.sh`,
     image: `/images/icon.png`,
   },

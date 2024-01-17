@@ -4,6 +4,7 @@
     "description": "interactive installation assisting users to draw abstract artworks",
     "date": "2021-12-23",
     "image": "../images/projects/performance-of-meaning/main.png",
+    "animation": null,
     "tags": ["Art"],
     "ongoing": false,
     "url": "performance-of-meaning"

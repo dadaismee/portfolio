@@ -4,7 +4,8 @@
     "description": "branding and website for my streamlined academic writing tools startup",
     "date": "2023-04-10",
     "image": "../images/projects/konspekt/main.png",
-    "tags": ["Branding", "UX/UI", "WebDev"],
+    "animation": null,
+    "tags": ["Concept", "Branding", "UX/UI", "Web Dev"],
     "ongoing": false,
     "url": "konspekt"
   },

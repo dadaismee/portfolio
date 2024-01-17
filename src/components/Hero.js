@@ -39,8 +39,8 @@ const Hero = () => {
             },
           }}
           viewport={{ once: true }}>
-          design generalist <br />
-          creative coder
+          design engineer <br />
+          ed product owner <br />
         </Subtitle>
         {/* <Subtitle
           initial={{
@@ -72,7 +72,6 @@ const Wrapper = styled.div`
   gap: 0px;
   padding: var(--padding);
   /* padding: 0 60px 40px; */
-
   @media (max-width: ${mediaQueries.phone}) {
     gap: 20px;
     padding: var(--padding-mobile) 40px;
@@ -99,7 +98,7 @@ export const GridWrapper = styled.div`
 
 const Subtitle = styled(h2)`
   grid-column: 5 / 8;
-  margin: 0px;
+  margin: 40px 0px;
   padding-left: 1.38vw; // 20px;
   text-align: left;
 
