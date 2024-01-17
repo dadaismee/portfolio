@@ -98,7 +98,7 @@ export const GridWrapper = styled.div`
 
 const Subtitle = styled(h2)`
   grid-column: 5 / 8;
-  margin: 40px 0px;
+  margin: 60px 0px;
   padding-left: 1.38vw; // 20px;
   text-align: left;
 
