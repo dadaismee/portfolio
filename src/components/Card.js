@@ -33,7 +33,7 @@ const Card = ({ image, animation, title, description, tags, index, to, ongoing }
         transformTemplate={({ y }) => `translateY(-${y}px)`}>
         {Boolean(ongoing) && <Badge>ONGOING</Badge>}
         <Image image={image} alt={title} />
-        {Boolean(animation) && <Animation src={animation} loop autoPlat />}
+        {Boolean(animation) && <Animation src={animation} loop autoPlay />}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
           <div
             style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
@@ -128,11 +128,11 @@ const Image = styled(GatsbyImage)`
 `;
 
 const Animation = styled.video`
-  height: 25.5vh;
+  max-height: 25.5vh;
   border-radius: 15px;
   object-fit: fill;
   width: 100%;
-  border: 1px solid var;
+  border: 1px solid var(--color-text);
 
   @media (max-width: ${mediaQueries.phone}) {
     height: 19vh;

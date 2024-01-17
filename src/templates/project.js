@@ -8,7 +8,7 @@ import { Contact, Layout, SEO } from '../components';
 import Arrow from '../images/icons/Arrow.svg';
 import { mediaQueries } from '../styles/GlobalStyles';
 import { h2, paragraph, sectionTitle } from '../styles/TextStyles';
-import animations from '../images/projects/simpl-quiz/simpl-quiz-animated.mp4';
+import animations from '../images/projects/simpl-quiz/simpl-quiz-animated.mp4'
 
 const Project = ({ data }) => {
   // Data from a prject JSON
@@ -119,7 +119,7 @@ const Project = ({ data }) => {
               <Text>{task}</Text>
             </TextSection>
           </GridContainer>
-          {Boolean(animation) ? <Animation src={animations} loop autoPlay/> : <Zoom>
+          {Boolean(animation) ? <Animation src={animation} loop autoPlay/> : <Zoom>
             <Image image={img} alt={title} />
           </Zoom>}
         </FrontmatterWrapper>

@@ -1,16 +1,16 @@
 {
   "frontmatter": {
-    "title": "Simpl quiz",
-    "description": "a simple trivia quiz that asks three random questions and releases confetti if all answered correctly",
-    "date": "2022-12-21",
+    "title": "Academic writing on steroids",
+    "description": "my course on advanced writing digital tools and a website for it",
+    "date": "2023-11-07",
     "image": null,
-    "animation": "/static/simpl-quiz-animated-dc0ad57353d94978aa1435bf7781ae87.mp4",
-    "tags": ["UX/UI", "Web Dev"],
-    "url": "simpl-quiz"
+    "animation": "/static/main-cc50f40e10598ee58471eeb5fa3d1e74.mp4",
+    "tags": ["Ed Product", "UX/UI", "Web Dev"],
+    "url": "academic-writing"
   },
   "projectData": {
     "links": {
-      "prod": ["https://simplquiz.netlify.app"]
+      "prod": ["https://konspekt.io"]
     },
     "tools": [
       {
@@ -18,12 +18,16 @@
         "title": "Figma"
       },
       {
-        "icon": "../images/icons/react.png", 
-        "title": "React"
+        "icon": "../images/icons/gatsby-icon.png", 
+        "title": "Gatsby (React)"
+      }, 
+      {
+        "icon": "../images/icons/styled-components-icon.png", 
+        "title": "Styled Components"
       }
     ],
-    "task": "To make the final study project for the Scrimba React course to learn React.",
-    "whyExists": "I was learning React and decided to design a more or less usable and attractive interface and implement what I've learned.",
+    "task": "To develop and launch a profitable course on academic writing for Russian audience with minimal expenses",
+    "whyExists": "Through the 3 years of my PhD studies, I have had issues with systematizing the literature I've read and putting it into the context. I researched the topic and gradually developed a system which works for me. After a year of preliminary research with problem interviews, questionnaires among my students and colleagues alike, I developed a course and decided to design and develop a converting page as well",
     "process": [
       {
         "title": "Taking the course",

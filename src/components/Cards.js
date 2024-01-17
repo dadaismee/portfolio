@@ -4,7 +4,6 @@ import React from 'react';
 import { styled } from 'styled-components';
 import { Card } from '../components/index';
 import { mediaQueries } from '../styles/GlobalStyles';
-import { animations } from 'framer-motion';
 
 const Cards = ({ filter }) => {
   const query = useStaticQuery(graphql`
