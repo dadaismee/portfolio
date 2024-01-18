@@ -6,7 +6,8 @@
     "image": "../images/projects/chameletones/main.png",
     "animation": null,
     "tags": ["Concept", "UX/UI", "WebDev", "3D"],
-    "url": "chameletones"
+    "url": "chameletones",
+    "ongoing": true
   },
   "projectData": {
     "links": {

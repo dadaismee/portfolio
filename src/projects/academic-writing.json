@@ -1,11 +1,12 @@
 {
   "frontmatter": {
     "title": "Academic writing on steroids",
-    "description": "my course on advanced writing digital tools and a website for it",
+    "description": "my course on advanced writing digital tools and a landing page for it",
     "date": "2023-11-07",
     "image": null,
     "animation": "/static/main-cc50f40e10598ee58471eeb5fa3d1e74.mp4",
     "tags": ["Ed Product", "UX/UI", "Web Dev"],
+    "ongoing": true, 
     "url": "academic-writing"
   },
   "projectData": {
@@ -13,6 +14,10 @@
       "prod": ["https://konspekt.io"]
     },
     "tools": [
+      {
+        "icon": "../images/icons/pm-muscles.png", 
+        "title": "Ed Product muscles"
+      },
       {
         "icon": "../images/icons/figma-icon.png", 
         "title": "Figma"
@@ -24,30 +29,81 @@
       {
         "icon": "../images/icons/styled-components-icon.png", 
         "title": "Styled Components"
+      },
+      {
+      "icon": "../images/icons/netlify-icon.png", 
+      "title": "Netlify Functions"
       }
     ],
     "task": "To develop and launch a profitable course on academic writing for Russian audience with minimal expenses",
-    "whyExists": "Through the 3 years of my PhD studies, I have had issues with systematizing the literature I've read and putting it into the context. I researched the topic and gradually developed a system which works for me. After a year of preliminary research with problem interviews, questionnaires among my students and colleagues alike, I developed a course and decided to design and develop a converting page as well",
+    "whyExists": "Through the 3 years of my PhD studies, I have had issues with systematizing the literature I've read and putting it into the context. I researched the topic and gradually developed a system which works for me. After a year of preliminary research with problem interviews, questionnaires among my students and colleagues alike, I developed a course and decided to design and develop a landing page as well, as I wanted granular control (and free hosting)",
     "process": [
       {
-        "title": "Taking the course",
+        "title": "Demand test",
         "image":"../images/projects/simpl-quiz/process-step-1.png",
         "isDone": true,
-        "caption": "I wanted to firmly learn React and as a person who professionally produces programming courses opted for Scrimba's course"
+        "caption": "After formulating the product concept, I wanted to validate the idea, so I conducted several online surveys and a couple of problem interviews, mostly amongst my students. The result was that I shifted my target audience from BA and MA humanities students to PhDs, early career professors and knowledge work professionals"
       },
       {
-        "title": "Struggling",
+        "title": "Design and USP formulation",
         "image":"../images/projects/simpl-quiz/process-step-2.png",
         "isDone": true,
-        "caption": "I spent 2 weeks trying to make it work. Somtimes it was so unbearable that I needed to calm down (not really, but still true)"
+        "caption": "At this stage I wanted to create a landing page with a payment system to check whether any actual human being would pay for my course. As the course revolves around text, I decided to base the page design on typography. My fellow product marketing manager helped me to formulate and settle on the unique selling propositions of the course "
       },
       {
-        "title": "Designing",
+        "title": "Coding",
         "image":"../images/projects/simpl-quiz/main.png",
         "isDone": true,
-        "caption": "I decided to make it minimally appealing, user-facing and fun and learned to use SVG animations"
-      }     
-    ],
-    "results": "Learned React to some extent (I hope)."
+        "caption": "I used Gatsby, Styled Components and Netlify Functions to code the page. Why I chose this tech stack, read below"
+      },     
+      {
+        "title": "Promotion",
+        "image":"../images/projects/simpl-quiz/main.png",
+        "isDone": true,
+        "caption": "My fellow PMM helped to find relevant Telegram channels to discuss a post about the course. In addition, I made a Facebook post and asked couple of friend to repost. It led to 30+ leads and eventually to 13 payments"
+      },
+      {
+      "title": "Curriculum development",
+      "image":"../images/projects/simpl-quiz/main.png",
+      "isDone": true,
+      "caption": "I wrote the plan and structured the things I wanted to teach into presentation. The format was synchronous and practice oriented"
+    },
+    {
+    "title": "Teaching",
+    "image":"../images/projects/simpl-quiz/main.png",
+    "isDone": true,
+    "caption": "We had 8 exciting classes!"
+    },
+    {
+    "title": "Feedback interviews",
+    "image":"../images/projects/simpl-quiz/main.png",
+    "isDone": false,
+    "caption": "Conducting interviews to gather the participant feedback to iterate the course content and format and continue the product discovery phase"
     }
+    ],
+    "details": [
+      {
+        "title": "Demand test",
+        "text": "After formulating the product concept, I wanted to validate the idea, so I conducted several online surveys and a couple of problem interviews, mostly amongst my students. The result was that I shifted my target audience from BA and MA humanities students to PhDs, early career professors and knowledge work professionals.",
+        "images": [
+          {
+            "image": "../images/projects/portfolio/user-flow.jpeg",
+            "caption": "Survey results"
+          } 
+        ]
+      },
+      {
+        "title": "Design and USP formulation",
+        "text": "At this stage I wanted to create a landing page with a payment system to check whether any actual human being would pay for my course. As the course revolves around text, I decided to base the page design on typography. My fellow product marketing manager helped me to formulate and settle on the unique selling propositions of the course.",
+        "images": [
+          {
+            "image": "../images/projects/portfolio/user-flow.jpeg",
+            "caption": "Survey results"
+          } 
+        ]
+      }
+    ],
+    "results": "Earned €1400 in a month as a side hustle, learned a lot and made some good acquaintances"
+    }
+
   } 
