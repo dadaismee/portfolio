@@ -1,10 +1,9 @@
 {
   "frontmatter": {
     "title": "Academic writing on steroids",
-    "description": "my course on advanced writing digital tools and a landing page for it",
-    "date": "2023-11-07",
-    "image": null,
-    "animation": "/static/main-cc50f40e10598ee58471eeb5fa3d1e74.mp4",
+    "description": "my course on advanced digital tools for writing and a landing page for it",
+    "date": null,
+    "image": "../images/projects/academic-writing/main.jpeg",
     "tags": ["Ed Product", "UX/UI", "Web Dev"],
     "ongoing": true, 
     "url": "academic-writing"
@@ -31,55 +30,53 @@
         "title": "Styled Components"
       },
       {
-      "icon": "../images/icons/netlify-icon.png", 
-      "title": "Netlify Functions"
+        "icon": "../images/icons/netlify-icon.png", 
+        "title": "Netlify Functions"
+      },
+      {
+        "icon": "../images/icons/framer-motion.png", 
+        "title": "Framer Motion"
       }
     ],
     "task": "To develop and launch a profitable course on academic writing for Russian audience with minimal expenses",
-    "whyExists": "Through the 3 years of my PhD studies, I have had issues with systematizing the literature I've read and putting it into the context. I researched the topic and gradually developed a system which works for me. After a year of preliminary research with problem interviews, questionnaires among my students and colleagues alike, I developed a course and decided to design and develop a landing page as well, as I wanted granular control (and free hosting)",
+    "whyExists": "Through the 3 years of my PhD studies, I have had issues with systematizing the literature I've read and putting it into the context. I researched the topic and gradually developed a system which works for me. After a year of preliminary research with problem interviews, questionnaires among my students and colleagues alike, I developed a course and decided to design and develop a landing page as well, as I wanted granular control (and a free hosting).",
+    "metaphor": "Main focus is on immediate practicality and giving bare essentials to start with, all in a non-tech language.",
     "process": [
       {
         "title": "Demand test",
-        "image":"../images/projects/simpl-quiz/process-step-1.png",
-        "isDone": true,
-        "caption": "After formulating the product concept, I wanted to validate the idea, so I conducted several online surveys and a couple of problem interviews, mostly amongst my students. The result was that I shifted my target audience from BA and MA humanities students to PhDs, early career professors and knowledge work professionals"
+        "image": "../images/projects/academic-writing/process-step-1.png",
+        "isDone": true
       },
       {
         "title": "Design and USP formulation",
-        "image":"../images/projects/simpl-quiz/process-step-2.png",
-        "isDone": true,
-        "caption": "At this stage I wanted to create a landing page with a payment system to check whether any actual human being would pay for my course. As the course revolves around text, I decided to base the page design on typography. My fellow product marketing manager helped me to formulate and settle on the unique selling propositions of the course "
+        "image": "../images/projects/academic-writing/process-step-2.png",
+        "isDone": true
       },
       {
         "title": "Coding",
-        "image":"../images/projects/simpl-quiz/main.png",
-        "isDone": true,
-        "caption": "I used Gatsby, Styled Components and Netlify Functions to code the page. Why I chose this tech stack, read below"
+        "image": "../images/projects/academic-writing/process-step-3.png",
+        "isDone": true
       },     
       {
         "title": "Promotion",
-        "image":"../images/projects/simpl-quiz/main.png",
-        "isDone": true,
-        "caption": "My fellow PMM helped to find relevant Telegram channels to discuss a post about the course. In addition, I made a Facebook post and asked couple of friend to repost. It led to 30+ leads and eventually to 13 payments"
+        "image": "../images/projects/academic-writing/process-step-4.png",
+        "isDone": true
       },
       {
-      "title": "Curriculum development",
-      "image":"../images/projects/simpl-quiz/main.png",
-      "isDone": true,
-      "caption": "I wrote the plan and structured the things I wanted to teach into presentation. The format was synchronous and practice oriented"
-    },
-    {
-    "title": "Teaching",
-    "image":"../images/projects/simpl-quiz/main.png",
-    "isDone": true,
-    "caption": "We had 8 exciting classes!"
-    },
-    {
-    "title": "Feedback interviews",
-    "image":"../images/projects/simpl-quiz/main.png",
-    "isDone": false,
-    "caption": "Conducting interviews to gather the participant feedback to iterate the course content and format and continue the product discovery phase"
-    }
+        "title": "Curriculum development",
+        "image": "../images/projects/academic-writing/process-step-5.png",
+        "isDone": true
+      },
+      {
+        "title": "Teaching",
+        "image": "../images/projects/academic-writing/process-step-6.png",
+        "isDone": true
+      },
+      {
+        "title": "Feedback interviews",
+        "image": "../images/projects/wip.png",
+        "isDone": false
+      }
     ],
     "details": [
       {
@@ -87,7 +84,7 @@
         "text": "After formulating the product concept, I wanted to validate the idea, so I conducted several online surveys and a couple of problem interviews, mostly amongst my students. The result was that I shifted my target audience from BA and MA humanities students to PhDs, early career professors and knowledge work professionals.",
         "images": [
           {
-            "image": "../images/projects/portfolio/user-flow.jpeg",
+            "image": "../images/projects/academic-writing/process-step-1.png",
             "caption": "Survey results"
           } 
         ]
@@ -97,13 +94,43 @@
         "text": "At this stage I wanted to create a landing page with a payment system to check whether any actual human being would pay for my course. As the course revolves around text, I decided to base the page design on typography. My fellow product marketing manager helped me to formulate and settle on the unique selling propositions of the course.",
         "images": [
           {
-            "image": "../images/projects/portfolio/user-flow.jpeg",
-            "caption": "Survey results"
+            "image":"../images/projects/academic-writing/process-step-2.png",
+            "caption": "Defining styles and grids"
+          } 
+        ]
+      },
+      {
+        "title": "Coding",
+        "text": "I used Gatsby, for the website will not require any dynamic content (in foreseeable future) and the data is stored in JSON files which I wanted to be loaded in advance. I used Styled Components for speed, for it's my preferred way of doing CSS in React projects. In addition, I used Netlify Functions and connected Google Spreadsheet to put the user data from forms there, so that I can use it later to build a mailing list (with automations). And Framer Motion has become my go-to choice for quick animations.",
+        "images": [
+          {
+            "image": "../images/projects/academic-writing/process-step-3.png",
+            "caption": "Pricing component, which renders the info about course cost"
+          } 
+        ]
+      },
+      {
+        "title": "Promotion",
+        "text": "My fellow PMM helped to find relevant Telegram channels to discuss a post about the course. In addition, I made a Facebook post and asked couple of friend to repost. For the 2 week period of course 'promotion' the end-to-end conversion rate from visitors to payments was 2,65%. CR1 was 6% and CR2 was 59%, as there were 22 leads and 13 payments. Planning to work on the website to boost the former conversion metric.",
+        "images": [
+          {
+            "image": "../images/projects/academic-writing/process-step-4.png",
+            "caption": "Visitors → leads conversion rate in two weeks of course's promotion"
+          } 
+        ]
+      }, 
+      {
+        "title": "Curriculum development",
+        "text": "I wrote a plan and structured things I wanted to teach into presentations. The format was synchronous and practice-oriented",
+        "images": [
+          {
+            "image": "../images/projects/academic-writing/process-step-5.png",
+            "caption": "A lecture plan in a presentation"
           } 
         ]
       }
     ],
     "results": "Earned €1400 in a month as a side hustle, learned a lot and made some good acquaintances"
-    }
+  }
 
-  } 
+} 

@@ -1,4 +1,5 @@
 import { graphql, navigate } from 'gatsby';
+import { useInView } from "react-intersection-observer";
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React, { useEffect } from 'react';
 import Zoom from 'react-medium-image-zoom';
@@ -117,9 +118,15 @@ const Project = ({ data }) => {
             <TextSection column='5 / 7'>
               <SectionTitle>Task</SectionTitle>
               <Text>{task}</Text>
+              {Boolean(results) && (
+                <div style={{ display: "flex", flexDirection: "column", gap: '10px'}}>
+                  <SectionTitle style={{ marginTop: "20px" }}>Result</SectionTitle>
+                  <Text>{results}</Text>
+                </div>
+              )}
             </TextSection>
           </GridContainer>
-          {Boolean(animation) ? <Animation src={animation} loop autoPlay/> : <Zoom>
+          {Boolean(animation) ? <Animation src={animation} autoPlay loop /> : <Zoom>
             <Image image={img} alt={title} />
           </Zoom>}
         </FrontmatterWrapper>
@@ -228,14 +235,6 @@ const Project = ({ data }) => {
             );
           })}
 
-        {Boolean(results) && (
-          <GridContainer>
-            <TextSection column='1 / 3'>
-              <SectionTitle>Results</SectionTitle>
-              <Text>{results}</Text>
-            </TextSection>
-          </GridContainer>
-        )}
       </Wrapper>
       <Contact id='#contact' />
     </Layout>
@@ -325,7 +324,7 @@ gap: 20px;
 const TextSection = styled.div`
 display: flex;
 flex-direction: column;
-gap: 15px;
+gap: 10px;
 grid-column: ${({ column }) => column};
 
 @media (max-width: ${mediaQueries.phone}) {
@@ -419,6 +418,24 @@ border-radius: var(--border-radius-ext);
 }
 `;
 
+// const Animation = ({ threshold = 0.85, src }) => {
+//   const [ref, inView, entry] = useInView({ threshold })
+//
+//   useEffect(() => {
+//     if (inView) {
+//       ref.current?.play();
+//     } else {
+//       ref.current?.pause();
+//     }
+//   }, [ref, inView])
+//   console.log(inView);
+//   console.log(ref.current?.play());
+//
+//   return (
+//   <AnimationWrapper ref={ref} src={src} playsInline muted loop />
+//   )
+// }
+//
 const Animation = styled.video`
 border-radius: var(--border-radius-ext);
   

@@ -1,0 +1,85 @@
+{
+  "frontmatter": {
+    "title": "Conscious weather",
+    "description": "an art project about relativity of climate change",
+    "date": "2023-12-13",
+    "image": "../images/projects/conscious-weather/main.png",
+    "tags": ["Concept", "UX/UI", "Web Dev", "Art"],
+    "url": "conscious-weather"
+  },
+  "projectData": {
+    "links": {
+      "prod": ["https://conscious-weather.netlify.app", "https://github.com/dadaismee/conscious-weather"]
+    },
+    "tools": [
+      {
+        "icon": "../images/icons/figma-icon.png", 
+        "title": "Figma"
+      },
+      {
+        "icon": "../images/icons/react.png", 
+        "title": "React"
+      },
+      {
+      "icon": "../images/icons/styled-components-icon.png", 
+      "title": "Styled Components"
+    }
+    ],
+    "task": "To make an art project on climate change that involves open data sets or APIs",
+    "whyExists": "A study project from the 'Understanding Data' course at Interaction Design MA at MOME. I needed to come up with a concept about non-trivial data representation of climate change. After some ideation, I decided to go with real-time weather data.",
+    "process": [
+      {
+        "title": "Ideation and first prototype",
+        "image":"../images/projects/conscious-weather/process-step-1.png",
+        "isDone": true,
+        "caption": "First prototype"
+      },
+      {
+        "title": "Design",
+        "image":"../images/projects/conscious-weather/process-step-2.png",
+        "isDone": true,
+        "caption": "Interface design"
+      },
+      {
+      "title": "Development",
+      "image":"../images/projects/conscious-weather/process-step-3.png",
+      "isDone": true,
+      "caption": "The main component rendering and handling the weather app"
+      }
+    ],
+    "details": [
+      {
+        "title": "Ideation and first prototype",
+        "text": "After desk research, I wabted to look for correlation between mobile phone concentration in a particular ara and extreme weather events. However, data on that matter proved to be either inexistent or irrelevant. And at one of the critique sessions, I showed a simple interface for querying current weather written in HTML and vanilla JavaScript. That prototype had strong colors as temperature indicators. Fellow designers suggested to make accent on the emotional aspect of weather representation. And that triggered me to derive emotional informational display from comparison of temperatures over a time scale rather than from a current snapshot.",
+        "images": [
+          {
+            "image":"../images/projects/conscious-weather/process-step-1.png",
+            "caption": "First prototype"
+          } 
+        ]
+      },
+      {
+      "title": "Design",
+      "text": "The final interface shows two dimensions of data: temperature in a city entered by user now, ten and twenty years ago and the trend—whether it has become colder, hotter or remained stagnant ever since. I was inspired by Edward Tufte's classic 'The Visual Display of Quantitative information' to make a concise yet eloquent data representation.",
+      "images": [
+        {
+          "image":"../images/projects/conscious-weather/process-step-2.png",
+          "caption": "Interface design"
+        } 
+      ]
+      },
+      {
+        "title": "Development",
+        "text": "I used OpenWeatherMap's API to make two types of queries: for current weather and historical ones. The project uses three (nested) acynchronous fetch functions (you can look at those in the 'Visualization' component in the project's GitHub, link to which is in the page title). Such a decision was made to accommodate the visual display of the delays between queries. And yes, it was my first project written in Neovim which I am now a hige fan of 🙃.",
+        "images": [
+          {
+            "image":"../images/projects/conscious-weather/process-step-3.png",
+            "caption": "The main component rendering and handling the weather app"
+          } 
+        ]
+      }
+    ],
+    "results": "Not a result, but rather a next step is to adjust this project for exhibiting"
+  }
+} 
+

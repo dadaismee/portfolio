@@ -14,15 +14,15 @@ const About = () => {
       <AboutBlock column='1 / 3'>
         <Title>About</Title>
         <Text>
-          Hi there! I'm Valerii Shevchenko, a passionate design generalist,
-          experienced edtech product manager and academic philosopher of science
-          . I specialize in bridging the gap between design consultancy and
-          hands-on creation, ensuring a holistic approach. My expertise in
-          education, product management, design, and creative coding allow me to
-          create thoughtful products and experiences. When I'm not immersed in
-          design, I'm pursuing a PhD in philosophy of science and spending
-          quality time with my family.
-        </Text>
+          Hello! I'm <b>Valerii Shevchenko</b>:
+          <ul>
+            <li>design engineer</li>
+            <li>edtech product owner</li>
+            <li>academic philosopher of science</li>
+            <li>happy father and husband</li>
+          </ul>
+          I work at the intersection of product, design and code by mostly making web interfaces and developing and launching educational courses (mainly about programming). I also write academic papers (mainly about evolution of social coordination), occasinally teach at universities, make algorithmic art for fun and spend time with my family. Needless to say how unique my perspective is, right? Feel free to write me an email to say hi, to work together or both.
+      </Text>
       </AboutBlock>
       {/* <AboutBlock column='5 / 7'>
         <Title>Services</Title>
@@ -84,10 +84,8 @@ const AboutBlock = styled.div`
 const Title = styled(sectionTitle)``;
 const Text = styled(paragraph)`
   ul {
-    margin: 0 -20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    line-height: 20px;
+    margin-top: 5px;
   }
 
   li {
