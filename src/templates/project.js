@@ -1,5 +1,4 @@
 import { graphql, navigate } from 'gatsby';
-import { useInView } from "react-intersection-observer";
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React, { useEffect } from 'react';
 import Zoom from 'react-medium-image-zoom';
