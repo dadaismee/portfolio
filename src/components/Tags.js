@@ -29,6 +29,7 @@ export const tagsData = [
   'Art',
   'Branding',
   'Interaction',
+  '3D'
 ];
 
 const Wrapper = styled.div`

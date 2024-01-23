@@ -23,27 +23,87 @@
         "title": "React"
       }
     ],
-    "task": "To create a concept of a non-existent product, model it in 3D and pack into a landing to practice modeling",
-    "whyExists": "",
+    "task": "To create a concept of a non-existent product, model it in 3D and pack it into a landing page",
+    "whyExists": "I learned Blender as a part of a design course I took, and the task was to model an inexistent product, but the departure point should have been a strong enough concept.",
     "process": [
       {
+        "title": "Moodboard and concept",
+        "image":"../images/projects/chameletones/process-step-1.png",
+        "isDone": true
+      },
+      {
+        "title": "Wireframe",
+        "image":"../images/projects/chameletones/process-step-2-2.png",
+        "isDone": true
+      },
+      {
+        "title": "3D modeling",
+        "image":"../images/projects/chameletones/process-step-3-2.png",
+        "isDone": true
+      },
+      {
+        "title": "UI Design",
+        "image":"../images/projects/chameletones/main.png",
+        "isDone": true
+      },
+      {
         "title": "Coding",
-        "image":"../images/projects/random-variable/process-step-1.png",
-        "isDone": true,
-        "caption": "I decided to teach myself to code and iterated a lot until got something interesting"
+        "image":"../images/projects/wip.png",
+        "isDone": false,
+        "caption": ""
+      }
+    ],
+    "details": [
+      {
+        "title": "Moodboard and concept",
+        "text": "I wanted to design headphones and departed from the chameleon as a metaphor of adaptability to the environment. This informed visual design decisions.",
+        "images": [
+          {
+            "image": "../images/projects/chameletones/process-step-1.png",
+            "caption": ""
+          } 
+        ]
       },
       {
-        "title": "Printing",
-        "image":"../images/projects/random-variable/process-step-2.png",
-        "isDone": true,
-        "caption": "After generating 100s of images, I selected 9, printed and framed them"
+        "title": "Information architecture and wireframe",
+        "images": [
+          {
+            "image": "../images/projects/chameletones/process-step-2.png",
+            "caption": ""
+          } 
+        ]
       },
       {
-        "title": "Exhibition",
-        "image":"../images/projects/random-variable/process-step-3.png",
-        "isDone": true,
-        "caption": "With the venue owner, we mounted the pieces and the installation"
-      }     
+        "title": "3D modeling",
+        "text": "",
+        "images": [
+          {
+            "image": "../images/projects/chameletones/process-step-1.png",
+            "caption": ""
+          },
+          {
+          "image": "../images/projects/chameletones/process-step-3-1.png",
+          "caption": ""
+          },
+          {
+          "image": "../images/projects/chameletones/process-step-3-2.png",
+          "caption": ""
+          },
+          {
+          "image": "../images/projects/chameletones/process-step-3-3.png",
+          "caption": ""
+          }
+        ]
+      },
+      {
+        "title": "UI Design",
+        "images": [
+          {
+            "image": "../images/projects/chameletones/process-step-4.png",
+            "caption": ""
+          } 
+        ]
+      }
     ]
   }
   } 

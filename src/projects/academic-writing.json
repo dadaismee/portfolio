@@ -10,7 +10,7 @@
   },
   "projectData": {
     "links": {
-      "prod": ["https://konspekt.io"]
+      "prod": ["https://konspekt.io", "https://github.com/dadaismee/konspekt"]
     },
     "tools": [
       {

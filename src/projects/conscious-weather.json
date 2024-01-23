@@ -50,7 +50,7 @@
     "details": [
       {
         "title": "Ideation and first prototype",
-        "text": "After desk research, I wabted to look for correlation between mobile phone concentration in a particular ara and extreme weather events. However, data on that matter proved to be either inexistent or irrelevant. And at one of the critique sessions, I showed a simple interface for querying current weather written in HTML and vanilla JavaScript. That prototype had strong colors as temperature indicators. Fellow designers suggested to make accent on the emotional aspect of weather representation. And that triggered me to derive emotional informational display from comparison of temperatures over a time scale rather than from a current snapshot.",
+        "text": "After desk research, I wanted to look for correlation between mobile phone concentration in a particular area and extreme weather events. However, data on that matter proved to be either inexistent or irrelevant. And at one of the critique sessions, I showed a simple interface for querying current weather written in HTML and vanilla JavaScript. That prototype had strong colors as temperature indicators. Fellow designers suggested to make accent on the emotional aspect of weather representation. And that triggered me to derive emotional informational display from comparison of temperatures over a time scale rather than from a current snapshot.",
         "images": [
           {
             "image":"../images/projects/conscious-weather/process-step-1.png",
@@ -70,7 +70,7 @@
       },
       {
         "title": "Development",
-        "text": "I used OpenWeatherMap's API to make two types of queries: for current weather and historical ones. The project uses three (nested) acynchronous fetch functions (you can look at those in the 'Visualization' component in the project's GitHub, link to which is in the page title). Such a decision was made to accommodate the visual display of the delays between queries. And yes, it was my first project written in Neovim which I am now a hige fan of 🙃.",
+        "text": "I used OpenWeatherMap's API to make two types of queries: for current weather and historical one. The project uses three (nested) acynchronous fetch functions (you can look at those in the 'Visualization' component in the project's GitHub, link to which is in the page title). Such a decision was made to accommodate the visual display of the delays between queries. And yes, it was my first project written in Neovim which I am now a huge fan of 🙃.",
         "images": [
           {
             "image":"../images/projects/conscious-weather/process-step-3.png",
