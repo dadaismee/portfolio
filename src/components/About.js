@@ -16,12 +16,12 @@ const About = () => {
         <Text>
           Hello! I'm <b>Valerii Shevchenko</b>:
           <ul>
+            <li>edtech product manager</li>
             <li>design engineer</li>
-            <li>edtech product owner</li>
             <li>academic philosopher of science</li>
             <li>happy father and husband</li>
           </ul>
-          I work at the intersection of product, design and code by mostly making web interfaces and developing and launching educational courses. I write academic papers (mainly about evolution of social coordination), occasinally teach at universities, make algorithmic art for fun and spend time with my family. Needless to say how unique my perspective is, right? Feel free to write to me to say hi, to work together or both.
+          I work at the intersection of product, design and code by mostly making web interfaces and developing, managing and launching educational courses. I write academic papers (mainly about evolution of social coordination), occasinally teach at universities, make algorithmic art for fun and spend time with my family. Needless to say how unique my perspective is, right? Feel free to write to me to say hi, to work together or both.
       </Text>
       </AboutBlock>
       {/* <AboutBlock column='5 / 7'>
