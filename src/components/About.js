@@ -17,7 +17,7 @@ const About = () => {
           Hello! I'm <b>Valerii Shevchenko</b>:
           <ul>
             <li>edtech product manager</li>
-            <li>design engineer</li>
+            <li>ux engineer</li>
             <li>academic philosopher of science</li>
             <li>happy father and husband</li>
           </ul>
@@ -113,27 +113,23 @@ const Skills = styled.div`
 
 const skills = [
   {
-    title: 'LX Design / Product Management',
+    title: 'Ed Product Leadership',
+    level: 100,
+  },
+  {
+    title: 'Web Development',
     level: 90,
   },
   {
     title: 'UX/UI Design',
-    level: 75,
-  },
-  {
-    title: 'Web Development',
-    level: 70,
+    level: 80,
   },
   {
     title: 'Creative Coding',
-    level: 65,
-  },
-  {
-    title: 'Brand Design',
-    level: 65,
+    level: 70,
   },
   {
     title: '3D (Blender)',
-    level: 55,
+    level: 60,
   },
 ];

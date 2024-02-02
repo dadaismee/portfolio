@@ -40,7 +40,7 @@ const Hero = () => {
           }}
           viewport={{ once: true }}>
           ed product manager <br />
-          design engineer <br />
+          ux engineer <br />
         </Subtitle>
         {/* <Subtitle
           initial={{
